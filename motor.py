@@ -16,7 +16,7 @@
 #add powered = the PWM signal is out
 
 
-class motor(object):
+class Motor(object):
     """Manages the currect Angular rotation
     Implements the IO interface using the RPIO lib
     __init_(self, name, pin, kv=1000, RPMMin=1, RPMMax=100, debug=True, simulation=True):

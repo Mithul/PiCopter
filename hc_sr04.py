@@ -55,7 +55,6 @@ class hc_sr04:
     def __del__(self):
 #        self.thread.join
         GPIO.cleanup()
-
     def get_dist(self):
         return self.distance
 
@@ -63,6 +62,7 @@ class hc_sr04:
 s1 =  hc_sr04(23,24,0.5)
 s1.start()
 raw_input()
+#while True:
 x=s1.get_dist()
 print x
 raw_input()
