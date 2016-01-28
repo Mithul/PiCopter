@@ -2,16 +2,40 @@ import smbus
 import time
 import sensors.imu as imu
 from threading import Thread
-from motor import Motor as motor
 import os
+import argparse
+
+
+parser = argparse.ArgumentParser(description='Raspberry Pi Quadcopter Program.', usage='%(prog)s [options]')
+
+parser.add_argument('--config', type=str, default="")
+parser.add_argument('--motor', type=str, default="pigpio")
+
+args = parser.parse_args()
+print args
+
+if args.motor == "pigpio":
+    from motor_pigpio import Motor as motor
+    print
+elif args.motor == "pwm":
+    from motor_pwm import Motor as motor
+elif args.motor == "servo":
+    from motor_servo import Motor as motor
+elif args.motor == "servoblaster":
+    from motor_servoblaster import Motor as motor
+else:
+    print "Invalid motor controller selection. Please choose pigpio, pwm, servo, servoblaster"
+    exit(0)
+
+
 
 os.nice(-10)
 class Quad(object):
     def __init__(self, m1, m2, m3, m4, imu, s1=None, s2=None, s3=None, s4=None):
-        self.motor_bl=m4
-        self.motor_br=m2
+        self.motor_bl=m1
+        self.motor_br=m4
         self.motor_fr=m3
-        self.motor_fl=m1
+        self.motor_fl=m2
         self.sensor_l=s1
         self.sensor_f=s2
         self.sensor_r=s3
@@ -98,7 +122,6 @@ class Quad(object):
         self.thread.start()
         # self.balance()
 
-
     def set_zero_angle(self):
         (pitch, roll, yaw) = self.imu.read_pitch_roll_yaw()
         self.offset_x = pitch
@@ -166,6 +189,14 @@ quadcopter = Quad(mymotor1,mymotor2,mymotor3,mymotor4,imu_controller)
 
 print ('init > i | balance > b | stop > s | PID > p | set_zero > r \n increase_height > a | decrease_height > z | Emergency_zero > x')
 
+if len(args.config) > 0:
+    print "Reading file"
+    config_file = open(args.config, 'r')
+    import json
+    pid = json.load(config_file)
+    quadcopter.set_PID(pid['p'],pid['i'],pid['d'])
+    print "PID set from file"
+
 cycling = True
 try:
     while cycling:
@@ -182,6 +213,7 @@ try:
             quadcopter.set_zero_angle()
         if res == 'x':
             quadcopter.set_height()
+            quadcopter.stop()
         if res == 'p':
             p = float(raw_input())
             i = float(raw_input())

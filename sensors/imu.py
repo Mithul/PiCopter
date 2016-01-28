@@ -9,7 +9,7 @@ class IMU(object):
     K = 0.98
     K1 = 1 - K
     
-    def __init__(self, bus, gyro_address, accel_address, compass_address, name, gyro_scale=L3G4200D.FS_2000, accel_scale=ADXL345.AFS_16g):
+    def __init__(self, bus, gyro_address, accel_address, compass_address, name, gyro_scale=L3G4200D.FS_2000, accel_scale=ADXL345.AFS_2g):
         self.bus = bus
         self.gyro_address = gyro_address 
         self.accel_address = accel_address

@@ -3,7 +3,7 @@
 
 #solenerotech 2013.09.06
 
-from motor import motor
+from motor4 import Motor as motor
 
 mymotor = motor('m1', 17, simulation=False)
 #where 17 is  GPIO17 = pin 11

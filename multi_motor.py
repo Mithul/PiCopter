@@ -3,7 +3,7 @@
 
 #solenerotech 2013.09.06
 
-from motor import Motor as motor
+from motor4 import Motor as motor
 import time
 
 mymotor1 = motor('m1', 17, simulation=False)    #RL
