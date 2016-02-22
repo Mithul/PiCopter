@@ -95,3 +95,20 @@ class L3G4200D(object):
     def read_scaled_gyro_z(self):
         '''Return the SCALED Z gyro value in radians/second'''
         return self.gyro_scaled_z
+
+
+if __name__ == "__main__":
+    import smbus
+    import time
+    bus = smbus.SMBus(1)
+    l3g4200d=L3G4200D(bus, 0x68, "gyro")
+    while True:
+        start_time = time.time()
+        l3g4200d.read_raw_data()
+        print l3g4200d.read_scaled_gyro_x()
+        print l3g4200d.read_scaled_gyro_y()
+        print l3g4200d.read_scaled_gyro_z()
+        end_time = time.time()
+        while(end_time-start_time <= 0.02):
+            end_time = time.time()
+            time.sleep(0.0001)
