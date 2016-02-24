@@ -53,10 +53,10 @@ class itg3205:
 	# Address will always be either 0x68 (104) or 0x69 (105)
 	def __init__(self, bus, addr=0x69):
 		self.bus = bus
-		
+		self.address = addr
 		self.setPowerManagement(0x00)
 		self.setSampleRateDivider(0x07)
-		self.setDLPFAndFullScale(self.FullScale_2000_sec, self.DLPF_188_1)
+		self.setDLPFAndFullScale(self.FullScale_2000_sec, self.DLPF_5_1)
 		self.setInterrupt(self.IC_LatchUntilIntCleared, self.IC_IntOnDeviceReady, self.IC_IntOnDataReady)
 	
 	def setPowerManagement(self, *function_set):
@@ -75,14 +75,16 @@ class itg3205:
 		options = 0x00
 		for function in function_set:
 			options = options | function
-		self.bus.write_byte(register, options)
+		#self.bus.write_byte(register, options)
+ 		I2CUtils.i2c_write_byte(self.bus, self.address, register, options)
 
 	# Adds to existing options of register	
 	def addOption(self, register, *function_set):
 		options = self.bus.read_byte(register)
 		for function in function_set:
 			options = options | function
-		self.bus.write_byte(register, options)
+		#self.bus.write_byte(register, options)
+ 		I2CUtils.i2c_write_byte(self.bus, self.address, register, options)
 		
 	# Removes options of register	
 	def removeOption(self, register, *function_set):
@@ -114,17 +116,28 @@ class itg3205:
 		
 		return options
 		
+	def read_raw_data(self):
+		return
+	def read_scaled_gyro_x(self):
+		return -self.getRadPerSecAxes()[0]
+	def read_scaled_gyro_y(self):
+		return -self.getRadPerSecAxes()[1]
+	def read_scaled_gyro_z(self):
+		return -self.getRadPerSecAxes()[2]
+
 	def getAxes(self):
-		gyro_x = self.bus.read_s16int(self.GyroXDataRegisterMSB)
-		gyro_y = self.bus.read_s16int(self.GyroYDataRegisterMSB)
-		gyro_z = self.bus.read_s16int(self.GyroZDataRegisterMSB)
+		gyro_x = I2CUtils.i2c_read_word_signed(self.bus, self.address, self.GyroXDataRegisterMSB) #self.bus.read_s16int(self.GyroXDataRegisterMSB)
+		gyro_y = I2CUtils.i2c_read_word_signed(self.bus, self.address, self.GyroYDataRegisterMSB) #self.bus.read_s16int(self.GyroXDataRegisterMSB)
+		gyro_z = I2CUtils.i2c_read_word_signed(self.bus, self.address, self.GyroZDataRegisterMSB) #self.bus.read_s16int(self.GyroXDataRegisterMSB)
+#		gyro_y = self.bus.read_s16int(self.GyroYDataRegisterMSB)
+#		gyro_z = self.bus.read_s16int(self.GyroZDataRegisterMSB)
 		return (gyro_x, gyro_y, gyro_z)
 	
 	def getDegPerSecAxes(self):
 		(gyro_x, gyro_y, gyro_z) = self.getAxes()
 		return (gyro_x / 14.375, gyro_y / 14.375, gyro_z / 14.375)
 
+	def getRadPerSecAxes(self):
+		(gyro_x, gyro_y, gyro_z) = self.getAxes()
+ 		return (gyro_x / 823.6268, gyro_y / 823.6268, gyro_z / 823.6268)
 
-import smbus
-bus = smbus.SMBus(1)
-i = itg3205(bus,0x68)

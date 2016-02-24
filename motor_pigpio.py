@@ -11,6 +11,7 @@ class Motor:
         # GPIO.setmode(GPIO.BCM)
         # GPIO.setup(pin,GPIO.OUT)
         self.driver = pigpio.pi()
+        self.maxSpeed = 100
 
     def start(self):
         pass
@@ -18,15 +19,19 @@ class Motor:
     def stop(self):
         self.driver.set_servo_pulsewidth(self.pin, 0)
 
+    def setMaxSpeed(self,speed):
+        self.maxSpeed = speed
+
     def forward(self,speed):
         if self.simulation:
             return
-        if speed>100:
-            self.speed=100
+        if speed>self.maxSpeed:
+            speed=self.maxSpeed
             # print speed,' Speed too high reduced'
         if speed<0:
-            self.speed=0
+            speed=0
             # print speed,' Speed too low, set to 0'
+        self.speed = speed
         speed=speed*5
         self.driver.set_servo_pulsewidth(self.pin, 1000+speed)
 

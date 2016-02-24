@@ -1,6 +1,6 @@
 import smbus
 import time
-import sensors.imu as imu
+import sensors.imu2 as imu
 from threading import Thread
 import os
 import argparse
@@ -123,7 +123,7 @@ class Quad(object):
         # self.balance()
 
     def set_zero_angle(self):
-        (pitch, roll, yaw) = self.imu.read_pitch_roll_yaw()
+        (pitch, roll, yaw, _) = self.imu.read_pitch_roll_yaw()
         self.offset_x = pitch
         self.offset_y = roll
         self.offset_z = yaw
@@ -145,34 +145,33 @@ class Quad(object):
         i_y = 0
         i_z = 0
         log = open('motor.log', 'w')
-        log.write('iteration\theight\tx-ouput\ty-output\tpitch\troll\ttime-taken\titer-time\tgx\tgy\tax\tay')
+        log.write('iteration\theight\tx-ouput\ty-output\tpitch\troll\ttime-taken\tgx\tgy\tax\tay')
         i=0
         while self.running:
             # print "Nothing"
             start_time = time.time()
             old_pitch, old_roll, old_yaw = pitch, roll, yaw
-            (pitch, roll, yaw) = self.imu.read_pitch_roll_yaw()
+            (pitch, roll, yaw, imu_connected) = self.imu.read_pitch_roll_yaw()
             (_, _, gx, gy, _, ax, ay, _) = self.imu.read_all()
             axis_output = {'x': 0, 'y': 0, 'z': 0}
-            [axis_output['x'],i_x]=self.compute_PID_output(self.kp_x, self.ki_x, self.kd_x, pitch-self.offset_x, i_x, old_pitch)
-            [axis_output['y'],i_y]=self.compute_PID_output(self.kp_y, self.ki_y, self.kd_x, roll-self.offset_y, i_y, old_roll)
-            [axis_output['z'],i_z]=self.compute_PID_output(self.kp_z, self.ki_z, self.kd_x, yaw-self.offset_z, i_z, old_yaw)
-            self.motor_bl.setW(int(self.height+axis_output['x']/2+axis_output['y']/2))
-            self.motor_br.setW(int(self.height+axis_output['x']/2-axis_output['y']/2))
-            self.motor_fl.setW(int(self.height-axis_output['x']/2+axis_output['y']/2))
-            self.motor_fr.setW(int(self.height-axis_output['x']/2-axis_output['y']/2))
-            log.write(str(i)+'\t'+str(self.height)+'\t'+str(axis_output['x']/2)+'\t'+str(axis_output['y']/2))
-            log.write('\t'+'\t'+str(pitch)+'\t'+str(roll))
-            end_time = time.time()
-            print end_time-start_time
-            log.write('\t'+str(end_time-start_time))
-            while(end_time-start_time <= 0.02):
+            if imu_connected:
+                [axis_output['x'],i_x]=self.compute_PID_output(self.kp_x, self.ki_x, self.kd_x, pitch-self.offset_x, i_x, old_pitch)
+                [axis_output['y'],i_y]=self.compute_PID_output(self.kp_y, self.ki_y, self.kd_x, roll-self.offset_y, i_y, old_roll)
+                [axis_output['z'],i_z]=self.compute_PID_output(self.kp_z, self.ki_z, self.kd_x, yaw-self.offset_z, i_z, old_yaw)
+                self.motor_bl.setW(int(self.height+axis_output['x']/2+axis_output['y']/2))
+                self.motor_br.setW(int(self.height+axis_output['x']/2-axis_output['y']/2))
+                self.motor_fl.setW(int(self.height-axis_output['x']/2+axis_output['y']/2))
+                self.motor_fr.setW(int(self.height-axis_output['x']/2-axis_output['y']/2))
+                log.write(str(i)+'\t'+str(self.height)+'\t'+str(axis_output['x']/2)+'\t'+str(axis_output['y']/2))
+                log.write('\t'+str(pitch)+'\t'+str(roll))
                 end_time = time.time()
-                time.sleep(0.0001)
-            log.write('\t'+str(end_time-start_time))
-            log.write('\t'+str(gx)+'\t'+str(gy)+'\t'+str(ax)+'\t'+str(ay))
-            log.write("\n")
-            i=i+1
+                print pitch,roll
+                log.write('\t'+str(end_time-start_time))
+                log.write('\t'+str(gx)+'\t'+str(gy)+'\t'+str(ax)+'\t'+str(ay))
+                log.write("\n")
+                i=i+1
+            else:
+                print "Warning IMU disconnected"
 
 
 

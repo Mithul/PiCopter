@@ -18,9 +18,12 @@ def i2c_read_byte(bus, address, register):
     return bus.read_byte_data(address, register)
  
 def i2c_read_word_unsigned(bus, address, register):
-    high = bus.read_byte_data(address, register)
-    low = bus.read_byte_data(address, register+1)
-    return (high << 8) + low
+    try:
+        high = bus.read_byte_data(address, register)
+        low = bus.read_byte_data(address, register+1)
+        return (high << 8) + low
+    except:
+        return 0
 
 def i2c_read_word_signed(bus, address, register):
     value = i2c_read_word_unsigned(bus, address, register)
