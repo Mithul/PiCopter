@@ -1,8 +1,8 @@
 import time
 
-from sensors.adxl345 import ADXL345
-from sensors.l3g4200d import L3G4200D
-from sensors.hmc5883l import HMC5883L
+from adxl345 import ADXL345
+from l3g4200d import L3G4200D
+from hmc5883l import HMC5883L
 
 class IMU(object):
     

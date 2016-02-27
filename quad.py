@@ -2,6 +2,7 @@ import smbus
 import time
 import sensors.imu2 as imu
 from threading import Thread
+from utils.butterworth import Butterworth
 import os
 import argparse
 
@@ -15,14 +16,14 @@ args = parser.parse_args()
 print args
 
 if args.motor == "pigpio":
-    from motor_pigpio import Motor as motor
+    from motor.motor_pigpio import Motor as motor
     print
 elif args.motor == "pwm":
-    from motor_pwm import Motor as motor
+    from motor.motor_pwm import Motor as motor
 elif args.motor == "servo":
-    from motor_servo import Motor as motor
+    from motor.motor_servo import Motor as motor
 elif args.motor == "servoblaster":
-    from motor_servoblaster import Motor as motor
+    from motor.motor_servoblaster import Motor as motor
 else:
     print "Invalid motor controller selection. Please choose pigpio, pwm, servo, servoblaster"
     exit(0)
@@ -62,6 +63,11 @@ class Quad(object):
         #x^ top is front
         #y->
         #z.
+        dri_frequency = 40
+        samples_per_motion = 4
+        self.bfx = Butterworth(dri_frequency / samples_per_motion, 0.05, 8)
+        self.bfy = Butterworth(dri_frequency / samples_per_motion, 0.05, 8)
+        self.bfz = Butterworth(dri_frequency / samples_per_motion, 0.05, 8)
 
         self.imu.set_compass_offsets(9, -10, -140)
         self.motor_fl.start()
@@ -95,10 +101,10 @@ class Quad(object):
         self.motor_bl.setW(0)
         self.motor_fr.setW(0)
         self.motor_br.setW(0)
-        mymotor1.stop()
-        mymotor2.stop()
-        mymotor3.stop()
-        mymotor4.stop()
+        self.motor_fl.stop()
+        self.motor_bl.stop()
+        self.motor_fr.stop()
+        self.motor_br.stop()
 
     def set_PID(self,p,i,d):
         self.kp_x=p
@@ -109,10 +115,12 @@ class Quad(object):
         self.kd_y=d
         
 
-    def compute_PID_output(self, kp, ki, kd, angle, old_i, old_angle):
+    def compute_PID_output(self, kp, ki, kd, angle, old_i, old_angle, log=False):
         p = kp*angle
         i = old_i+ki*angle
         d = kd*(angle-old_angle)
+        if log != False:
+            log.write('\t'+str(p)+'\t'+str(i)+'\t'+str(d)+'\t')
         return [p+i+d,i]
 
     def balancer(self):
@@ -144,91 +152,111 @@ class Quad(object):
         i_x = 0
         i_y = 0
         i_z = 0
-        log = open('motor.log', 'w')
-        log.write('iteration\theight\tx-ouput\ty-output\tpitch\troll\ttime-taken\tgx\tgy\tax\tay')
+        log = open('logs/motor.log', 'w')
+        old_pitch, old_roll, old_yaw = 0,0,0
+        log.write('iteration\theight\tx-ouput\ty-output\tpitch\troll\ttime-taken\tgx\tgy\tax\tay\n')
         i=0
+        ii=0
+        ustart_time = time.time()
+        samples = 0
         while self.running:
             # print "Nothing"
             start_time = time.time()
-            old_pitch, old_roll, old_yaw = pitch, roll, yaw
             (pitch, roll, yaw, imu_connected) = self.imu.read_pitch_roll_yaw()
+            ex = self.bfx.filter(pitch)
+            ey = self.bfy.filter(roll)
+            ez = self.bfz.filter(yaw)
             (_, _, gx, gy, _, ax, ay, _) = self.imu.read_all()
             axis_output = {'x': 0, 'y': 0, 'z': 0}
-            if imu_connected:
-                [axis_output['x'],i_x]=self.compute_PID_output(self.kp_x, self.ki_x, self.kd_x, pitch-self.offset_x, i_x, old_pitch)
-                [axis_output['y'],i_y]=self.compute_PID_output(self.kp_y, self.ki_y, self.kd_x, roll-self.offset_y, i_y, old_roll)
-                [axis_output['z'],i_z]=self.compute_PID_output(self.kp_z, self.ki_z, self.kd_x, yaw-self.offset_z, i_z, old_yaw)
-                self.motor_bl.setW(int(self.height+axis_output['x']/2+axis_output['y']/2))
-                self.motor_br.setW(int(self.height+axis_output['x']/2-axis_output['y']/2))
-                self.motor_fl.setW(int(self.height-axis_output['x']/2+axis_output['y']/2))
-                self.motor_fr.setW(int(self.height-axis_output['x']/2-axis_output['y']/2))
-                log.write(str(i)+'\t'+str(self.height)+'\t'+str(axis_output['x']/2)+'\t'+str(axis_output['y']/2))
-                log.write('\t'+str(pitch)+'\t'+str(roll))
-                end_time = time.time()
-                print pitch,roll
-                log.write('\t'+str(end_time-start_time))
-                log.write('\t'+str(gx)+'\t'+str(gy)+'\t'+str(ax)+'\t'+str(ay))
-                log.write("\n")
-                i=i+1
-            else:
-                print "Warning IMU disconnected"
+            if ii%4 ==0:
+                if imu_connected:
+                    log.write(str(i)+'\t')
+                    [axis_output['x'],i_x]=self.compute_PID_output(self.kp_x, self.ki_x, self.kd_x, pitch-self.offset_x, i_x, old_pitch, log)
+                    [axis_output['y'],i_y]=self.compute_PID_output(self.kp_y, self.ki_y, self.kd_x, roll-self.offset_y, i_y, old_roll, log)
+                    [axis_output['z'],i_z]=self.compute_PID_output(self.kp_z, self.ki_z, self.kd_x, yaw-self.offset_z, i_z, old_yaw)
+                    self.motor_bl.setW(int(self.height+axis_output['x']/2+axis_output['y']/2))
+                    self.motor_br.setW(int(self.height+axis_output['x']/2-axis_output['y']/2))
+                    self.motor_fl.setW(int(self.height-axis_output['x']/2+axis_output['y']/2))
+                    self.motor_fr.setW(int(self.height-axis_output['x']/2-axis_output['y']/2))
+                    log.write(str(self.height)+'\t'+str(axis_output['x']/2)+'\t'+str(axis_output['y']/2))
+                    log.write('\t'+str(pitch)+'\t'+str(roll))
+                    end_time = time.time()
+                    if (end_time - ustart_time) > 1:
+                        ustart_time = time.time()
+                        samples = ii - samples
+                        print 'samples ',samples,ustart_time
+                    print pitch,roll, end_time, ustart_time, samples
+                    log.write('\t'+str(end_time-start_time))
+                    log.write('\t'+str(gx)+'\t'+str(gy)+'\t'+str(ax)+'\t'+str(ay))
+                    log.write('\t'+str(ex)+'\t'+str(ey)+'\t'+str(ez))
+                    log.write("\n")
+                    i=i+1
+                else:
+                    print "Warning IMU disconnected"
+                old_pitch, old_roll, old_yaw = pitch, roll, yaw
+            ii=ii+1
 
 
-
-bus = smbus.SMBus(1)#i2c_raspberry_pi_bus_number())
-imu_controller = imu.IMU(bus, 0x68, 0x53, 0x1e, "IMU")
-
-
-mymotor1 = motor('m1', 17,debug=False, simulation=False)    #RL
-mymotor2 = motor('m2', 18,debug=False, simulation=False)    #RR
-mymotor3 = motor('m3', 27,debug=False, simulation=False)    #FR
-mymotor4 = motor('m4', 22,debug=False, simulation=False)    #FL
-
-quadcopter = Quad(mymotor1,mymotor2,mymotor3,mymotor4,imu_controller)
-
-print ('init > i | balance > b | stop > s | PID > p | set_zero > r \n increase_height > a | decrease_height > z | Emergency_zero > x')
-
-if len(args.config) > 0:
-    print "Reading file"
-    config_file = open(args.config, 'r')
-    import json
-    pid = json.load(config_file)
-    quadcopter.set_PID(pid['p'],pid['i'],pid['d'])
-    print "PID set from file"
-
-cycling = True
-try:
-    while cycling:
-        res = raw_input()
-        if res == 'i':
-            quadcopter.motor_init()
-        if res == 'a':
-            quadcopter.inc_height(5)
-        if res == 'z':
-            quadcopter.dec_height(5)
-        if res == 'b':
-            quadcopter.balancer()
-        if res == 'r':
-            quadcopter.set_zero_angle()
-        if res == 'x':
-            quadcopter.set_height()
-            quadcopter.stop()
-        if res == 'p':
-            p = float(raw_input())
-            i = float(raw_input())
-            d = float(raw_input())
-            quadcopter.set_PID(p,i,d)
-        if res == 's':
-            quadcopter.stop()
-            cycling = False
-finally:
-    # shut down cleanly
-    mymotor1.stop()
-    mymotor2.stop()
-    mymotor3.stop()
-    mymotor4.stop()
-    print ("well done!")
+if __name__ == "__main__":
+    bus = smbus.SMBus(1)#i2c_raspberry_pi_bus_number())
+    imu_controller = imu.IMU(bus, 0x68, 0x53, 0x1e, "IMU")
 
 
-quadcopter.stop()
+    mymotor1 = motor('m1', 17,debug=False, simulation=False)    #RL
+    mymotor2 = motor('m2', 18,debug=False, simulation=False)    #RR
+    mymotor3 = motor('m3', 27,debug=False, simulation=False)    #FR
+    mymotor4 = motor('m4', 22,debug=False, simulation=False)    #FL
+
+    mymotor1.setMaxSpeed(30)
+    mymotor2.setMaxSpeed(30)
+    mymotor3.setMaxSpeed(30)
+    mymotor4.setMaxSpeed(30)
+
+    quadcopter = Quad(mymotor1,mymotor2,mymotor3,mymotor4,imu_controller)
+
+    print ('init > i | balance > b | stop > s | PID > p | set_zero > r \n increase_height > a | decrease_height > z | Emergency_zero > x')
+
+    if len(args.config) > 0:
+        print "Reading file"
+        config_file = open(args.config, 'r')
+        import json
+        pid = json.load(config_file)
+        quadcopter.set_PID(pid['p'],pid['i'],pid['d'])
+        print "PID set from file"
+
+    cycling = True
+    try:
+        while cycling:
+            res = raw_input()
+            if res == 'i':
+                quadcopter.motor_init()
+            if res == 'a':
+                quadcopter.inc_height(5)
+            if res == 'z':
+                quadcopter.dec_height(5)
+            if res == 'b':
+                quadcopter.balancer()
+            if res == 'r':
+                quadcopter.set_zero_angle()
+            if res == 'x':
+                quadcopter.set_height()
+                quadcopter.stop()
+            if res == 'p':
+                p = float(raw_input())
+                i = float(raw_input())
+                d = float(raw_input())
+                quadcopter.set_PID(p,i,d)
+            if res == 's':
+                quadcopter.stop()
+                cycling = False
+    finally:
+        # shut down cleanly
+        mymotor1.stop()
+        mymotor2.stop()
+        mymotor3.stop()
+        mymotor4.stop()
+        print ("well done!")
+
+
+    quadcopter.stop()
 

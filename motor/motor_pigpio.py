@@ -12,6 +12,7 @@ class Motor:
         # GPIO.setup(pin,GPIO.OUT)
         self.driver = pigpio.pi()
         self.maxSpeed = 100
+        self.minSpeed = 0
 
     def start(self):
         pass
@@ -22,14 +23,17 @@ class Motor:
     def setMaxSpeed(self,speed):
         self.maxSpeed = speed
 
+    def setMinSpeed(self,speed):
+        self.minSpeed = speed
+
     def forward(self,speed):
         if self.simulation:
             return
         if speed>self.maxSpeed:
             speed=self.maxSpeed
             # print speed,' Speed too high reduced'
-        if speed<0:
-            speed=0
+        if speed<self.minSpeed:
+            speed=self.minSpeed
             # print speed,' Speed too low, set to 0'
         self.speed = speed
         speed=speed*5
