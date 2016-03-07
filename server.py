@@ -25,10 +25,10 @@ mymotor2 = motor('m2', 18,debug=False, simulation=True)    #RR
 mymotor3 = motor('m3', 27,debug=False, simulation=False)    #FR
 mymotor4 = motor('m4', 22,debug=False, simulation=True)    #FL
 
-mymotor1.setMaxSpeed(22)
-mymotor2.setMaxSpeed(22)
-mymotor3.setMaxSpeed(22)
-mymotor4.setMaxSpeed(22)
+mymotor1.setMaxSpeed(50)
+mymotor2.setMaxSpeed(50)
+mymotor3.setMaxSpeed(50)
+mymotor4.setMaxSpeed(50)
 
 mymotor1.setMinSpeed(8)
 mymotor2.setMinSpeed(8)
@@ -55,7 +55,12 @@ while True:
 		quadcopter.set_PID(p,i,d)
 	except Exception as e:
 		print e
+		mymotor1.setMinSpeed(0)
+		mymotor2.setMinSpeed(0)
+		mymotor3.setMinSpeed(0)
+		mymotor4.setMinSpeed(0)
 		quadcopter.stop()
+		break
 	
 	# print msg
 

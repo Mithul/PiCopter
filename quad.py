@@ -166,6 +166,7 @@ class Quad(object):
             ex = self.bfx.filter(pitch)
             ey = self.bfy.filter(roll)
             ez = self.bfz.filter(yaw)
+            # (pitch, roll, yaw)=(ex, ey, ez)
             (_, _, gx, gy, _, ax, ay, _) = self.imu.read_all()
             axis_output = {'x': 0, 'y': 0, 'z': 0}
             if ii%4 ==0:
@@ -183,8 +184,8 @@ class Quad(object):
                     end_time = time.time()
                     if (end_time - ustart_time) > 1:
                         ustart_time = time.time()
-                        samples = ii - samples
                         print 'samples ',samples,ustart_time
+                        samples = 0
                     print pitch,roll, end_time, ustart_time, samples
                     log.write('\t'+str(end_time-start_time))
                     log.write('\t'+str(gx)+'\t'+str(gy)+'\t'+str(ax)+'\t'+str(ay))
@@ -194,6 +195,7 @@ class Quad(object):
                 else:
                     print "Warning IMU disconnected"
                 old_pitch, old_roll, old_yaw = pitch, roll, yaw
+            samples = samples + 1
             ii=ii+1
 
 
