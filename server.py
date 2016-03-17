@@ -21,19 +21,19 @@ imu_controller = imu.IMU(bus, 0x68, 0x53, 0x1e, "IMU")
 
 
 mymotor1 = motor('m1', 17, debug=False, simulation=False)  # RL
-mymotor2 = motor('m2', 18, debug=False, simulation=True)  # RR
+mymotor2 = motor('m2', 18, debug=False, simulation=False)  # RR
 mymotor3 = motor('m3', 27, debug=False, simulation=False)  # FR
-mymotor4 = motor('m4', 22, debug=False, simulation=True)  # FL
+mymotor4 = motor('m4', 22, debug=False, simulation=False)  # FL
 
-mymotor1.setMaxSpeed(50)
-mymotor2.setMaxSpeed(50)
-mymotor3.setMaxSpeed(50)
-mymotor4.setMaxSpeed(50)
+mymotor1.setMaxSpeed(60)
+mymotor2.setMaxSpeed(60)
+mymotor3.setMaxSpeed(60)
+mymotor4.setMaxSpeed(60)
 
-mymotor1.setMinSpeed(8)
-mymotor2.setMinSpeed(8)
-mymotor3.setMinSpeed(8)
-mymotor4.setMinSpeed(8)
+mymotor1.setMinSpeed(6)
+mymotor2.setMinSpeed(6)
+mymotor3.setMinSpeed(6)
+mymotor4.setMinSpeed(6)
 
 quadcopter = Quad(mymotor1, mymotor2, mymotor3, mymotor4, imu_controller)
 quadcopter.dec_height(5)

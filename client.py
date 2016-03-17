@@ -57,6 +57,7 @@ I = Scale(
     to=500,
     tickinterval=100,
     label='I',
+    resolution=0.01,
     orient=HORIZONTAL,
     length=600)
 D = Scale(
@@ -86,18 +87,22 @@ roll.set(5)
 roll.pack()
 trim_x = Scale(
     master,
-    from_=0,
+    from_=-100,
     to=100,
     length=600,
     tickinterval=10,
-    orient=HORIZONTAL).set(0).pack()
+    orient=HORIZONTAL)
+trim_x.set(0)
+trim_x.pack()
 trim_y = Scale(
     master,
-    from_=0,
+    from_=-100,
     to=100,
     length=600,
     tickinterval=10,
-    orient=HORIZONTAL).set(0).pack()
+    orient=HORIZONTAL)
+trim_y.set(0)
+trim_y.pack()
 Button(master, text='Show', command=show_values).pack()
 Button(master, text='Stop', command=stop).pack()
 Button(master, text='Reset', command=reset).pack()

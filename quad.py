@@ -225,8 +225,7 @@ class Quad(object):
                      i_x] = self.compute_PID_output(self.kp_x,
                                                     self.ki_x,
                                                     self.kd_x,
-                                                    pitch - self.offset_x
-                                                     - self.trim_x,
+                                                    pitch - self.offset_x,
                                                     i_x,
                                                     old_pitch,
                                                     self.limit_px,
@@ -236,8 +235,7 @@ class Quad(object):
                      i_y] = self.compute_PID_output(self.kp_y,
                                                     self.ki_y,
                                                     self.kd_x,
-                                                    roll - self.offset_y
-                                                     - self.trim_y,
+                                                    roll - self.offset_y,
                                                     i_y,
                                                     old_roll,
                                                     self.limit_py,
@@ -245,7 +243,9 @@ class Quad(object):
                                                     log)
                     [axis_output['z'], i_z] = self.compute_PID_output(
                         self.kp_z, self.ki_z, self.kd_x,
-                        yaw - self.offset_z - self.trim_z, i_z, old_yaw)
+                        yaw - self.offset_z, i_z, old_yaw)
+                    axis_output['x'] = axis_output['x'] - self.trim_x
+                    axis_output['y'] = axis_output['y'] - self.trim_y
                     self.motor_bl.setW(
                         int(self.height + axis_output['x'] / 2
                          + axis_output['y'] / 2))
@@ -322,7 +322,7 @@ if __name__ == "__main__":
     cycling = True
     try:
         while cycling:
-            res = eval(input())
+            res = raw_input()
             if res == 'i':
                 quadcopter.motor_init()
             if res == 'a':
@@ -337,9 +337,9 @@ if __name__ == "__main__":
                 quadcopter.set_height()
                 quadcopter.stop()
             if res == 'p':
-                p = float(eval(input()))
-                i = float(eval(input()))
-                d = float(eval(input()))
+                p = raw_input()
+                i = raw_input()
+                d = raw_input()
                 quadcopter.set_PID(p, i, d)
             if res == 's':
                 quadcopter.stop()
