@@ -1,3 +1,4 @@
 motor.log
 build/*
-Pano/pano_dataset/
+Pano/pano_dataset/*
+*.jpg
