@@ -12,7 +12,7 @@ class PiCam:
 		for i in xrange(self.threshold):
 			im_name = self.name+"/"+str(i)+".jpg"
 			self.camera.capture(im_name)
-			sleep(2)
+			sleep(0.5)
 
 	def change_threshold(self,new_threshold):
 		self.threshold = new_threshold
@@ -22,4 +22,6 @@ class PiCam:
 			im_name = self.name+"/"+str(i)+".jpg"
 			cv2.imshow("Image",im_name)
 			cv2.waitKey(0)
-			
+
+p = PiCam('img',10)
+p.take_pic()
