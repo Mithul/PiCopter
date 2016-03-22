@@ -6,6 +6,7 @@ import json
 from Tkinter import *
 
 s = socket.socket()         # Create a socket object
+#host = '192.168.1.37'  # Get local machine name
 host = 'raspberrypi.local'  # Get local machine name
 port = 12345                # Reserve a port for your service.
 
@@ -15,7 +16,7 @@ run = False
 
 def show_values():
     msg = {
-        'pitch': pitch.get(),
+        'height': pitch.get(),
         'roll': roll.get(),
         'P': P.get(),
         'I': I.get(),

@@ -47,10 +47,10 @@ class Quad(object):
             s2=None,
             s3=None,
             s4=None):
-        self.motor_bl = m1
+        self.motor_bl = m3
         self.motor_br = m4
-        self.motor_fr = m3
-        self.motor_fl = m2
+        self.motor_fr = m2
+        self.motor_fl = m1
         self.sensor_l = s1
         self.sensor_f = s2
         self.sensor_r = s3
@@ -81,13 +81,17 @@ class Quad(object):
         self.offset_y = 0
         self.offset_z = 0
 
+        self.zero_x = 0
+        self.zero_y = 0
+        self.zero_z = 0
+
         self.trim_x = 0
         self.trim_y = 0
         self.trim_z = 0
         #x^ top is front
         # y->
         # z.
-        dri_frequency = 40
+        dri_frequency = 50
         samples_per_motion = 4
         self.bfx = Butterworth(dri_frequency / samples_per_motion, 0.05, 8)
         self.bfy = Butterworth(dri_frequency / samples_per_motion, 0.05, 8)
@@ -154,8 +158,12 @@ class Quad(object):
         d = kd * (angle - old_angle)
         if p > limit_p:
             p = limit_p
+        if p < -limit_p:
+            p = -limit_p
         if i > limit_i:
             i = limit_i
+        if i < -limit_i:
+            i = -limit_i
         if log:
             log.write('\t' + str(p) + '\t' + str(i) + '\t' + str(d) + '\t')
         return [p + i + d, i]
@@ -169,9 +177,9 @@ class Quad(object):
 
     def set_zero_angle(self):
         (pitch, roll, yaw, _) = self.imu.read_pitch_roll_yaw()
-        self.offset_x = pitch
-        self.offset_y = roll
-        self.offset_z = yaw
+        self.zero_x = pitch
+        self.zero_y = roll
+        self.zero_z = yaw
 
     def set_height(self, amt=0):
         self.height = amt
@@ -181,6 +189,12 @@ class Quad(object):
 
     def dec_height(self, amt=1):
         self.height = self.height - amt
+
+    def set_parameters(self, x, y, z, height):
+        self.offset_x = x
+        self.offset_y = y
+        self.offset_z = z
+        self.height = height
 
     def set_trims(self, x, y, z, relative=True):
         if relative:
@@ -193,12 +207,12 @@ class Quad(object):
             self.trim_z = z
 
     def balance(self):
-        pitch = 0
-        roll = 0
-        yaw = 0
-        i_x = 0
-        i_y = 0
-        i_z = 0
+        pitch = 0.0
+        roll = 0.0
+        yaw = 0.0
+        i_x = 0.0
+        i_y = 0.0
+        i_z = 0.0
         log = open('logs/motor.log', 'w')
         old_pitch, old_roll, old_yaw = 0, 0, 0
         log.write(
@@ -225,7 +239,7 @@ class Quad(object):
                      i_x] = self.compute_PID_output(self.kp_x,
                                                     self.ki_x,
                                                     self.kd_x,
-                                                    pitch - self.offset_x,
+                                                    pitch - self.offset_x - self.zero_x,
                                                     i_x,
                                                     old_pitch,
                                                     self.limit_px,
@@ -235,7 +249,7 @@ class Quad(object):
                      i_y] = self.compute_PID_output(self.kp_y,
                                                     self.ki_y,
                                                     self.kd_x,
-                                                    roll - self.offset_y,
+                                                    roll - self.offset_y - self.zero_y,
                                                     i_y,
                                                     old_roll,
                                                     self.limit_py,
@@ -243,7 +257,7 @@ class Quad(object):
                                                     log)
                     [axis_output['z'], i_z] = self.compute_PID_output(
                         self.kp_z, self.ki_z, self.kd_x,
-                        yaw - self.offset_z, i_z, old_yaw)
+                        yaw - self.offset_z - self.zero_y, i_z, old_yaw)
                     axis_output['x'] = axis_output['x'] - self.trim_x
                     axis_output['y'] = axis_output['y'] - self.trim_y
                     self.motor_bl.setW(
@@ -271,7 +285,7 @@ class Quad(object):
                         ustart_time = time.time()
                         print(('samples ', samples, ustart_time))
                         samples = 0
-                    print((pitch, roll, end_time, ustart_time, samples))
+                    print((pitch, roll, end_time, ustart_time, samples, i_x, i_y))
                     log.write('\t' + str(end_time - start_time))
                     log.write(
                         '\t' +
