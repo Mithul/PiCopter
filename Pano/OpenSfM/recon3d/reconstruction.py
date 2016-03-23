@@ -224,13 +224,10 @@ def run_relative_pose_optimize_nonlinear(b1, b2, t, R):
 
 
 def two_view_reconstruction(p1, p2, camera1, camera2, threshold):
+    #pixel bearings are the vieweing positions of pixels
     b1 = camera1.pixel_bearings(p1)
     b2 = camera2.pixel_bearings(p2)
-
-    # Note on threshold:
-    # See opengv doc on thresholds here: http://laurentkneip.github.io/opengv/page_how_to_use.html
-    # Here we arbitrarily assume that the threshold is given for a camera of focal length 1
-    # Also arctan(threshold) \approx threshold since threshold is small
+    #returns relative camera pose from pixel bearings defined by the Essential Matrix
     T = run_relative_pose_ransac(b1, b2, "STEWENIUS", 1 - np.cos(threshold), 1000)
     R = T[:, :3]
     t = T[:, 3]
@@ -577,20 +574,6 @@ def align_reconstruction_orientation_prior_similarity(reconstruction, config):
                       Xp[:,2].mean() - s * X[:,2].mean()])  # vertical alignment
     return s, A, b
 
-
-def shot_lla_and_compass(shot, reference):
-    """
-    Lat, lon, alt and compass of the reconstructed shot position
-    """
-    topo = shot.pose.get_origin()
-    lat, lon, alt = geo.lla_from_topocentric(
-        topo[0], topo[1], topo[2],
-        reference['latitude'], reference['longitude'], reference['altitude'])
-
-    dz = shot.viewing_direction()
-    angle = np.rad2deg(np.arctan2(dz[0], dz[1]))
-    angle = (angle + 360) % 360
-    return lat, lon, alt, angle
 
 
 def merge_two_reconstructions(r1, r2, config, threshold=1):

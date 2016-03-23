@@ -190,6 +190,174 @@
 
             getData();
 
+            // function addDatGui(){
+            //     var gui = new dat.GUI();
+
+            //     f1 = gui.addFolder('Options');
+            //     f1.add(options, 'pointSize', 0, 10)
+            //         .listen()
+            //         .onChange(setPointSize);
+            //     f1.add(options, 'cameraSize', 0, 2)
+            //         .listen()
+            //         .onChange(setCameraSize);
+            //     f1.add(options, 'imagePlaneSize', 1, 200)
+            //         .onChange(function(value) {
+            //             options.imagePlaneSize *= 1.5;
+            //             imagePlane.geometry = imagePlaneGeo(imagePlaneCameraOld.reconstruction, imagePlaneCameraOld.shot_id);
+            //             options.imagePlaneSize /= 1.5;
+            //             imagePlane.geometry = imagePlaneGeo(imagePlaneCamera.reconstruction, imagePlaneCamera.shot_id);
+            //             render();
+            //         });
+            //     f1.add(options, 'animationSpeed', 0, 0.2)
+            //         .onChange(function(value) {
+            //             controls.animationSpeed = value;
+            //             invokeJourneyWrapper(function () { journeyWrapper.updateInterval(); });
+            //         });
+            //     f1.add(options, 'resolution', [ '320', '640', 'original' ] );
+            //     f1.add(options, 'showThumbnail')
+            //         .listen()
+            //         .onChange(setShowThumbnail);
+            //     f1.add(options, 'drawGrid')
+            //         .listen()
+            //         .onChange(setDrawGrid);
+            //     f1.add(options, 'showImagePlane')
+            //         .listen()
+            //         .onChange(setShowImagePlane);
+            //     f1.add(options, 'drawGPS')
+            //         .listen()
+            //         .onChange(setDrawGPS);
+            //     f1.open();
+
+
+            //     var f3 = gui.addFolder('Reconstructions')
+            //     f3.add(options, 'allNone');
+            //     options.reconstruction_visibles = [];
+            //     for (var r = 0; r < reconstructions.length; ++r) {
+            //         options.reconstruction_visibles[r] = true;
+            //         f3.add(options.reconstruction_visibles, r, true)
+            //             .onChange(
+            //                 (function(rr) {
+            //                     return function (value) {
+            //                         reconstruction_groups[rr].traverse(
+            //                             function (object) { object.visible = value; } );
+            //                         render();
+            //                     }
+            //                 })(r)
+            //             ).listen();
+            //     }
+            //     f3.close();
+
+            //     gui.close();
+            // }
+
+            // function setPointSize(value) {
+            //     options.pointSize = value;
+            //     pointCloudMaterial.size = value;
+            //     for (var i = 0; i < point_clouds.length; ++i) {
+            //         point_clouds[i].visible = (value > 0);
+            //     }
+            //     render();
+            // }
+
+            // function setCameraSize(value) {
+            //     options.cameraSize = value;
+            //     for (var r = 0; r < reconstructions.length; ++r) {
+            //         updateCameraLines(reconstructions[r]);
+            //     }
+            //     render();
+            // }
+
+            // function setShowThumbnail(value) {
+            //     options.showThumbnail = value;
+            //     $('#info').css('visibility', value ? 'visible' : 'hidden');
+            // }
+
+            // function setShowImagePlane(value) {
+            //     options.showImagePlane = value;
+            //     imagePlane.visible = value;
+            //     if (movingMode === 'walk') {
+            //         imagePlaneOld.visible = value;
+            //     } else {
+            //         imagePlaneOld.visible = false;
+            //     }
+            //     render();
+            // }
+
+            // function setDrawGrid(value) {
+            //     options.drawGrid = value;
+            //     grid_group.visible = value;
+            //     render();
+            // }
+
+            // function setDrawGPS(value) {
+            //     options.drawGPS = value;
+            //     for (var i = 0; i < gps_lines.length; ++i) {
+            //         gps_lines[i].visible = value;
+            //     }
+            //     render();
+            // }
+
+            // function setMovingMode(mode) {
+            //     if (mode != movingMode) {
+            //         movingMode = mode;
+            //         if (mode == 'orbit') {
+            //             invokeJourneyWrapper(function () { journeyWrapper.stop(); journeyWrapper.addShowPathController(); });
+            //             resetWalkMode();
+            //             swapOptions();
+            //             controls.noRotate = false;
+            //             controls.noLookAround = false;
+            //             controls.noPan = false;
+            //             controls.noZoom = false;
+            //             controls.noKeys = false;
+            //             controls.animationPosition.z += 10;
+            //             controls.dollyOut(4);
+            //             imagePlane.material.depthWrite = true;
+            //             imagePlaneOld.material.depthWrite = true;
+            //             $('#navigation').hide();
+            //         } else if (mode == 'walk') {
+            //             invokeJourneyWrapper(function () { journeyWrapper.removeShowPathController(); });
+            //             swapOptions();
+            //             // controls.noRotate = true;
+            //             // controls.noLookAround = true;
+            //             // controls.noPan = true;
+            //             // controls.noZoom = true;
+            //             // controls.noKeys = true;
+            //             imagePlane.material.depthWrite = false;
+            //             imagePlaneOld.material.depthWrite = false;
+            //             $('#navigation').show();
+            //         }
+            //     }
+            // }
+
+            // function resetWalkMode() {
+            //     previousShot = undefined;
+            // }
+
+            // function swapOptions() {
+            //     var tmpOptions = {
+            //         pointSize: savedOptions.pointSize,
+            //         cameraSize: savedOptions.cameraSize,
+            //         showThumbnail: savedOptions.showThumbnail,
+            //         showImagePlane: savedOptions.showImagePlane,
+            //         drawGrid: savedOptions.drawGrid,
+            //         drawGPS: savedOptions.drawGPS
+            //     };
+
+            //     savedOptions.pointSize = options.pointSize;
+            //     savedOptions.cameraSize = options.cameraSize;
+            //     savedOptions.showThumbnail = options.showThumbnail;
+            //     savedOptions.showImagePlane = options.showImagePlane;
+            //     savedOptions.drawGrid = options.drawGrid;
+            //     savedOptions.drawGPS = options.drawGPS;
+
+            //     setPointSize(tmpOptions.pointSize);
+            //     setCameraSize(tmpOptions.cameraSize);
+            //     setShowThumbnail(tmpOptions.showThumbnail);
+            //     setShowImagePlane(tmpOptions.showImagePlane);
+            //     setDrawGrid(tmpOptions.drawGrid);
+            //     setDrawGPS(tmpOptions.drawGPS);
+            // }
+
             function imageURL(shot_id) {
                 var url = urlParams.file;
                 var slash = url.lastIndexOf('/');

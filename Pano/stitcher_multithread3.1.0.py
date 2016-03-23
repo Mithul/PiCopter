@@ -198,8 +198,6 @@ if __name__ == "__main__":
   import time
   st = time.time()
   images = ["pano_dataset/door/door1.jpg","pano_dataset/door/door2.jpg","pano_dataset/door/door3.jpg","pano_dataset/door/door4.jpg","pano_dataset/door/door5.jpg","pano_dataset/door/door6.jpg","pano_dataset/door/door7.jpg"]
-  # images = ["pano_dataset/door/door1.jpg","pano_dataset/door/door2.jpg","pano_dataset/door/door3.jpg","pano_dataset/door/door4.jpg"]
-  #images = ["bridge/01.jpg","bridge/02.jpg","bridge/03.jpg","bridge/04.jpg","bridge/05.jpg","bridge/06.jpg","bridge/07.jpg","bridge/08.jpg"]
   n = len(images)
   val = int(math.ceil(math.log(len(images),2)))+1
   for q in range(val):

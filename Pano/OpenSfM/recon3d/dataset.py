@@ -66,7 +66,7 @@ class DataSet:
 
     @staticmethod
     def __is_image_file(filename):
-        return filename.split('.')[-1].lower() in {'jpg', 'jpeg', 'png', 'tif', 'tiff', 'pgm', 'pnm', 'gif'}
+        return filename.split('.')[-1].lower() in {'jpg', 'jpeg', 'png', 'tif', 'tiff', 'pgm', 'pnm', 'gif','svg'}
 
     def set_image_path(self, path):
         """Set image path and find the all images in there"""
@@ -121,9 +121,7 @@ class DataSet:
             fout.write(io.json_dumps(data))
 
     def feature_type(self):
-        """Return the type of local features (e.g. AKAZE, SURF, SIFT)
-        """
-        feature_name = self.config.get('feature_type', 'sift').lower()
+        feature_name = self.config.get('feature_type', 'surf').lower()
         if self.config.get('feature_root', False): feature_name = 'root_' + feature_name
         return feature_name
 
@@ -152,11 +150,7 @@ class DataSet:
     def __save_features(self, filepath, image, points, descriptors, colors=None):
         io.mkdir_p(self.__feature_path())
         feature_type = self.config.get('feature_type')
-        if ((feature_type == 'AKAZE' and self.config.get('akaze_descriptor') in ['MLDB_UPRIGHT', 'MLDB']) or
-            (feature_type == 'HAHOG' and self.config.get('hahog_normalize_to_uchar', False))):
-            feature_data_type = np.uint8
-        else:
-            feature_data_type = np.float32
+        feature_data_type = np.float32
         np.savez(filepath,
                  points=points.astype(np.float32),
                  descriptors=descriptors.astype(feature_data_type),
@@ -168,10 +162,7 @@ class DataSet:
     def load_features(self, image):
         feature_type = self.config.get('feature_type')
         s = np.load(self.__feature_file(image))
-        if feature_type == 'HAHOG' and self.config.get('hahog_normalize_to_uchar', False):
-            descriptors = s['descriptors'].astype(np.float32)
-        else:
-            descriptors = s['descriptors']
+        descriptors = s['descriptors']
         return s['points'], descriptors, s['colors'].astype(float)
 
     def save_features(self, image, points, descriptors, colors):
@@ -181,10 +172,7 @@ class DataSet:
         return os.path.isfile(self.__feature_index_file(image))
 
     def __feature_index_file(self, image):
-        """
-        Return path of FLANN index file for specified image
-        :param image: Image name, with extension (i.e. 123.jpg)
-        """
+        '''returns path to FLANN file'''
         return os.path.join(self.__feature_path(), image + '.' + self.feature_type() + '.flann')
 
     def load_feature_index(self, image, features):
@@ -196,11 +184,6 @@ class DataSet:
         index.save(self.__feature_index_file(image))
 
     def __preemptive_features_file(self, image):
-        """
-        Return path of preemptive feature file (a short list of the full feature file)
-        for specified image
-        :param image: Image name, with extension (i.e. 123.jpg)
-        """
         return os.path.join(self.__feature_path(), image + '_preemptive.' + self.feature_type() + '.npz')
 
     def load_preemtive_features(self, image):
@@ -218,7 +201,7 @@ class DataSet:
             if self.feature_type() == 'akaze' and (self.config.get('akaze_descriptor', 5) >= 4):
                  matcher_type = 'BruteForce-Hamming'
             self.config['matcher_type'] = matcher_type
-        return matcher_type # BruteForce, BruteForce-L1, BruteForce-Hamming
+        return matcher_type
 
     def __matches_path(self):
         """Return path of matches directory"""
@@ -257,21 +240,7 @@ class DataSet:
         """Return path of tracks file"""
         return os.path.join(self.data_path, 'tracks.csv')
 
-    def load_tracks_graph_as_list(self):
-        """Return tranks graph as a list of edges"""
-        track_list = []
-        images = self.images()
-        image_inv = {}
-        for i, im in enumerate(images):
-            image_inv[im] = int(i)
-        with open(self.__tracks_graph_file()) as fin:
-            for line in fin:
-                image, track_id, observation, x, y = line.split('\t')
-                if int(track_id) >= len(track_list):
-                    track_list.append([])
-                track_list[int(track_id)].append([image_inv[image], int(observation)])
-        return track_list
-
+    
     def load_tracks_graph(self):
         """Return graph (networkx data structure) of tracks"""
         with open(self.__tracks_graph_file()) as fin:

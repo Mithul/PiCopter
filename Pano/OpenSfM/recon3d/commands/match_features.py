@@ -154,22 +154,7 @@ def match(args):
     im1_matches = {}
     # #for each image, calculate the highest probability of match
     for im2 in candidates:
-    #     # preemptive matching
-    #     if preemptive_threshold > 0:
-    #         t = time.time()
-    #         config['lowes_ratio'] = preemptive_lowes_ratio
-    #         matches_pre = matching.match_lowe_bf(
-    #             ctx.f_pre[im1], ctx.f_pre[im2], config)
-    #         config['lowes_ratio'] = lowes_ratio
-    #         logger.debug("Preemptive matching {0}, time: {1}s".format(
-    #             len(matches_pre), time.time() - t))
-    #         if len(matches_pre) < preemptive_threshold:
-    #             logger.debug(
-    #                 "Discarding based of preemptive matches {0} < {1}".format(
-    #                     len(matches_pre), preemptive_threshold))
-    #             continue
-
-    #     # symmetric matching
+    #symmetric matching
         t = time.time()
         p1, f1, c1 = ctx.data.load_features(im1)
         i1 = ctx.data.load_feature_index(im1, f1)

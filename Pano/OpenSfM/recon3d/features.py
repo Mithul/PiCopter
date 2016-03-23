@@ -26,14 +26,6 @@ def resized_image(image, config):
     else:
         return image
 
-# def root_feature(desc, l2_normalization=False):
-#     if l2_normalization:
-#         s2 = np.linalg.norm(desc, axis=1)
-#         desc = (desc.T/s2).T
-#     s = np.sum(desc, 1)
-#     desc = np.sqrt(desc.T/s).T
-#     return desc
-
 def root_feature_surf(desc, l2_normalization=False, partial=False):
     """
     Experimental square root mapping of surf-like feature, only work for 64-dim surf now
@@ -61,13 +53,6 @@ def normalized_image_coordinates(pixel_coords, width, height):
     p[:, 1] = (pixel_coords[:, 1] + 0.5 - height / 2.0) / size
     return p
 
-# def denormalized_image_coordinates(norm_coords, width, height):
-#     size = max(width, height)
-#     p = np.empty((len(norm_coords), 2))
-#     p[:, 0] = norm_coords[:, 0] * size - 0.5 + width / 2.0
-#     p[:, 1] = norm_coords[:, 1] * size - 0.5 + height / 2.0
-#     return p
-
 def mask_and_normalize_features(points, desc, colors, width, height, config):
     masks = np.array(config.get('masks',[]))
     for mask in masks:
@@ -87,12 +72,7 @@ def mask_and_normalize_features(points, desc, colors, width, height, config):
 
 def extract_features_surf(image, config):
     surf_hessian_threshold = config.get('surf_hessian_threshold', 1000)
-    try:
-            detector = cv2.xfeatures2d.SURF_create()
-    except AttributeError as ae:
-            if "no attribute 'xfeatures2d'" in ae.message:
-                logger.error('OpenCV Contrib modules are required to extract SURF features')
-            raise
+    detector = cv2.xfeatures2d.SURF_create()
     descriptor = detector
     detector.setHessianThreshold(surf_hessian_threshold)
     detector.setNOctaves(config.get('surf_n_octaves', 4))

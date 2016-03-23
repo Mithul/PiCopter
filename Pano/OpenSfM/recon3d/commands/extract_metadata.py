@@ -12,7 +12,7 @@ logging.getLogger("exifread").setLevel(logging.WARNING)
 
 class Command:
     name = 'extract_metadata'
-    help = "Extract metadata form images' EXIF tag"
+    help = "Extract metadata form images' EXIF tag using python exif library"
 
     def add_arguments(self, parser):
         parser.add_argument('dataset', help='dataset to process')

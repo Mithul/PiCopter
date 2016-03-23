@@ -43,28 +43,6 @@ def convert_matches_to_vector(matches):
     return matches_vector
 
 
-# def match_lowe_bf(f1, f2, config):
-#     '''Bruteforce feature matching
-#     '''
-#     assert(f1.dtype.type==f2.dtype.type)
-#     if (f1.dtype.type == np.uint8):
-#         matcher_type = 'BruteForce-Hamming'
-#     else:
-#         matcher_type = 'BruteForce'
-#     matcher = cv2.DescriptorMatcher_create(matcher_type)
-#     matches = matcher.knnMatch(f1, f2, k=2)
-
-#     ratio = config.get('lowes_ratio', 0.6)
-#     good_matches = []
-#     for match in matches:
-#         if match and len(match) == 2:
-#             m, n = match
-#             if m.distance < ratio * n.distance:
-#                 good_matches.append(m)
-#     good_matches = convert_matches_to_vector(good_matches)
-#     return np.array(good_matches, dtype=int)
-
-
 def robust_match_fundamental(p1, p2, matches, config):
     '''Computes robust matches by estimating the Fundamental matrix via RANSAC.
     '''

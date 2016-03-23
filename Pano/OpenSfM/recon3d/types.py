@@ -184,6 +184,7 @@ class PerspectiveCamera(Camera):
         """
         points = pixels.reshape((-1, 1, 2)).astype(np.float64)
         distortion = np.array([self.k1, self.k2, 0., 0.])
+        #calculate up vector
         up = cv2.undistortPoints(points, self.get_K(), distortion)
         up = up.reshape((-1, 2))
         x = up[:, 0]

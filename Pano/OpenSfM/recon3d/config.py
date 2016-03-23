@@ -13,41 +13,26 @@ feature_min_frames: 4000      # If fewer frames are detected, sift_peak_threshol
 feature_process_size: 2048    # Resize the image if its size is larger than specified. Set to -1 for original size
 feature_use_adaptive_suppression: no
 
-# Params for SIFT
-sift_peak_threshold: 0.1     # Smaller value -> more features
-sift_edge_threshold: 10       # See OpenCV doc
-
 # Params for SURF
 surf_hessian_threshold: 1000  # 3000 Smaller value -> more features
 surf_n_octaves: 4             # See OpenCV doc
 surf_n_octavelayers: 2        # See OpenCV doc
 
-# Params for AKAZE (See detials in lib/src/third_party/akaze/AKAZEConfig.h)
-akaze_omax: 4                 # Maximum octave evolution of the image 2^sigma (coarsest scale sigma units)
-akaze_dthreshold: 0.001       # Detector response threshold to accept point
-akaze_descriptor: MSURF       # Feature type
-akaze_descriptor_size: 0      # Size of the descriptor in bits. 0->Full size
-akaze_descriptor_channels: 3  # Number of feature channels (1,2,3)
-
-# Params for HAHOG
-hahog_peak_threshold: 0.00001
-hahog_edge_threshold: 10
-
-# Masks for regions that will be ignored for feature extraction
+# Masks for regions - ignore them for feature extraction
 # List of bounding boxes specified as the ratio to image width and height
 # masks: [{top: 0.96, bottom: 1.0, left: 0.0, right: 0.15}, {top: 0.95, bottom: 1.0, left: 0, right: 0.05}]
 
 # Params for general matching
-lowes_ratio: 0.8              # Ratio test for matches
-preemptive_lowes_ratio: 0.6   # Ratio test for preemptive matches
-matcher_type: FLANN           # FLANN or BRUTEFORCE
+lowes_ratio: 0.8             # 0.75 to 0.8 as defined in Hartley and Zisserman 
+preemptive_lowes_ratio: 0.6   
+matcher_type: FLANN           
 
 # Params for FLANN matching
-flann_branching: 16           # See OpenCV doc
-flann_iterations: 10          # See OpenCV doc
-flann_checks: 200             # Smaller -> Faster (but might lose good matches)
+flann_branching: 16           
+flann_iterations: 10          
+flann_checks: 200             # Smaller -> Fewer matches but faster
 
-# Params for preemtive matching
+# Params for preemptive matching
 matching_gps_distance: 150            # Maximum gps distance between two images for matching
 matching_gps_neighbors: 0             # Number of images to match selected by GPS distance. Set to 0 to use no limit
 matching_time_neighbors: 0            # Number of images to match selected by time taken. Set to 0 to use no limit
