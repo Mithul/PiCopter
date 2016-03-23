@@ -213,7 +213,8 @@ def _two_view_reconstruction_inliers(b1, b2, R, t, threshold):
     ok2 = np.linalg.norm(br2 - b2, axis=1) < threshold
     return np.nonzero(ok1 * ok2)[0]
 
-
+#pyopengv is Geometric Vision Library
+#Stewenius algo is a 5-point pose-estim algo 
 def run_relative_pose_ransac(b1, b2, method, threshold, iterations):
     return pyopengv.relative_pose_ransac(b1, b2, method, threshold, iterations)
 
@@ -256,9 +257,6 @@ def two_view_reconstruction_rotation_only(p1, p2, camera1, camera2, threshold):
 
     R = pyopengv.relative_pose_ransac_rotation_only(b1, b2, 1 - np.cos(threshold), 1000)
     inliers = _two_view_reconstruction_rotation_only_inliers(b1, b2, R, threshold)
-
-    # R = pyopengv.relative_pose_rotation_only(b1[inliers], b2[inliers])
-    # inliers = _two_view_reconstruction_rotation_only_inliers(b1, b2, R, threshold)
 
     return cv2.Rodrigues(R.T)[0].ravel(), inliers
 
