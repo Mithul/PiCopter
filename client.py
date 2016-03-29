@@ -18,6 +18,7 @@ def show_values():
     msg = {
         'height': pitch.get(),
         'roll': roll.get(),
+        'PR': PR.get(),
         'P': P.get(),
         'I': I.get(),
         'D': D.get(),
@@ -44,6 +45,14 @@ def start():
 
 master = Tk()
 pitch = Scale(master, from_=0, to=100, tickinterval=10)
+PR = Scale(
+    master,
+    from_=0,
+    to=500,
+    tickinterval=100,
+    label='P',
+    orient=HORIZONTAL,
+    length=600)
 P = Scale(
     master,
     from_=0,
@@ -69,9 +78,11 @@ D = Scale(
     label='D',
     orient=HORIZONTAL,
     length=600)
+PR.set(0)
 P.set(0)
 I.set(0)
 D.set(0)
+PR.pack()
 P.pack()
 I.pack()
 D.pack()

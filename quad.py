@@ -48,9 +48,9 @@ class Quad(object):
             s3=None,
             s4=None):
         self.motor_bl = m3
-        self.motor_br = m4
+        self.motor_br = m1
         self.motor_fr = m2
-        self.motor_fl = m1
+        self.motor_fl = m4
         self.sensor_l = s1
         self.sensor_f = s2
         self.sensor_r = s3
@@ -62,8 +62,8 @@ class Quad(object):
 
         self.height = 10
 
-        self.kp_x = 0
-        self.kp_y = 0
+        self.kp_x = 1
+        self.kp_y = 2
         self.kp_z = 0
         self.ki_x = 0
         self.ki_y = 0
@@ -71,11 +71,19 @@ class Quad(object):
         self.kd_x = 0
         self.kd_y = 0
         self.kd_z = 0
+        self.kpr_x = 20
+        self.kpr_z = 20
+        self.kpr_y = 10
 
         self.limit_px = 20
         self.limit_py = 20
         self.limit_ix = 10
         self.limit_iy = 10
+        self.limit_pz = 10
+        self.limit_iz = 10
+        self.limit_rx = 20
+        self.limit_ry = 20
+        self.limit_rz = 20
 
         self.offset_x = 0
         self.offset_y = 0
@@ -91,7 +99,7 @@ class Quad(object):
         #x^ top is front
         # y->
         # z.
-        dri_frequency = 50
+        dri_frequency = 50.0
         samples_per_motion = 4
         self.bfx = Butterworth(dri_frequency / samples_per_motion, 0.05, 8)
         self.bfy = Butterworth(dri_frequency / samples_per_motion, 0.05, 8)
@@ -134,13 +142,33 @@ class Quad(object):
         self.motor_fr.stop()
         self.motor_br.stop()
 
-    def set_PID(self, p, i, d):
+    def set_PID(self, p, i, d, kpr=0):
         self.kp_x = p
         self.ki_x = i
         self.kd_x = d
         self.kp_y = p
         self.ki_y = i
         self.kd_y = d
+        self.kpr_x = kpr
+        self.kpr_y = kpr
+#        self.kp_z = p
+#        self.ki_z = i
+#        self.kd_z = d
+
+    def save_zero(self):
+        self.set_zero_angle()
+        f = open('zero.cfg', 'w')
+        import json
+        f.write(json.dumps({'x': self.zero_x, 'y': self.zero_y, 'z': self.zero_z}))
+        f.close()
+
+    def load_zero(self):
+        f = open('zero.cfg', 'r')
+        import json
+        zero_angle = json.load(f)
+        self.zero_x = zero_angle['x']
+        self.zero_y = zero_angle['y']
+        self.zero_z = zero_angle['z']
 
     def compute_PID_output(
             self,
@@ -168,9 +196,44 @@ class Quad(object):
             log.write('\t' + str(p) + '\t' + str(i) + '\t' + str(d) + '\t')
         return [p + i + d, i]
 
+    def compute_rate_PID_output(
+            self,
+            kpr,
+            kp,
+            ki,
+            kd,
+            gyro,
+            angle,
+            old_i,
+            old_angle,
+            limit_p=100,
+            limit_i=100,
+            limit_pr=100,
+            log=False):
+        p = kp * angle
+        i = old_i + ki * angle
+        d = kd * (angle - old_angle)
+        if p > limit_p:
+            p = limit_p
+        if p < -limit_p:
+            p = -limit_p
+        if i > limit_i:
+            i = limit_i
+        if i < -limit_i:
+            i = -limit_i
+        total = kpr*(p + i + gyro)
+        print total,p,i,kpr,angle,gyro,kp
+        if total > limit_pr:
+            total = limit_pr
+        if total < - limit_pr:
+            total = -limit_pr
+        if log:
+            log.write('\t' + str(p) + '\t' + str(i) + '\t' + str(d) + '\t')
+        return [total, i]
+
     def balancer(self):
         print("Started Balancing")
-        self.thread = Thread(target=self.balance)
+        self.thread = Thread(target=self.rate_balance)
         self.running = True
         self.thread.start()
         # self.balance()
@@ -206,6 +269,40 @@ class Quad(object):
             self.trim_y = y
             self.trim_z = z
 
+    def rate_balance(self):
+        pitch = 0.0
+        roll = 0.0
+        yaw = 0.0
+        i_x = 0.0
+        i_y = 0.0
+        i_z = 0.0
+        log = open('logs/motor.log', 'w')
+        old_pitch, old_roll, old_yaw = 0, 0, 0
+        while self.running:
+            (roll, pitch, yaw, gy, gx, gz, imu_connected) = self.imu.read_pitch_roll_yaw_full()
+            print gx, gy, gz, pitch, roll, yaw
+            axis_output = {'x': 0, 'y': 0, 'z': 0}
+            (axis_output['x'], i_x) = self.compute_rate_PID_output(self.kpr_x, self.kp_x, self.ki_x, self.kp_x, gx, pitch - self.offset_x - self.zero_x, i_x, self.limit_px ,self.limit_ix, self.limit_rx)
+            (axis_output['y'], i_y) = self.compute_rate_PID_output(self.kpr_y, self.kp_y, self.ki_y, self.kd_y, gy, roll - self.offset_y - self.zero_y, i_y, self.limit_py ,self.limit_iy, self.limit_ry)
+            (axis_output['z'], i_z) = self.compute_rate_PID_output(self.kpr_z, self.kp_z, self.ki_z, self.kd_z, gz, yaw - self.offset_z - self.zero_z, i_z, self.limit_pz ,self.limit_iz, self.limit_rz)
+            axis_output['x'] = axis_output['x'] - self.trim_x
+            axis_output['y'] = axis_output['y'] - self.trim_y
+            print axis_output
+            self.motor_bl.setW(
+                        int(self.height + axis_output['x'] / 3
+                         + axis_output['y'] / 3 + axis_output['z']/3))
+            self.motor_br.setW(
+                        int(self.height + axis_output['x'] / 2
+                        - axis_output['y'] / 3 - axis_output['z']/3))
+            self.motor_fl.setW(
+                        int(self.height - axis_output['x'] / 3
+                         + axis_output['y'] / 3 - axis_output['z']/3))
+            self.motor_fr.setW(
+                        int(self.height - axis_output['x'] / 3
+                        - axis_output['y'] / 3 + axis_output['z']/3))
+
+
+
     def balance(self):
         pitch = 0.0
         roll = 0.0
@@ -232,7 +329,7 @@ class Quad(object):
             # (pitch, roll, yaw)=(ex, ey, ez)
             (_, _, gx, gy, _, ax, ay, _) = self.imu.read_all()
             axis_output = {'x': 0, 'y': 0, 'z': 0}
-            if ii % 4 == 0:
+            if ii % 1 == 0:
                 if imu_connected:
                     log.write(str(i) + '\t')
                     [axis_output['x'],
@@ -256,22 +353,22 @@ class Quad(object):
                                                     self.limit_iy,
                                                     log)
                     [axis_output['z'], i_z] = self.compute_PID_output(
-                        self.kp_z, self.ki_z, self.kd_x,
-                        yaw - self.offset_z - self.zero_y, i_z, old_yaw)
+                        self.kp_z, self.ki_z, self.kd_z,
+                        yaw - self.offset_z - self.zero_z, i_z, old_yaw,self.limit_pz,self.limit_iz)
                     axis_output['x'] = axis_output['x'] - self.trim_x
                     axis_output['y'] = axis_output['y'] - self.trim_y
                     self.motor_bl.setW(
                         int(self.height + axis_output['x'] / 2
-                         + axis_output['y'] / 2))
+                         + axis_output['y'] / 2 + axis_output['z']/2))
                     self.motor_br.setW(
                         int(self.height + axis_output['x'] / 2
-                        - axis_output['y'] / 2))
+                        - axis_output['y'] / 2) - axis_output['z']/2)
                     self.motor_fl.setW(
                         int(self.height - axis_output['x'] / 2
-                         + axis_output['y'] / 2))
+                         + axis_output['y'] / 2) - axis_output['z']/2)
                     self.motor_fr.setW(
                         int(self.height - axis_output['x'] / 2
-                        - axis_output['y'] / 2))
+                        - axis_output['y'] / 2) + axis_output['z']/2)
                     log.write(str(self.height) +
                               '\t' +
                               str(axis_output['x'] /

@@ -119,11 +119,11 @@ class itg3205:
 	def read_raw_data(self):
 		return
 	def read_scaled_gyro_x(self):
-		return -self.getRadPerSecAxes()[0]
+		return self.getRadPerSecAxes()[0]
 	def read_scaled_gyro_y(self):
-		return -self.getRadPerSecAxes()[1]
+		return self.getRadPerSecAxes()[1]
 	def read_scaled_gyro_z(self):
-		return -self.getRadPerSecAxes()[2]
+		return self.getRadPerSecAxes()[2]
 
 	def getAxes(self):
 		gyro_x = I2CUtils.i2c_read_word_signed(self.bus, self.address, self.GyroXDataRegisterMSB) #self.bus.read_s16int(self.GyroXDataRegisterMSB)

@@ -23,33 +23,36 @@ bus = smbus.SMBus(1)  # i2c_raspberry_pi_bus_number())
 imu_controller = imu.IMU(bus, 0x68, 0x53, 0x1e, "IMU")
 
 
-mymotor1 = motor('m1', 17, debug=False, simulation=False)  # RL
-mymotor2 = motor('m2', 18, debug=False, simulation=False)  # RR
-mymotor3 = motor('m3', 27, debug=False, simulation=False)  # FR
-mymotor4 = motor('m4', 22, debug=False, simulation=False)  # FL
+mymotor1 = motor('br', 17, debug=False, simulation=False)  # RL
+mymotor2 = motor('fr', 18, debug=False, simulation=False)  # RR
+mymotor3 = motor('bl', 27, debug=False, simulation=False)  # FR
+mymotor4 = motor('fl', 22, debug=False, simulation=False)  # FL
 
-mymotor1.setMaxSpeed(60)
-mymotor2.setMaxSpeed(60)
-mymotor3.setMaxSpeed(60)
-mymotor4.setMaxSpeed(60)
+mymotor1.setMaxSpeed(7)
+mymotor2.setMaxSpeed(7)
+mymotor3.setMaxSpeed(7)
+mymotor4.setMaxSpeed(7)
 
-mymotor1.setMinSpeed(6)
-mymotor2.setMinSpeed(6)
-mymotor3.setMinSpeed(6)
-mymotor4.setMinSpeed(6)
+mymotor1.setMinSpeed(5)
+mymotor2.setMinSpeed(5)
+mymotor3.setMinSpeed(5)
+mymotor4.setMinSpeed(5)
 
 quadcopter = Quad(mymotor1, mymotor2, mymotor3, mymotor4, imu_controller)
 quadcopter.dec_height(5)
-quadcopter.balancer()
 print 'Setting zero'
-quadcopter.set_zero_angle()
+quadcopter.load_zero()
+print quadcopter.zero_x,quadcopter.zero_y,quadcopter.zero_z
 time.sleep(2)
+quadcopter.balancer()
 print 'Zero set'
-p=30
+pr=0
+p=0
 i=0
-d=55
+d=0
 
-quadcopter.set_PID(p, i, d)
+# quadcopter.set_PID(p, i, d, pr)
+quadcopter.set_trims(0, 7, 0, False)
 success = 5
 while True:
     try:
@@ -61,10 +64,11 @@ while True:
             continue
         if 'P' in data:
             print data['P']
+            pr = int(data['PR'])
             p = int(data['P'])
             i = float(data['I'])
             d = int(data['D'])
-            quadcopter.set_PID(p, i, d)
+            quadcopter.set_PID(p, i, d, pr)
         if 'height' in data:
             height = int(data['height'])
             quadcopter.set_height(height)
@@ -73,16 +77,21 @@ while True:
             trim_y = int(data['trim_y'])
             quadcopter.set_trims(trim_x, trim_y, 0, False)
         if 'X' in data:
-            x = -float(data['Y'])/300
-            y = -float(data['X'])/300
-            z = float(data['Z'])/300
+            x = -float(data['Y'])/200
+            y = -float(data['X'])/200
+            z = 0
+            print "message",x,y,z
             height = int(data['Height'])
             #x = float(-y) / 300
             #y = float(x) / 300
             #z = float(z) / 300
             height = (float(height) + 300) / 6
             quadcopter.set_parameters(x, y, z, height)
-        success = success + 1
+        if 'running' in data:
+            if data['running']==False:
+                raise
+        if success<5:
+            success = success + 1
         print success
     except ValueError as e:
         print e
