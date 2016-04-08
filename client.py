@@ -13,6 +13,7 @@ port = 12345                # Reserve a port for your service.
 s.connect((host, port))
 run = False
 
+TUNE_MESSAGE = 4
 
 def show_values():
     msg = {

@@ -63,7 +63,7 @@ class Quad(object):
         self.height = 10
 
         self.kp_x = 1
-        self.kp_y = 2
+        self.kp_y = 1
         self.kp_z = 0
         self.ki_x = 0
         self.ki_y = 0
@@ -72,8 +72,8 @@ class Quad(object):
         self.kd_y = 0
         self.kd_z = 0
         self.kpr_x = 20
-        self.kpr_z = 20
-        self.kpr_y = 10
+        self.kpr_z = 50
+        self.kpr_y = 15
 
         self.limit_px = 20
         self.limit_py = 20
@@ -170,6 +170,10 @@ class Quad(object):
         self.zero_y = zero_angle['y']
         self.zero_z = zero_angle['z']
 
+    def set_zero_z(self):
+        (pitch, roll, yaw, _) = self.imu.read_pitch_roll_yaw()
+        self.zero_z = yaw
+
     def compute_PID_output(
             self,
             kp,
@@ -225,7 +229,7 @@ class Quad(object):
         print total,p,i,kpr,angle,gyro,kp
         if total > limit_pr:
             total = limit_pr
-        if total < - limit_pr:
+        if total < -limit_pr:
             total = -limit_pr
         if log:
             log.write('\t' + str(p) + '\t' + str(i) + '\t' + str(d) + '\t')
@@ -282,9 +286,9 @@ class Quad(object):
             (roll, pitch, yaw, gy, gx, gz, imu_connected) = self.imu.read_pitch_roll_yaw_full()
             print gx, gy, gz, pitch, roll, yaw
             axis_output = {'x': 0, 'y': 0, 'z': 0}
-            (axis_output['x'], i_x) = self.compute_rate_PID_output(self.kpr_x, self.kp_x, self.ki_x, self.kp_x, gx, pitch - self.offset_x - self.zero_x, i_x, self.limit_px ,self.limit_ix, self.limit_rx)
-            (axis_output['y'], i_y) = self.compute_rate_PID_output(self.kpr_y, self.kp_y, self.ki_y, self.kd_y, gy, roll - self.offset_y - self.zero_y, i_y, self.limit_py ,self.limit_iy, self.limit_ry)
-            (axis_output['z'], i_z) = self.compute_rate_PID_output(self.kpr_z, self.kp_z, self.ki_z, self.kd_z, gz, yaw - self.offset_z - self.zero_z, i_z, self.limit_pz ,self.limit_iz, self.limit_rz)
+            (axis_output['x'], i_x) = self.compute_rate_PID_output(self.kpr_x, self.kp_x, self.ki_x, self.kd_x, gx, pitch - self.offset_x - self.zero_x, i_x, old_pitch, self.limit_px ,self.limit_ix, self.limit_rx)
+            (axis_output['y'], i_y) = self.compute_rate_PID_output(self.kpr_y, self.kp_y, self.ki_y, self.kd_y, gy, roll - self.offset_y - self.zero_y, i_y, old_roll, self.limit_py ,self.limit_iy, self.limit_ry)
+            (axis_output['z'], i_z) = self.compute_rate_PID_output(self.kpr_z, self.kp_z, self.ki_z, self.kd_z, gz, yaw - self.offset_z - self.zero_z, i_z, old_yaw, self.limit_pz ,self.limit_iz, self.limit_rz)
             axis_output['x'] = axis_output['x'] - self.trim_x
             axis_output['y'] = axis_output['y'] - self.trim_y
             print axis_output
@@ -300,6 +304,7 @@ class Quad(object):
             self.motor_fr.setW(
                         int(self.height - axis_output['x'] / 3
                         - axis_output['y'] / 3 + axis_output['z']/3))
+            old_pitch, old_roll, old_yaw = pitch, roll, yaw
 
 
 

@@ -39,57 +39,70 @@ mymotor2.setW(0)
 mymotor3.setW(0)
 mymotor4.setW(0)
 
-print 'nothing',measure(5)
+MOTOR2 = True
+MOTOR3 = False
+MOTOR1 = True
+MOTOR4 = False
+
+# print 'nothing',measure(5)
 speed = 40
 
 time.sleep(2)
 
-# while True:
-# 	mymotor2.setW(speed)
-# 	k=0
-# 	while k<8:
-# 		print 'motor 2',measure(1)
-# 		k=k+1
-# 	mymotor2.setW(0)
-# 	k=0
-# 	while k<15:
-# 		print k
-# 		time.sleep(1)
-# 		k=k+1
+wait = 2
+calc = 5
 
-while True:
-	mymotor1.setW(speed)
+while MOTOR2:
+	mymotor2.setW(speed)
 	k=0
-	while k<8:
-		print 'motor 1',measure(1)
+	while k<calc:
+		print 'motor 2',measure(1)
 		k=k+1
-	mymotor1.setW(0)
+	mymotor2.setW(0)
 	k=0
-	while k<15:
+	while k<wait:
 		print k
 		time.sleep(1)
 		k=k+1
 
-# mymotor3.setW(speed)
-# k=0
-# while k<8:
-# 	print 'motor 3',measure(1)
-# 	k=k+1
-# mymotor3.setW(0)
-# time.sleep(1)
+# while MOTOR1:
+	mymotor1.setW(speed)
+	k=0
+	while k<calc:
+		print 'motor 1',measure(1)
+		k=k+1
+	mymotor1.setW(0)
+	k=0
+	while k<wait:
+		print k
+		time.sleep(1)
+		k=k+1
 
-# while True:
-# 	mymotor4.setW(speed)
-# 	k=0
-# 	while k<8:
-# 		print 'motor 4',measure(1)
-# 		k=k+1
-# 	mymotor4.setW(0)
-# 	k=0
-# 	while k<15:
-# 		print k
-# 		time.sleep(1)
-# 		k=k+1
+# while MOTOR3:
+	mymotor3.setW(speed)
+	k=0
+	while k<calc:
+		print 'motor 3',measure(1)
+		k=k+1
+	mymotor3.setW(0)
+	k=0
+	while k<wait:
+		print k
+		time.sleep(1)
+		k=k+1
+
+# while MOTOR4:
+	mymotor4.setW(speed)
+	k=0
+	while k<calc:
+		print 'motor 4',measure(1)
+		k=k+1
+	mymotor4.setW(0)
+	k=0
+	while k<wait:
+		print k
+		time.sleep(1)
+		k=k+1
 
 mymotor1.setW(0)
 mymotor2.setW(0)

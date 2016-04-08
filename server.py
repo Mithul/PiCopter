@@ -28,10 +28,10 @@ mymotor2 = motor('fr', 18, debug=False, simulation=False)  # RR
 mymotor3 = motor('bl', 27, debug=False, simulation=False)  # FR
 mymotor4 = motor('fl', 22, debug=False, simulation=False)  # FL
 
-mymotor1.setMaxSpeed(7)
-mymotor2.setMaxSpeed(7)
-mymotor3.setMaxSpeed(7)
-mymotor4.setMaxSpeed(7)
+mymotor1.setMaxSpeed(80)
+mymotor2.setMaxSpeed(80)
+mymotor3.setMaxSpeed(80)
+mymotor4.setMaxSpeed(80)
 
 mymotor1.setMinSpeed(5)
 mymotor2.setMinSpeed(5)
