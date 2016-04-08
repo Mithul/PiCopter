@@ -1,7 +1,7 @@
  #set multiplot layout 2,2 rowsfirst
  # set xrange [100:500]
  # plot 'motor.log' using 1:8 with lines title 'gx', 'motor.log' using 1:9 with lines title 'gy','motor.log' using 1:10 with lines title 'ax', 'motor.log' using 1:11 with lines title 'ay', 'motor.log' using 1:5 with lines title 'pitch', 'motor.log' using 1:6 with lines title 'roll'
- plot 'motor.log' using 1:5 with lines title 'pitch', 'motor.log' using 1:6 with lines title 'roll'
+ plot 'motor.log' using 1:11 with lines title 'pitch', 'motor.log' using 1:12 with lines title 'roll' 
  # plot 'motor.log' using 1:9 with lines title 'gx', 'motor.log' using 1:10 with lines title 'gy', 'motor.log' using 1:6 with lines title 'pitch', 'motor.log' using 1:7 with lines title 'roll'
  # plot 'motor.log' using 1:3 with lines title 'x-pid', 'motor.log' using 1:4 with lines title 'y-pid', 'motor.log' using 1:6 with lines title 'pitch', 'motor.log' using 1:7 with lines title 'roll'
 

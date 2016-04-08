@@ -1,6 +1,6 @@
 import smbus
 
-import sensors.imu as imu
+import imu as imu
 
 bus = smbus.SMBus(1)#i2c_raspberry_pi_bus_number())
 imu_controller = imu.IMU(bus, 0x68, 0x53, 0x1e, "IMU")
