@@ -14,26 +14,27 @@
 \end{figure}
 
 \begin{table}[H]
-    \begin{tabular}{ | l | l | l | p{2cm}|}
+    \begin{tabular}{ | l | l | l | p{1cm}|}
     \hline
-    S.No & Test Case & Action & Result \\ \hline
-    1 & SwipeRight & Swipe hand in the right direction & Robot moves in the right direction \\ \hline
-    2 & SwipeLeft &  Swipe hand in the left direction & Robot moves in the left direction \\ \hline
-    3 & SwipeUp & Swipe hand in the upward direction & Robot moves in the forward direction \\ \hline
-     4 & SwipeDown & Swipe hand in the downward direction & Robot moves in the backward direction \\ \hline
- 5 & Circle & Swipe hand in a circular manner & Robot rotates \\ \hline
- 6 & DiagonalSwipe & Swipe hand in a diagonal manner & Robot does not move \\ \hline
- 7 & Left handed gesture & Any gesture made with the left hand & Robot does not move \\ \hline
-
-
-    \end{tabular}
+    S.No & Signal & Result \\ \hline
+    1 & Swipe left joystick up & Quadcopter flies upward \\ \hline
+    2 & Swipe left joystick down &  Quadcopter's height decreases \\ \hline
+    3 & Swipe right joystick up & Quadcopter pitches forward \\ \hline
+    4 & Swipe right joystick down & Quadcopter pitches backward \\ \hline
+ 5 & Swipe right joystick left & Quadcopter pitches left \\ \hline
+ 6 & Swipe right joystick right & Quadcopter pitches right \\ \hline
+ 7 & Click the 'start' camera button & Pi Camera starts shooting \\ \hline
+ 8 & Click the 'stop' camera button & Pi Camera stops shooting \\ \hline
+ 9 & Click the '+/-' button on the x-axis & Quadcopter's x-trim values change \\ \hline
+ 10 & Click the '+/-' button on the y-axis & Quadcopter's y-trim values change \\ \hline
+\end{tabular}
 \caption{Test Cases and Results}
 \label{APT}
 \end{table}
 
 \subsection{Evaluation}
-There are several differences between the Internet-based re- mote control systems and other tele-operating systems. Most of the tele-operating systems are based on private media, by which the transmission delay and data loss rate can be well modelled. The Internet in contrast is a public and shared resource in which various end users transmit data via the complex network simultaneously. The route for data transmission between two end points in a wide area is not fixed for different trials and the collision may be caused when two or more users transmit data via the same route simultaneously. Therefore the transmission efficiency of the Internet is difficult to be modelled at any time period.
-
+There are several changes that have to be made when flying the quadcopter in varying environments. The PID values change according to the wind conditions and other disturbances. Although the SD Card is securely inserted into the RPi, due to a large amount of vibration caused in the course of the quadcopter's flight, it may loosen leading to connection loss between the RPi and the App. The quadcopter is controlled by the App from a distance of about 10-15 metres since communication occurs via WiFi. Images are taken by a RPi native camera. The quality of the images taken largely depend on the stability of the quadcopter which are subject to the vagaries of the environment.
+The pictures taken are stitched and/or reconstructed. This process depends on the number of images taken and the quality of the images. 
 \begin{figure}[H]
   \centering
   \includegraphics[width = 15cm, height = 7cm]{graph2.png}

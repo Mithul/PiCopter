@@ -1,25 +1,35 @@
 \relax 
 \providecommand*{\memsetcounter}[2]{}
-\AC@reset@newl@bel
+\reset@newl@bel
 \@writefile{toc}{\contentsline {chapter}{ABSTRACT -- ENGLISH}{iii}}
 \@writefile{toc}{\contentsline {chapter}{ABSTRACT -- TAMIL}{iv}}
 \@writefile{toc}{\contentsline {chapter}{LIST OF FIGURES}{viii}}
 \@writefile{toc}{\contentsline {chapter}{LIST OF TABLES}{ix}}
 \@writefile{toc}{\contentsline {chapter}{LIST OF ABBREVIATIONS}{x}}
-\newacro{RPI}[\AC@hyperlink{RPI}{RPI}]{Raspberry Pi}
-\newacro{SDK}[\AC@hyperlink{SDK}{SDK}]{Software Development Kit}
-\newacro{PC}[\AC@hyperlink{PC}{PC}]{Personal Computer}
-\newacro{MP4}[\AC@hyperlink{MP4}{MP4}]{MPEG 4}
-\newacro{SSH}[\AC@hyperlink{SSH}{SSH}]{Secure Shell}
+\newacro{Rpi}[\AC@hyperlink{Rpi}{Rpi}]{Raspberry Pi}
+\newacro{IDE}[\AC@hyperlink{IDE}{IDE}]{Interactive Desktop Environment}
+\newacro{UAV}[\AC@hyperlink{UAV}{UAV}]{Unmanned Aerial Vehicle}
+\newacro{PWM}[\AC@hyperlink{PWM}{PWM}]{Pulse Width Modulation}
+\newacro{IMU}[\AC@hyperlink{IMU}{IMU}]{Inertial Measurement Unit}
+\newacro{PID}[\AC@hyperlink{PID}{PID}]{Proportional-Integral-Derivative}
+\newacro{GUI}[\AC@hyperlink{GUI}{GUI}]{Graphical User Interface}
+\newacro{JSON}[\AC@hyperlink{JSON}{JSON}]{JavaScript Object Notation}
+\newacro{WiFi}[\AC@hyperlink{WiFi}{WiFi}]{Wireless Fidelity}
+\newacro{SfM}[\AC@hyperlink{SfM}{SfM}]{Structure from Motion}
+\newacro{DOF}[\AC@hyperlink{DOF}{DOF}]{Degrees Of Freedom}
+\newacro{BLDC}[\AC@hyperlink{BLDC}{BLDC}]{BrushLess Direct Current}
+\newacro{ESC}[\AC@hyperlink{ESC}{ESC}]{Electronic Speed Controller}
+\newacro{SD}[\AC@hyperlink{SD}{SD}]{Secure Digital}
+\newacro{LiPo}[\AC@hyperlink{LiPo}{LiPo}]{Lithium Polonium}
 \@writefile{toc}{\contentsline {chapter}{\chapternumberline {1}INTRODUCTION}{1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}General Overview}{1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}About the project}{2}}
 \@writefile{toc}{\contentsline {chapter}{\chapternumberline {2}RELATED WORK}{4}}
 \@writefile{toc}{\contentsline {chapter}{\chapternumberline {3}REQUIREMENTS ANALYSIS}{7}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Requirements}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Robot}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Gesture recognition}{8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Internet Module}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Quadcopter}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Image Processing}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Android App Module}{8}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.4}Analysis}{9}}
 \@writefile{toc}{\contentsline {chapter}{\chapternumberline {4}SYSTEM DESIGN}{10}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Components in the project}{10}}
@@ -27,18 +37,18 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Software Components}{10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Programs}{11}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Technology used}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Raspberry-pi}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Raspberry Pi 2 Microcomputer}{11}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Raspberry Pi}}{12}}
 \newlabel{RPi}{{\M@TitleReference {4.1}{Raspberry Pi}}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}L298N Motor Driver}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces L298N Motor Driver}}{13}}
-\newlabel{L298N motor driver}{{\M@TitleReference {4.2}{L298N Motor Driver}}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Microsoft Kinect}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Schematic Diagram of Microsoft Kinect}}{14}}
-\newlabel{kinect}{{\M@TitleReference {4.3}{Schematic Diagram of Microsoft Kinect}}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}RPI Camera}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Raspberry-pi camera}}{15}}
-\newlabel{RPI camera}{{\M@TitleReference {4.4}{Raspberry-pi camera}}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Electronic Speed Controller (ESC)}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces 40A 3s ESC}}{13}}
+\newlabel{40A 3s ESC}{{\M@TitleReference {4.2}{40A 3s ESC}}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}IMU Sensor}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces IMU Sensor}}{14}}
+\newlabel{IMU Sensor}{{\M@TitleReference {4.3}{IMU Sensor}}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Raspberry Pi Camera}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Raspberry Pi camera}}{15}}
+\newlabel{RPi camera}{{\M@TitleReference {4.4}{Raspberry Pi camera}}{15}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}Block Diagram}{16}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Block Digram}}{16}}
 \newlabel{block}{{\M@TitleReference {4.5}{Block Digram}}{16}}
@@ -50,48 +60,48 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Input}{19}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Output}{19}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Input and Output for each module}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Raspberry-pi controlled Robot}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Kinect-PC module for gesture recognition}{21}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Internet-Interfacing the Gesture and Voice Recognition Device with the Robot}{21}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Modules}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Raspberry-pi controlled Robot}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces The Preliminary Robot which could Only be Moved through Computer or Phone}}{25}}
-\newlabel{first robot}{{\M@TitleReference {5.1}{The Preliminary Robot which could Only be Moved through Computer or Phone}}{25}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces The Fully Functional Robot without the Camera}}{26}}
-\newlabel{second robot}{{\M@TitleReference {5.2}{The Fully Functional Robot without the Camera}}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Kinect-PC module for gesture recognition}{26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Recognition of Skeleton using Kinect}}{28}}
-\newlabel{skeleton}{{\M@TitleReference {5.3}{Recognition of Skeleton using Kinect}}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Programming for Kinect using C\# WPF Application}}{29}}
-\newlabel{WPF}{{\M@TitleReference {5.4}{Programming for Kinect using C\# WPF Application}}{29}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Internet-Interfacing the Gesture and Voice Recognition Device with the Robot}{29}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Software Implementation Flow}{31}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Software Flow Diagram}}{31}}
-\newlabel{Software Flow}{{\M@TitleReference {5.5}{Software Flow Diagram}}{31}}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {6}RESULTS AND DISCUSSION}{32}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Results}{32}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Assessment}{32}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Project Cost for each Part}}{32}}
-\newlabel{Cost wise Estimate}{{\M@TitleReference {6.1}{Project Cost for each Part}}{32}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Test Cases and Results}}{33}}
-\newlabel{APT}{{\M@TitleReference {6.1}{Test Cases and Results}}{33}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Evaluation}{33}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for Robot to Move based on Internet Speed}}{34}}
-\newlabel{Internet speed based performance}{{\M@TitleReference {6.2}{Time taken for Robot to Move based on Internet Speed}}{34}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Time taken for Robot to Move in Different Networks based on Internet Speed}}{34}}
-\newlabel{Network based performance}{{\M@TitleReference {6.3}{Time taken for Robot to Move in Different Networks based on Internet Speed}}{34}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Time taken to Recognise Gesture based on Number of People in Front of Kinect}}{35}}
-\newlabel{Kinect performance}{{\M@TitleReference {6.4}{Time taken to Recognise Gesture based on Number of People in Front of Kinect}}{35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Response based on type of gesture}}{35}}
-\newlabel{Gesture-action pair}{{\M@TitleReference {6.5}{Response based on type of gesture}}{35}}
-\@writefile{toc}{\contentsline {chapter}{\chapternumberline {7}CONCLUSIONS}{36}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Contributions}{36}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Future Work}{37}}
-\@writefile{toc}{\contentsline {appendix}{\chapternumberline {A}Secure Shell (SSH)}{38}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1} Sample Working Code for SSH}{38}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Sample Swipe Code}{42}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}Sample Circle Code}{46}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Raspberry Pi-controlled quadcopter}{20}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Image-Processing Module}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Android App Module}{24}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Modules}{26}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Raspberry Pi 2-controlled quadcopter}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces The Preliminary Quadcopter without the camera}}{28}}
+\newlabel{first quadcopter}{{\M@TitleReference {5.1}{The Preliminary Quadcopter without the camera}}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces The Fully Functional Quadcopter with the Camera}}{29}}
+\newlabel{second quadcopter}{{\M@TitleReference {5.2}{The Fully Functional Quadcopter with the Camera}}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Image-Processing Module}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Panorama Stitching of test images}}{31}}
+\newlabel{pano}{{\M@TitleReference {5.3}{Panorama Stitching of test images}}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces 3D Reconstruction of test images}}{32}}
+\newlabel{recon}{{\M@TitleReference {5.4}{3D Reconstruction of test images}}{32}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Android App}{32}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Software Implementation Flow}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Software Flow Diagram}}{33}}
+\newlabel{Software Flow}{{\M@TitleReference {5.5}{Software Flow Diagram}}{33}}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {6}RESULTS AND DISCUSSION}{34}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Results}{34}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Assessment}{34}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Project Cost for each Part}}{34}}
+\newlabel{Cost wise Estimate}{{\M@TitleReference {6.1}{Project Cost for each Part}}{34}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Test Cases and Results}}{35}}
+\newlabel{APT}{{\M@TitleReference {6.1}{Test Cases and Results}}{35}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Evaluation}{35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for Robot to Move based on Internet Speed}}{36}}
+\newlabel{Internet speed based performance}{{\M@TitleReference {6.2}{Time taken for Robot to Move based on Internet Speed}}{36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Time taken for Robot to Move in Different Networks based on Internet Speed}}{36}}
+\newlabel{Network based performance}{{\M@TitleReference {6.3}{Time taken for Robot to Move in Different Networks based on Internet Speed}}{36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Time taken to Recognise Gesture based on Number of People in Front of Kinect}}{37}}
+\newlabel{Kinect performance}{{\M@TitleReference {6.4}{Time taken to Recognise Gesture based on Number of People in Front of Kinect}}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Response based on type of gesture}}{37}}
+\newlabel{Gesture-action pair}{{\M@TitleReference {6.5}{Response based on type of gesture}}{37}}
+\@writefile{toc}{\contentsline {chapter}{\chapternumberline {7}CONCLUSIONS}{38}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Contributions}{38}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Future Work}{38}}
+\@writefile{toc}{\contentsline {appendix}{\chapternumberline {A}Secure Shell (SSH)}{40}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1} Sample Working Code for SSH}{40}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Sample Swipe Code}{44}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}Sample Circle Code}{48}}
 \bibstyle{aubecse}
 \bibdata{bethesis1}
-\memsetcounter{lastsheet}{59}
-\memsetcounter{lastpage}{48}
+\memsetcounter{lastsheet}{61}
+\memsetcounter{lastpage}{50}

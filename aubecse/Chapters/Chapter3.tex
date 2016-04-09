@@ -3,50 +3,72 @@
 \chapter{REQUIREMENTS ANALYSIS} % All Chapter Headings in ALL CAPS
 
 \section{Requirements}
-\subsection{Robot}
-\textbf{Hardware Requirements for the Robot}
+\subsection{Quadcopter}
+\textbf{Hardware Requirements for the Quadcopter}
 \begin{verbatim}
-1) Raspberry pi microcomputer2) L298N motor driver3) Robot chassis4) Wheels 5) 12V battery6) Male-female connecting wires7) Wi-Fi modem/ router8) Portable charger9) 3G dongle
+1) Raspberry Pi 2 microcomputer
+2) 9DOF IMU Sensor
+3) 4 BLDC Motors
+4) Raspberry Pi Camera Module
+5) 4 Carbon Fibre Propellers
+6) Battery
+7) Quadcopter Frame
+8) ESC
+9) Male-Female Connecting Wires
+10) 4 Propeller Guards
+11) Breadboard
+12) Resistors
+13) Portable Charger
 \end{verbatim}
-\textbf{Software Requirements for the Robot}
+\textbf{Software Requirements for the Quadcopter}
 \begin{verbatim}
-1) Raspbian OS (Linux flavour for RPI)
-2) XRDP (remote desktop) VNC viewer 
+1) Raspbian OS – Jessie
+2) OpenCV 3.1.0 and OpenCV 3.1.0
+3) Python
+4) Android Studio
 \end{verbatim}
-\textbf{Functional Requirements for Robot}
+\textbf{Functional Requirements for the Quadcopter}
 \begin{verbatim}
-1) Robot should be connected to the internet
-2) Robot should be charged
-3) Robot should be capable of receiving gesture signals
-4) Robot should have the necessary resources to process the signals
-5) Robot should move according to the processed gesture signals
+1) Quadcopter should be connected to the WiFi network
+2) LiPo batteries should be charged
+3) The SD Card should be securely connected
+4) The SD Card should have enough space
+5) Quadcopter should move according to the processed flight control signals
 \end{verbatim}
-\subsection{Gesture recognition}
-\textbf{Hardware Requirements for the Gesture Recognition Device}
-\begin{verbatim}1) Microsoft Kinect 
-2) Laptop (Processing unit)
-\end{verbatim}
-\textbf{Software Requirements for the Gesture Recognition Device}
+\subsection{Image Processing}
+\textbf{Hardware Requirements for the Image processing module}
 \begin{verbatim}
-1) Microsoft Kinect SDK 
+1) Raspberry Pi Camera
+2) Raspberry Pi microcomputer (Processing unit)
 \end{verbatim}
-\textbf{Functional Requirements for Gesture Recognition Device}
+\textbf{Software Requirements for the Image processing module}
 \begin{verbatim}
-1) Processing unit should be connected to the internet
-2) The Microsoft Kinect should be interfaced with the processing unit
-3) The user should be recognised on the processing unit screen
-4) The movement of the users hand should be tracked by the sensors
-5) For a recognised gesture, the program should trigger the python program
+1) Python 2.7.6
+2) OpenCV 3.1.0
 \end{verbatim}
-\subsection{Internet Module}
-\textbf{Software Requirements for the Internet module }
+\textbf{Functional Requirements for Image processing module}
 \begin{verbatim}
-1) SSH (Putty)2) XRDP (remote desktop) VNC viewer 3) Terminal emulator for android
+1) The Raspberry Pi should be connected to the WiFi network
+2) The Raspberry Pi Camera should be mounted securely on the quadcopter
+3) The quadcopter must be stable enough to take fairly clear pictures
+4) The camera signal from the Android app should be received by the quadcopter
+5) The SD Card must have enough space to store the images taken
+6) The Raspberry Pi must execute the Python program without system failure
 \end{verbatim}
-\textbf{Functional Requirements for the Internet module}
+\subsection{Android App Module}
+\textbf{Software Requirements for the Android App module }
 \begin{verbatim}
-1) Activate the SSH tunnel
-2) Forward the recognised gesture signals from the processing unit connected with the Kinect to the robot
+1) Android Studio IDE
+2) Terminal emulator for android
+\end{verbatim}
+\textbf{Hardware Requirements for the Android App module}
+\begin{verbatim}
+3) Android phone supporting minimum API 18
+\end{verbatim}
+\textbf{Functional Requirements for the Android App module}
+\begin{verbatim}
+1) Create the Mobile Hotspot
+2) Send motion, orientation and camera signals from the app to the Raspberry Pi
 \end{verbatim}
 \subsection{Analysis}
-Robot is built using the raspberry-pi, the reason for choosing which over others is made clear in the subsequent chapters. The chassis is built with 4 wheels and an L298N motor driver that is interfaced with the RPI. The gesture signals received trigger the python program to drive the wheels of the robot. The Microsoft Kinect is connected to a Windows PC which hosts the C\# program written to interact with the Kinect. The program can identify the user using the coordinates sent from the sensors and hence the movement tracking is done. On the completion of a gesture, the necessary signals are sent through the SSH tunnel which are then picked up by the robot program.
+The quadcopter is built using the Raspberry Pi. The Raspberry Pi was used beacuse of its computational power, portability and immense opern-source support. The quadcopter is built with 4 motors, propellers, an IMU sensor, ESC and a Raspberry Pi native camera that is interfaced with the Raspberry Pi. The Android app sends JSON-encoded signals to the Pi.The Raspberry Pi hosts a Python server which decodes the signals received and triggers the appropriate Python program to fly the quadcopter and take pictures. The IMU sensor detects the orientation of the quadcopter and feeds that data to the quadcopter balancing program. The program can then use the roll,pitch and yaw data to compute the required orientation of the quadcopter. The Pi Camera takes images which are processed using OpenCV image processing library on the Pi and saved on the SD Card.
