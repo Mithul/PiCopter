@@ -1,6 +1,5 @@
 import cv2, numpy as np
 import math
-import argparse as ap
 import time
 from threading import Thread
 
@@ -174,6 +173,7 @@ def pano(images,i):
   # Visualise corresponding features.
   correspondences = draw_correspondences(image1, image2, points1, points2)
   cv2.imwrite("pano_dataset/door/correspondences.jpg", correspondences)
+  # cv2.imwrite("pano_dataset/yosemite/correspondences.jpg", correspondences)
   print 'Wrote correspondences.jpg'
   
   try:
@@ -189,15 +189,18 @@ def pano(images,i):
   images[i] = merge_images(image1, image2, homography, size, offset, (points1, points2))
   if(len(images) == 2):#final panorama
     filename = "pano_dataset/door/pano_ multi_final"+str(i)+".jpg"
+    #filename = "pano_dataset/yosemite/pano_multi_final"+str(i)+".jpg"
     print 'pano size: ',images[0].shape[:2]
   else:
     filename = "pano_dataset/door/pano_multi"+str(i)+".jpg"
+    #filename = "pano_dataset/yosemite/pano_multi"+str(i)+".jpg"
   cv2.imwrite(filename,images[i])
   
 if __name__ == "__main__":
   import time
   st = time.time()
-  images = ["pano_dataset/door/door1.jpg","pano_dataset/door/door2.jpg","pano_dataset/door/door3.jpg","pano_dataset/door/door4.jpg","pano_dataset/door/door5.jpg","pano_dataset/door/door6.jpg","pano_dataset/door/door7.jpg"]
+  images = ["pano_dataset/door/door1.jpg","pano_dataset/door/door2.jpg","pano_dataset/door/door3.jpg","pano_dataset/door/door4.jpg"]
+
   n = len(images)
   val = int(math.ceil(math.log(len(images),2)))+1
   for q in range(val):
