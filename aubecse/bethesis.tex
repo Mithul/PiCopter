@@ -1,0 +1,73 @@
+\documentclass[a4paper,oneside,14pt]{memoir}
+\usepackage{aubecse}
+
+\settitle{Gesture Based Automation for Remote Robot Control}
+\setnauthors{3}
+\setauthorone{Indrajeet R. Khater}{2010103668}
+\setauthortwo{Subramaniam Kedarnath}{2011103022}
+\setauthorthree{Adnan Ali}{2011103028}
+\setguide{Dr. Arul Siromoney}{Professor}
+\bachelors % Bachelors of Engineering
+\university{Anna University}
+\setgraddate{May 2015}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{float}
+\definecolor{dkgreen}{rgb}{0,0,0}
+\definecolor{gray}{rgb}{0,0,0}
+\definecolor{mauve}{rgb}{0,0,0}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{gray},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+\frontmatter
+\thetitlepage
+\aucertificate
+\auacknowledge
+\auabstract
+\auabstracttamil
+
+%
+\tableofcontents*
+\listoffigures
+\listoftables
+\listofacronyms{CDMA}
+
+\mainmatter
+\pagestyle{au}
+%\OnehalfSpacing
+\auSpacing  % 0.8 cm using \baselineskip
+
+%
+\input{./Chapters/Chapter1} % Introduction
+\input{./Chapters/Chapter2} % Literature Survey
+\input{./Chapters/Chapter3} % Design
+\input{./Chapters/Chapter4} % Implementation
+\input{./Chapters/Chapter5} % Testing
+\input{./Chapters/Chapter6} % Results
+\input{./Chapters/Chapter7} % Conclusion
+%
+\appendix
+\input{./Appendices/AppendixA}	% 
+%
+\backmatter
+\bibliographystyle{aubecse}
+\bibliography{bethesis1}
+
+\end{document}

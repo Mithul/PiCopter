@@ -1,0 +1,305 @@
+% Appendix A
+
+\chapter{Secure Shell (SSH)}
+SSH uses public-key cryptography to authenticate the remote computer and allow it to authenticate the user, if necessary. There are several ways to use SSH; one is to use automatically generated public-private key pairs to simply encrypt a network connection, and then use password authentication to log on.
+
+Another is to use a manually generated public-private key pair to perform the authentication, allowing users or programs to log in without having to specify a password. In this scenario, anyone can produce a matching pair of different keys (public and private). The public key is placed on all computers that must allow access to the owner of the matching private key (the owner keeps the private key secret). While authentication is based on the private key, the key itself is never transferred through the network during authentication. SSH only verifies whether the same person offering the public key also owns the matching private key. In all versions of SSH it is important to verify unknown public keys, i.e. associate the public keys with identities, before accepting them as valid. Accepting an attacker's public key without validation will authorize an unauthorized attacker as a valid user.
+\section{ Sample Working Code for SSH}
+   
+\begin{lstlisting}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using Renci.SshNet;
+
+namespace Kinect.Toolbox
+{
+    public static class ssh
+    {
+        public static void right()
+        {
+
+            {
+                try
+                {
+                    using (var client = new SshClient("192.168.0.104", "pi", "teddy"))
+                    {
+                        client.Connect();
+                        client.RunCommand("sudo python robotright.py");
+                        client.Disconnect();
+                    }
+
+
+                }
+                catch
+                {
+
+                }
+            }
+        }
+        public static void left()
+        {
+
+            {
+                try
+                {
+                    using (var client = new SshClient("192.168.0.104", "pi", "teddy"))
+                    {
+                        client.Connect();
+                        client.RunCommand("sudo python robotleft.py");
+                        client.Disconnect();
+                    }
+
+
+                }
+                catch
+                {
+
+                }
+            }
+        }
+        public static void circle()
+        {
+
+            {
+                try
+                {
+                    using (var client = new SshClient("192.168.0.104", "pi", "teddy"))
+                    {
+                        client.Connect();
+                        client.RunCommand("sudo python robotcircle.py");
+                        client.Disconnect();
+                    }
+
+
+                }
+                catch
+                {
+
+                }
+            }
+        }
+        public static void up()
+        {
+
+            {
+                try
+                {
+                    using (var client = new SshClient("192.168.0.104", "pi", "teddy"))
+                    {
+                        client.Connect();
+                        client.RunCommand("sudo python robotup.py");
+                        client.Disconnect();
+                    }
+
+
+                }
+                catch
+                {
+
+                }
+            }
+        }
+        public static void down()
+        {
+
+            {
+                try
+                {
+                    using (var client = new SshClient("192.168.0.104", "pi", "teddy"))
+                    {
+                        client.Connect();
+                        client.RunCommand("sudo python robotdown.py");
+                        client.Disconnect();
+                    }
+
+
+                }
+                catch
+                {
+
+                }
+            }
+        }
+    }
+}
+\end{lstlisting}
+    
+\subsection{Sample Swipe Code}
+\begin{lstlisting}
+using System;
+using Microsoft.Kinect;
+
+namespace Kinect.Toolbox
+{
+    public class SwipeGestureDetector : GestureDetector
+    {
+        public float SwipeMinimalLength {get;set;}
+        public float SwipeMaximalHeight {get;set;}
+        public int SwipeMininalDuration {get;set;}
+        public int SwipeMaximalDuration {get;set;}
+
+        public SwipeGestureDetector(int windowSize = 20)
+            : base(windowSize)
+        {
+            SwipeMinimalLength = 0.4f;
+            SwipeMaximalHeight = 0.2f;
+            SwipeMininalDuration = 250;
+            SwipeMaximalDuration = 1500;
+        }
+
+        protected bool ScanPositions(Func<Vector3, Vector3, bool> heightFunction, Func<Vector3, Vector3, bool> directionFunction, 
+            Func<Vector3, Vector3, bool> lengthFunction, int minTime, int maxTime)
+        {
+            int start = 0;
+
+            for (int index = 1; index < Entries.Count - 1; index++)
+            {
+                if (!heightFunction(Entries[0].Position, Entries[index].Position) || !directionFunction(Entries[index].Position, Entries[index + 1].Position))
+                {
+                    start = index;
+                }
+
+                if (lengthFunction(Entries[index].Position, Entries[start].Position))
+                {
+                    double totalMilliseconds = (Entries[index].Time - Entries[start].Time).TotalMilliseconds;
+                    if (totalMilliseconds >= minTime && totalMilliseconds <= maxTime)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        protected override void LookForGesture()
+        {
+            // Swipe to right
+            if (ScanPositions((p1, p2) => Math.Abs(p2.Y - p1.Y) < SwipeMaximalHeight, // Height
+                (p1, p2) => p2.X - p1.X > -0.01f, // Progression to right
+                (p1, p2) => Math.Abs(p2.X - p1.X) > SwipeMinimalLength, // Length
+                SwipeMininalDuration, SwipeMaximalDuration)) // Duration
+            {
+               RaiseGestureDetected("SwipeToRight");
+               ssh.right();
+                return;
+            }
+
+            // Swipe to left
+            if (ScanPositions((p1, p2) => Math.Abs(p2.Y - p1.Y) < SwipeMaximalHeight,  // Height
+                (p1, p2) => p2.X - p1.X < 0.01f, // Progression to right
+                (p1, p2) => Math.Abs(p2.X - p1.X) > SwipeMinimalLength, // Length
+                SwipeMininalDuration, SwipeMaximalDuration))// Duration
+            {
+               RaiseGestureDetected("SwipeToLeft");
+               ssh.left();
+                return;
+            }
+            if (ScanPositions((p1, p2) => Math.Abs(p2.X - p1.X) < SwipeMaximalHeight, // Height
+                (p1, p2) => p2.Y - p1.Y > -0.01f, // Progression to up
+                (p1, p2) => Math.Abs(p2.Y - p1.Y) > SwipeMinimalLength, // Length
+                SwipeMininalDuration, SwipeMaximalDuration)) // Duration
+            {
+                RaiseGestureDetected("SwipetoUp");
+                ssh.up();
+                return;
+            }
+            if (ScanPositions((p1, p2) => Math.Abs(p2.X - p1.X) < SwipeMaximalHeight,  // Height
+                (p1, p2) => p2.Y - p1.Y < 0.01f, // Progression to down
+                (p1, p2) => Math.Abs(p2.Y - p1.Y) > SwipeMinimalLength, // Length
+                SwipeMininalDuration, SwipeMaximalDuration))// Duration
+            {
+                RaiseGestureDetected("SwipeToDown");
+                ssh.down();
+                return;
+            }
+        }
+    }
+}
+\end{lstlisting}       
+\section{Sample Circle Code}
+\begin{lstlisting}
+using System.Linq;
+using System.IO;
+using Microsoft.Kinect;
+
+namespace Kinect.Toolbox
+{
+    public class TemplatedGestureDetector : GestureDetector
+    {
+        public float Epsilon { get; set; }
+        public float MinimalScore { get; set; }
+        public float MinimalSize { get; set; }
+        readonly LearningMachine learningMachine;
+        RecordedPath path;
+        readonly string gestureName;
+
+        public bool IsRecordingPath
+        {
+            get { return path != null; }
+        }
+
+        public LearningMachine LearningMachine
+        {
+            get { return learningMachine; }
+        }
+
+        public TemplatedGestureDetector(string gestureName, Stream kbStream, int windowSize = 60)
+            : base(windowSize)
+        {
+            Epsilon = 0.035f;
+            MinimalScore = 0.80f;
+            MinimalSize = 0.1f;
+            this.gestureName = gestureName;
+            learningMachine = new LearningMachine(kbStream);
+        }
+
+        public override void Add(SkeletonPoint position, KinectSensor sensor)
+        {
+            base.Add(position, sensor);
+
+            if (path != null)
+            {
+                path.Points.Add(position.ToVector2());
+            }
+        }
+
+        protected override void LookForGesture()
+        {
+            if (LearningMachine.Match(Entries.Select(e => new Vector2(e.Position.X, e.Position.Y)).ToList(), Epsilon, MinimalScore, MinimalSize))
+            {
+                RaiseGestureDetected(gestureName);
+                ssh.circle();
+            }
+        }
+
+        public void StartRecordTemplate()
+        {
+            path = new RecordedPath(WindowSize);
+        }
+
+        public void EndRecordTemplate()
+        {
+            LearningMachine.AddPath(path);
+            path = null;
+        }
+
+        public void SaveState(Stream kbStream)
+        {
+            LearningMachine.Persist(kbStream);
+        }
+    }
+}
+\end{lstlisting}

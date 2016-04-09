@@ -1,0 +1,1166 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.1)  6 APR 2016 20:44
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**bethesis.tex
+(./bethesis.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 2 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/memoir/memoir.cls
+Document Class: memoir 2015/04/23 v3.7d configurable book, report, article docu
+ment class
+\onelineskip=\skip41
+\lxvchars=\skip42
+\xlvchars=\skip43
+\@memcnta=\count79
+\c@@memmarkcntra=\count80
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Class memoir Info: An `ifetex' package is being emulated on input line 265.
+
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+\stockheight=\skip44
+\stockwidth=\skip45
+\trimtop=\skip46
+\trimedge=\skip47
+
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
+\et@xins=\count81
+)
+(/usr/share/texlive/texmf-dist/tex/latex/memoir/mem14.clo
+File: mem14.clo 2008/01/30 v0.4 memoir class 14pt size option
+)
+\binding=\skip48
+\spinemargin=\skip49
+\foremargin=\skip50
+\uppermargin=\skip51
+\lowermargin=\skip52
+\headdrop=\skip53
+\normalrulethickness=\skip54
+\mem@maxheadheight=\skip55
+\mem@maxfootheight=\skip56
+\headwidth=\skip57
+\c@storedpagenumber=\count82
+\memPD=\dimen102
+\m@mabparskip=\skip58
+\thanksmarkwidth=\skip59
+\thanksmarksep=\skip60
+\droptitle=\skip61
+\c@book=\count83
+\c@part=\count84
+\c@chapter=\count85
+\c@section=\count86
+\c@subsection=\count87
+\c@subsubsection=\count88
+\c@paragraph=\count89
+\c@subparagraph=\count90
+\beforechapskip=\skip62
+\midchapskip=\skip63
+\afterchapskip=\skip64
+\chapindent=\skip65
+\bottomsectionskip=\skip66
+\secindent=\skip67
+\beforesecskip=\skip68
+\aftersecskip=\skip69
+\subsecindent=\skip70
+\beforesubsecskip=\skip71
+\aftersubsecskip=\skip72
+\subsubsecindent=\skip73
+\beforesubsubsecskip=\skip74
+\aftersubsubsecskip=\skip75
+\paraindent=\skip76
+\beforeparaskip=\skip77
+\afterparaskip=\skip78
+\subparaindent=\skip79
+\beforesubparaskip=\skip80
+\aftersubparaskip=\skip81
+\pfbreakskip=\skip82
+\c@@ppsavesec=\count91
+\c@@ppsaveapp=\count92
+\ragrparindent=\dimen103
+\everylistparindent=\dimen104
+\parsepi=\skip83
+\topsepi=\skip84
+\itemsepi=\skip85
+\parsepii=\skip86
+\topsepii=\skip87
+\topsepiii=\skip88
+\itemsepii=\skip89
+\itemsepiii=\skip90
+\partopsepii=\skip91
+\partopsepiii=\skip92
+\m@msavetopsep=\skip93
+\m@msavepartopsep=\skip94
+\@enLab=\toks14
+\abstitleskip=\skip95
+\absleftindent=\skip96
+\abs@leftindent=\dimen105
+\absrightindent=\skip97
+\absparindent=\skip98
+\absparsep=\skip99
+\c@vslineno=\count93
+\c@poemline=\count94
+\c@modulo@vs=\count95
+\c@memfvsline=\count96
+\vleftskip=\skip100
+\vrightskip=\skip101
+\stanzaskip=\skip102
+\versewidth=\skip103
+\vgap=\skip104
+\vindent=\skip105
+\vleftmargin=\dimen106
+\c@verse=\count97
+\c@chrsinstr=\count98
+\beforepoemtitleskip=\skip106
+\afterpoemtitleskip=\skip107
+\c@poem=\count99
+\beforePoemTitleskip=\skip108
+\midPoemTitleskip=\skip109
+\afterPoemTitleskip=\skip110
+\col@sep=\dimen107
+\extrarowheight=\dimen108
+\NC@list=\toks15
+\extratabsurround=\skip111
+\backup@length=\skip112
+\TX@col@width=\dimen109
+\TX@old@table=\dimen110
+\TX@old@col=\dimen111
+\TX@target=\dimen112
+\TX@delta=\dimen113
+\TX@cols=\count100
+\TX@ftn=\toks16
+\heavyrulewidth=\dimen114
+\lightrulewidth=\dimen115
+\cmidrulewidth=\dimen116
+\belowrulesep=\dimen117
+\belowbottomsep=\dimen118
+\aboverulesep=\dimen119
+\abovetopsep=\dimen120
+\cmidrulesep=\dimen121
+\cmidrulekern=\dimen122
+\defaultaddspace=\dimen123
+\@cmidla=\count101
+\@cmidlb=\count102
+\@aboverulesep=\dimen124
+\@belowrulesep=\dimen125
+\@thisruleclass=\count103
+\@lastruleclass=\count104
+\@thisrulewidth=\dimen126
+\ctableftskip=\skip113
+\ctabrightskip=\skip114
+\abovecolumnspenalty=\count105
+\@linestogo=\count106
+\@cellstogo=\count107
+\@cellsincolumn=\count108
+\crtok=\toks17
+\@mincolumnwidth=\dimen127
+\c@newflo@tctr=\count109
+\mem@margin@floatbox=\box26
+\@contcwidth=\skip115
+\@contindw=\skip116
+\abovecaptionskip=\skip117
+\belowcaptionskip=\skip118
+\subfloattopskip=\skip119
+\subfloatcapskip=\skip120
+\subfloatcaptopadj=\skip121
+\subfloatbottomskip=\skip122
+\subfloatlabelskip=\skip123
+\subfloatcapmargin=\dimen128
+\c@@contsubnum=\count110
+\m@mscap@capbox=\box27
+\m@mscap@fbox=\box28
+\sidecapsep=\dimen129
+\sidecapwidth=\dimen130
+\m@m@tempdima=\dimen131
+\m@mscapraise=\dimen132
+\sidecapraise=\dimen133
+\m@mscapmainwidth=\dimen134
+\m@mscaplkern=\dimen135
+\beforeepigraphskip=\skip124
+\afterepigraphskip=\skip125
+\epigraphwidth=\skip126
+\epigraphrule=\skip127
+LaTeX Info: Redefining \em on input line 7533.
+LaTeX Info: Redefining \emph on input line 7541.
+\tocentryskip=\skip128
+\tocbaseline=\skip129
+\cftparskip=\skip130
+\cftbeforebookskip=\skip131
+\cftbookindent=\dimen136
+\cftbooknumwidth=\dimen137
+\cftbeforepartskip=\skip132
+\cftpartindent=\skip133
+\cftpartnumwidth=\skip134
+\cftbeforechapterskip=\skip135
+\cftchapterindent=\skip136
+\cftchapternumwidth=\skip137
+\cftbeforesectionskip=\skip138
+\cftsectionindent=\skip139
+\cftsectionnumwidth=\skip140
+\cftbeforesubsectionskip=\skip141
+\cftsubsectionindent=\skip142
+\cftsubsectionnumwidth=\skip143
+\cftbeforesubsubsectionskip=\skip144
+\cftsubsubsectionindent=\skip145
+\cftsubsubsectionnumwidth=\skip146
+\cftbeforeparagraphskip=\skip147
+\cftparagraphindent=\skip148
+\cftparagraphnumwidth=\skip149
+\cftbeforesubparagraphskip=\skip150
+\cftsubparagraphindent=\skip151
+\cftsubparagraphnumwidth=\skip152
+\prechapterprecisshift=\dimen138
+\c@maxsecnumdepth=\count111
+\bibindent=\dimen139
+\bibitemsep=\skip153
+\indexcolsep=\skip154
+\indexrule=\skip155
+\indexmarkstyle=\toks18
+\@indexbox=\insert233
+\glossarycolsep=\dimen140
+\glossaryrule=\dimen141
+\sideparvshift=\skip156
+\sideins=\insert232
+\sidebartopsep=\skip157
+\sidebarhsep=\skip158
+\sidebarvsep=\skip159
+\sidebarwidth=\skip160
+\footmarkwidth=\skip161
+\footmarksep=\skip162
+\footparindent=\skip163
+\footinsdim=\skip164
+\footinsv@r=\insert231
+\@mpfootinsv@r=\insert230
+\m@m@k=\count112
+\m@m@h=\dimen142
+\m@mipn@skip=\skip165
+\sidefootins=\insert229
+\sidefootadjust=\skip166
+\sidefootheight=\skip167
+\sidefoothsep=\skip168
+\sidefootvsep=\skip169
+\sidefootwidth=\skip170
+\m@mdownsf=\skip171
+\c@sidefootnote=\count113
+\sidefootmarkwidth=\skip172
+\sidefootmarksep=\skip173
+\sidefootparindent=\skip174
+\c@pagenote=\count114
+\c@pagenoteshadow=\count115
+\mem@pn@lastkern=\skip175
+\every@verbatim=\toks19
+\afterevery@verbatim=\toks20
+\verbatim@line=\toks21
+\tab@position=\count116
+\verbatim@in@stream=\read1
+\verbatimindent=\skip176
+\verbatim@out=\write3
+\bvboxsep=\skip177
+\c@memfbvline=\count117
+\c@bvlinectr=\count118
+\bvnumlength=\skip178
+\fb@frw=\dimen143
+\fb@frh=\dimen144
+\FrameRule=\dimen145
+\FrameSep=\dimen146
+\c@cp@cntr=\count119
+LaTeX Info: Redefining \: on input line 12050.
+LaTeX Info: Redefining \! on input line 12052.
+\c@ism@mctr=\count120
+\c@xsm@mctr=\count121
+\c@csm@mctr=\count122
+\c@ksm@mctr=\count123
+\c@xksm@mctr=\count124
+\c@cksm@mctr=\count125
+\c@msm@mctr=\count126
+\c@xmsm@mctr=\count127
+\c@cmsm@mctr=\count128
+\c@bsm@mctr=\count129
+\c@workm@mctr=\count130
+\c@sheetsequence=\count131
+\c@lastsheet=\count132
+\c@lastpage=\count133
+\c@figure=\count134
+\c@lofdepth=\count135
+\cftbeforefigureskip=\skip179
+\cftfigureindent=\skip180
+\cftfigurenumwidth=\skip181
+\c@table=\count136
+\c@lotdepth=\count137
+\cftbeforetableskip=\skip182
+\cfttableindent=\skip183
+\cfttablenumwidth=\skip184
+Package abstract [2008/07/23] emulated by memoir.
+Package appendix [2008/07/23] emulated by memoir.
+Package array [2008/09/09] emulated by memoir.
+Package booktabs [2008/07/23] emulated by memoir.
+Package ccaption [2008/07/23] emulated by memoir.
+Package changepage [2008/07/23] emulated by memoir.
+Package chngcntr [2008/07/23] emulated by memoir.
+Package chngpage [2008/07/23] emulated by memoir.
+Package crop emulated by memoir.
+Package dcolumn [2008/07/23] emulated by memoir.
+Package delarray [2008/07/23] emulated by memoir.
+Package enumerate [2008/07/23] emulated by memoir.
+Package epigraph [2008/07/23] emulated by memoir.
+Package ifmtarg [2008/07/23] emulated by memoir.
+Package ifetex [2008/07/23] emulated by memoir.
+Package index [2008/07/23] emulated by memoir.
+Package makeidx [2008/07/23] emulated by memoir.
+Package moreverb [2008/07/23] emulated by memoir.
+Package mparhack [2008/07/23] emulated by memoir.
+Package needspace [2008/07/23] emulated by memoir.
+Package newfile [2008/07/23] emulated by memoir.
+Package nextpage [2008/07/23] emulated by memoir.
+Package pagenote [2008/07/23] emulated by memoir.
+Package parskip [2008/07/23] emulated by memoir.
+Package patchcmd [2008/07/23] emulated by memoir.
+Package setspace [2008/07/23] emulated by memoir.
+Package shortvrb [2008/07/23] emulated by memoir.
+Package showidx [2008/07/23] emulated by memoir.
+Package tabularx [2008/07/23] emulated by memoir.
+Package titleref [2008/07/23] emulated by memoir.
+Package titling [2008/07/23] emulated by memoir.
+Package tocbibind [2008/07/23] emulated by memoir.
+Package tocloft [2008/07/23] emulated by memoir.
+Package tocvsec2 [2008/07/23] emulated by memoir.
+Package verbatim [2008/07/23] emulated by memoir.
+Package verse [2008/07/23] emulated by memoir.
+
+(/usr/share/texlive/texmf-dist/tex/latex/memoir/mempatch.sty
+Package: mempatch 2009/07/24 v6.0f Patches for memoir class v1.6180339
+)) (./aubecse.sty
+Package: aubecse 2013/05/18 v0.1 AU BE CSE thesis
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count138
+))
+\Gin@req@height=\dimen147
+\Gin@req@width=\dimen148
+)
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count139
+)
+(/usr/share/texlive/texmf-dist/tex/latex/acronym/acronym.sty
+Package: acronym 2015/03/21 v1.41 Support for acronyms (Tobias Oetiker)
+
+(/usr/share/texlive/texmf-dist/tex/latex/bigfoot/suffix.sty
+Package: suffix 2006/07/15 1.5a Variant command support
+)
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write4
+\integerpart=\count140
+\decimalpart=\count141
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\AC@clearlist=\toks23
+)
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip185
+\enit@outerparindent=\dimen149
+\enit@toks=\toks24
+\enit@inbox=\box29
+\enitdp@description=\count142
+)
+\linespace=\skip186
+\toptafiddle=\skip187
+\bottafiddle=\skip188
+\topfiddle=\skip189
+\botfiddle=\skip190
+
+
+******************************************************
+Stock height and width: 845.04684pt by 597.50787pt
+Top and edge trims: 0pt and 0pt
+Page height and width: 845.04684pt by 597.50787pt
+Text height and width: 688.15373pt by 412pt
+Spine and edge margins: 113.81102pt and 71.13188pt
+Upper and lower margins: 93.482pt and 63.41112pt
+Headheight and headsep: 17.5pt and 4.85011pt
+Footskip: 17.5pt
+Columnsep and columnseprule: 10pt and 0pt
+Marginparsep and marginparwidth: 7pt and 57.13188pt
+Sidecapsep and sidecapwidth: 7pt and 7pt
+Sidebarhsep and sidebarwidth: 7pt and 7pt
+Sidebarvsep and sidebartopsep: 17.5pt and 0pt
+Sidebarheight: 589.74994pt
+Sidefoothsep and sidefootwidth: 7pt and 7pt
+Sidefootvsep and sidefootheight: 17.5pt and 589.74994pt
+******************************************************
+
+\c@nauthors=\count143
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count144
+\lst@gtempboxa=\box30
+\lst@token=\toks25
+\lst@length=\count145
+\lst@currlwidth=\dimen150
+\lst@column=\count146
+\lst@pos=\count147
+\lst@lostspace=\dimen151
+\lst@width=\dimen152
+\lst@newlines=\count148
+\lst@lineno=\count149
+\lst@maxwidth=\dimen153
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count150
+\lst@skipnumbers=\count151
+\lst@framebox=\box31
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count152
+\float@exts=\toks26
+\float@box=\box32
+\@float@everytoks=\toks27
+\@floatcapt=\box33
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (./bethesis.aux)
+\openout1 = `bethesis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 38.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+\big@size=\dimen154
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count153
+\scratchdimen=\dimen155
+\scratchbox=\box34
+\nofMPsegments=\count154
+\nofMParguments=\count155
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count156
+\MPscratchDim=\dimen156
+\MPnumerator=\count157
+\makeMPintoPDFobject=\count158
+\everyMPtoPDFconversion=\toks29
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count159
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 40
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 40
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 40
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 40
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+
+<Figures/annauniv.png, id=1, 144.54pt x 134.5025pt>
+File: Figures/annauniv.png Graphic file (type png)
+ <use Figures/annauniv.png>
+Package pdftex.def Info: Figures/annauniv.png used on input line 40.
+(pdftex.def)             Requested size: 86.72466pt x 80.7021pt.
+
+[1
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Figures/annauniv.png>]
+Underfull \hbox (badness 1173) in paragraph at lines 41--41
+\OT1/ptm/m/n/14.4 of \OT1/ptm/b/n/14.4 IN-DRA-JEET R. KHATER (2010103668)\OT1/p
+tm/m/n/14.4 , \OT1/ptm/b/n/14.4 SUB-RA-MA-NIAM
+ []
+
+[1
+
+
+
+] (./FrontMatter/ack.tex) [2
+
+
+] (./FrontMatter/abstract.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--5
+
+ []
+
+
+Underfull \hbox (badness 2617) in paragraph at lines 2--5
+\OT1/ptm/m/n/14.4 Es-sen-tially, this project is aimed at set-ting up an ar-ran
+ge-ment
+ []
+
+
+Underfull \hbox (badness 2469) in paragraph at lines 2--5
+\OT1/ptm/m/n/14.4 that helps the user in-ter-act with a robot in a re-mote lo-c
+a-tion
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 2--5
+\OT1/ptm/m/n/14.4 through the In-ter-net. In-stead of us-ing any tra-di-tional 
+meth-
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 2--5
+\OT1/ptm/m/n/14.4 ods of in-put, a gesture-based in-ter-face is sug-gested to m
+ake the
+ []
+
+
+Underfull \hbox (badness 2111) in paragraph at lines 2--5
+\OT1/ptm/m/n/14.4 ex-pe-ri-ence more in-tu-itive and user friendly. The ba-sic 
+frame-
+ []
+
+
+Underfull \hbox (badness 2020) in paragraph at lines 2--5
+\OT1/ptm/m/n/14.4 work in-cludes an in-put de-vice ca-pa-ble of rec-og-niz-ing 
+and pro-
+ []
+
+
+Underfull \hbox (badness 2772) in paragraph at lines 2--5
+\OT1/ptm/m/n/14.4 cess-ing ges-tures. These ges-tures are then com-mu-ni-cated 
+over
+ []
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 2--5
+\OT1/ptm/m/n/14.4 the In-ter-net to a robot, which fol-lows the pre-scribed mov
+e-ment.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--5
+
+ []
+
+
+Underfull \hbox (badness 1248) in paragraph at lines 2--5
+\OT1/ptm/m/n/14.4 A re-search pa-per on the above men-tioned ar-range-ment was 
+pre-
+ []
+
+) [3
+
+
+] [4
+
+
+] (./bethesis.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+ [5
+
+]
+Underfull \hbox (badness 6016) in paragraph at lines 35--35
+ [][] []\OT1/ptm/m/n/14.4 Internet-Interfacing the Ges-ture and Voice 
+ []
+
+
+Underfull \hbox (badness 6016) in paragraph at lines 39--39
+ [][] []\OT1/ptm/m/n/14.4 Internet-Interfacing the Ges-ture and Voice 
+ []
+
+[6]) [7] (./bethesis.lof) [8
+
+] (./bethesis.lot) [9
+
+] (./FrontMatter/acronyms.tex) [10
+
+
+] (./Chapters/Chapter1.tex
+Underfull \hbox (badness 10000) in paragraph at lines 7--10
+
+ []
+
+
+Underfull \hbox (badness 1226) in paragraph at lines 7--10
+\OT1/ptm/m/n/14.4 The sec-ond mod-ule is the robot which is present at the re-m
+ote
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 7--10
+\OT1/ptm/m/n/14.4 lo-ca-tion. The robot is con-trolled by the Raspberry-Pi (RPi
+), a
+ []
+
+
+Underfull \hbox (badness 1097) in paragraph at lines 7--10
+\OT1/ptm/m/n/14.4 had other choices like the Ar-duino. How-ever, com-pared to t
+he
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--10
+
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 7--10
+\OT1/ptm/m/n/14.4 The third mod-ule is ba-si-cally in-ter-fac-ing the ges-ture 
+recog-ni-tion
+ []
+
+[1
+
+
+] [2]) (./Chapters/Chapter2.tex [3]) (./Chapters/Chapter3.tex [4
+
+] [5]
+[6] [7
+
+]
+Overfull \hbox (13.25745pt too wide) in paragraph at lines 48--48
+[]\OT1/ptm/m/n/14.4 5) For a recognised gesture, the program should trigger the
+ python program[] 
+ []
+
+
+Overfull \hbox (182.51256pt too wide) in paragraph at lines 60--60
+[]\OT1/ptm/m/n/14.4 2) Forward the recognised gesture signals from the processi
+ng unit connected with the Kinect to the robot[] 
+ []
+
+) (./Chapters/Chapter4.tex [8] [9] [10
+
+]
+Underfull \hbox (badness 1082) in paragraph at lines 49--50
+[]\OT1/ptm/m/n/14.4 The robot is aimed to be controlled using the Raspberry-pi.
+
+ []
+
+[11] <Figures/rpi.png, id=78, 731.73375pt x 668.4975pt>
+File: Figures/rpi.png Graphic file (type png)
+ <use Figures/rpi.png>
+Package pdftex.def Info: Figures/rpi.png used on input line 53.
+(pdftex.def)             Requested size: 426.79526pt x 341.43924pt.
+
+Overfull \hbox (14.79526pt too wide) in paragraph at lines 53--54
+ [][] 
+ []
+
+[12 <./Figures/rpi.png>] <Figures/motor.jpg, id=82, 757.83125pt x 602.25pt>
+File: Figures/motor.jpg Graphic file (type jpg)
+
+<use Figures/motor.jpg>
+Package pdftex.def Info: Figures/motor.jpg used on input line 63.
+(pdftex.def)             Requested size: 426.7994pt x 341.44815pt.
+
+Overfull \hbox (14.7994pt too wide) in paragraph at lines 63--64
+ [][] 
+ []
+
+[13 <./Figures/motor.jpg>]
+<Figures/kinect.png, id=86, 432.86719pt x 222.07968pt>
+File: Figures/kinect.png Graphic file (type png)
+
+<use Figures/kinect.png>
+Package pdftex.def Info: Figures/kinect.png used on input line 75.
+(pdftex.def)             Requested size: 369.90053pt x 199.1684pt.
+ <Figures/camera.jpg, id=87, 602.25pt x 602.25pt>
+File: Figures/camera.jpg Graphic file (type jpg)
+
+<use Figures/camera.jpg>
+Package pdftex.def Info: Figures/camera.jpg used on input line 85.
+(pdftex.def)             Requested size: 199.16583pt x 170.71487pt.
+ [14 <./Figures/kinect.png>]
+<Figures/Blocks.jpg, id=92, 551.9019pt x 772.0845pt>
+File: Figures/Blocks.jpg Graphic file (type jpg)
+ <use Figures/Blocks.jpg>
+Package pdftex.def Info: Figures/Blocks.jpg used on input line 94.
+(pdftex.def)             Requested size: 426.81006pt x 455.25494pt.
+
+Overfull \hbox (14.81006pt too wide) in paragraph at lines 94--95
+ [][] 
+ []
+
+[15 <./Figures/camera.jpg>]
+<Figures/Flows.jpg, id=96, 339.1872pt x 781.9614pt>
+File: Figures/Flows.jpg Graphic file (type jpg)
+ <use Figures/Flows.jpg>
+Package pdftex.def Info: Figures/Flows.jpg used on input line 106.
+(pdftex.def)             Requested size: 227.62688pt x 540.61588pt.
+
+[16 <./Figures/Blocks.jpg>] [17 <./Figures/Flows.jpg>])
+(./Chapters/Chapter5.tex [18]
+Underfull \hbox (badness 10000) in paragraph at lines 7--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--29
+
+ []
+
+[19
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 38--39
+
+ []
+
+[20]
+Underfull \hbox (badness 1275) in paragraph at lines 78--84
+\OT1/ptm/m/n/14.4 SSH to the robot, and the robot understanding each packet and
+
+ []
+
+[21] [22] [23] <Figures/InitialRobot.jpg, id=123, 4288.02pt x 2858.68pt>
+File: Figures/InitialRobot.jpg Graphic file (type jpg)
+
+<use Figures/InitialRobot.jpg>
+Package pdftex.def Info: Figures/InitialRobot.jpg used on input line 106.
+(pdftex.def)             Requested size: 426.73337pt x 312.9727pt.
+
+Overfull \hbox (14.73337pt too wide) in paragraph at lines 106--107
+ [][] 
+ []
+
+[24] <Figures/SecondRobot.jpg, id=127, 4288.02pt x 2858.68pt>
+File: Figures/SecondRobot.jpg Graphic file (type jpg)
+
+<use Figures/SecondRobot.jpg>
+Package pdftex.def Info: Figures/SecondRobot.jpg used on input line 113.
+(pdftex.def)             Requested size: 426.73337pt x 312.9727pt.
+
+Overfull \hbox (14.73337pt too wide) in paragraph at lines 113--114
+ [][] 
+ []
+
+[25 <./Figures/InitialRobot.jpg>]
+Underfull \hbox (badness 1521) in paragraph at lines 121--124
+\OT1/ptm/m/n/14.4 Kinect-enabled applications for Microsoft Windows. Developing
+
+ []
+
+[26 <./Figures/SecondRobot.jpg>]
+Overfull \hbox (89.25961pt too wide) in paragraph at lines 126--126
+[]\OT1/ptm/m/n/14.4 2. Each position must not exceed in height the first by mor
+e than a given distance (20 cm)[] 
+ []
+
+<Figures/SkeletalRecognition.jpg, id=135, 4288.02pt x 2858.68pt>
+File: Figures/SkeletalRecognition.jpg Graphic file (type jpg)
+
+<use Figures/SkeletalRecognition.jpg>
+Package pdftex.def Info: Figures/SkeletalRecognition.jpg used on input line 132
+.
+(pdftex.def)             Requested size: 426.73337pt x 341.41286pt.
+
+Overfull \hbox (14.73337pt too wide) in paragraph at lines 132--133
+ [][] 
+ []
+
+[27] <Figures/WPF.jpg, id=139, 4288.02pt x 2858.68pt>
+File: Figures/WPF.jpg Graphic file (type jpg)
+ <use Figures/WPF.jpg>
+Package pdftex.def Info: Figures/WPF.jpg used on input line 139.
+(pdftex.def)             Requested size: 426.73337pt x 341.41286pt.
+
+Overfull \hbox (14.73337pt too wide) in paragraph at lines 139--140
+ [][] 
+ []
+
+[28 <./Figures/SkeletalRecognition.jpg>]
+Underfull \hbox (badness 1067) in paragraph at lines 145--148
+\OT1/ptm/m/n/14.4 be established through the internet or bluetooth. This partic
+ular
+ []
+
+[29 <./Figures/WPF.jpg>]
+<Figures/software.png, id=146, 734.745pt x 691.58376pt>
+File: Figures/software.png Graphic file (type png)
+
+<use Figures/software.png>
+Package pdftex.def Info: Figures/software.png used on input line 154.
+(pdftex.def)             Requested size: 426.80264pt x 341.43275pt.
+
+Overfull \hbox (14.80264pt too wide) in paragraph at lines 154--155
+ [][] 
+ []
+
+[30]) (./Chapters/Chapter6.tex [31 <./Figures/software.png>]
+<Figures/graph4.png, id=154, 528.97626pt x 334.24875pt>
+File: Figures/graph4.png Graphic file (type png)
+
+<use Figures/graph4.png>
+Package pdftex.def Info: Figures/graph4.png used on input line 11.
+(pdftex.def)             Requested size: 528.97496pt x 334.24792pt.
+
+Overfull \hbox (14.78955pt too wide) in paragraph at lines 11--12
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--20
+[]|\OT1/ptm/m/n/14.4 Robot
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 20--20
+\OT1/ptm/m/n/14.4 moves in
+ []
+
+
+Underfull \hbox (badness 6094) in paragraph at lines 20--20
+\OT1/ptm/m/n/14.4 the right
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]|\OT1/ptm/m/n/14.4 Robot
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 21--21
+\OT1/ptm/m/n/14.4 moves in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+\OT1/ptm/m/n/14.4 the left
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+[]|\OT1/ptm/m/n/14.4 Robot
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+\OT1/ptm/m/n/14.4 moves
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+\OT1/ptm/m/n/14.4 in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+\OT1/ptm/m/n/14.4 forward
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]|\OT1/ptm/m/n/14.4 Robot
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\OT1/ptm/m/n/14.4 moves
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\OT1/ptm/m/n/14.4 in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+\OT1/ptm/m/n/14.4 backward
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]|\OT1/ptm/m/n/14.4 Robot
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]|\OT1/ptm/m/n/14.4 Robot
+ []
+
+
+Underfull \hbox (badness 6094) in paragraph at lines 25--25
+\OT1/ptm/m/n/14.4 does not
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+[]|\OT1/ptm/m/n/14.4 Robot
+ []
+
+
+Underfull \hbox (badness 6094) in paragraph at lines 26--26
+\OT1/ptm/m/n/14.4 does not
+ []
+
+
+Overfull \hbox (60.73436pt too wide) in paragraph at lines 17--30
+[][] 
+ []
+
+[32
+
+ <./Figures/graph4.png>]
+Underfull \hbox (badness 1803) in paragraph at lines 35--36
+[]\OT1/ptm/m/n/14.4 There are several differences between the Internet-based re
+-
+ []
+
+[33] <Figures/graph2.png, id=163, 934.49126pt x 314.17375pt>
+File: Figures/graph2.png Graphic file (type png)
+
+<use Figures/graph2.png>
+Package pdftex.def Info: Figures/graph2.png used on input line 39.
+(pdftex.def)             Requested size: 426.79121pt x 199.16733pt.
+
+Overfull \hbox (14.79121pt too wide) in paragraph at lines 39--40
+ [][] 
+ []
+
+<Figures/graph1.png, id=164, 936.49875pt x 303.1325pt>
+File: Figures/graph1.png Graphic file (type png)
+
+<use Figures/graph1.png>
+Package pdftex.def Info: Figures/graph1.png used on input line 47.
+(pdftex.def)             Requested size: 426.7935pt x 170.71976pt.
+
+Overfull \hbox (14.7935pt too wide) in paragraph at lines 47--48
+ [][] 
+ []
+
+<Figures/graph3.png, id=165, 620.3175pt x 433.62pt>
+File: Figures/graph3.png Graphic file (type png)
+ <use Figures/graph3.png>
+Package pdftex.def Info: Figures/graph3.png used on input line 54.
+(pdftex.def)             Requested size: 426.78906pt x 312.99353pt.
+
+Overfull \hbox (14.78906pt too wide) in paragraph at lines 54--55
+ [][] 
+ []
+
+[34 <./Figures/graph2.png> <./Figures/graph1.png>]
+<Figures/graph5.png, id=171, 942.52126pt x 421.575pt>
+File: Figures/graph5.png Graphic file (type png)
+ <use Figures/graph5.png>
+Package pdftex.def Info: Figures/graph5.png used on input line 62.
+(pdftex.def)             Requested size: 426.79126pt x 199.1695pt.
+
+Overfull \hbox (14.79126pt too wide) in paragraph at lines 62--63
+ [][] 
+ []
+
+) (./Chapters/Chapter7.tex [35 <./Figures/graph3.png> <./Figures/graph5.png>]
+Underfull \hbox (badness 3471) in paragraph at lines 5--6
+[]\OT1/ptm/m/n/14.4 This project establishes a method to integrate the various
+ []
+
+
+Underfull \hbox (badness 2197) in paragraph at lines 8--9
+[]\OT1/ptm/m/n/14.4 The basic arrangement can be extended to newer areas of
+ []
+
+[36
+
+]) (./Appendices/AppendixA.tex [37] [38
+
+] [39] [40] [41] [42] [43] [44]
+[45] [46] [47]) [48]
+No file bethesis.bbl.
+\tf@toc=\write5
+\openout5 = `bethesis.toc'.
+
+\tf@lof=\write6
+\openout6 = `bethesis.lof'.
+
+\tf@lot=\write7
+\openout7 = `bethesis.lot'.
+
+(./bethesis.aux) ) 
+Here is how much of TeX's memory you used:
+ 7935 strings out of 495000
+ 111365 string characters out of 6181169
+ 349948 words of memory out of 5000000
+ 11031 multiletter control sequences out of 15000+600000
+ 29047 words of font info for 64 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 42i,12n,40p,1485b,1591s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on bethesis.pdf (59 pages, 18358647 bytes).
+PDF statistics:
+ 237 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,52 @@
+% Chapter 3
+
+\chapter{REQUIREMENTS ANALYSIS} % All Chapter Headings in ALL CAPS
+
+\section{Requirements}
+\subsection{Robot}
+\textbf{Hardware Requirements for the Robot}
+\begin{verbatim}
+1) Raspberry pi microcomputer2) L298N motor driver3) Robot chassis4) Wheels 5) 12V battery6) Male-female connecting wires7) Wi-Fi modem/ router8) Portable charger9) 3G dongle
+\end{verbatim}
+\textbf{Software Requirements for the Robot}
+\begin{verbatim}
+1) Raspbian OS (Linux flavour for RPI)
+2) XRDP (remote desktop) VNC viewer 
+\end{verbatim}
+\textbf{Functional Requirements for Robot}
+\begin{verbatim}
+1) Robot should be connected to the internet
+2) Robot should be charged
+3) Robot should be capable of receiving gesture signals
+4) Robot should have the necessary resources to process the signals
+5) Robot should move according to the processed gesture signals
+\end{verbatim}
+\subsection{Gesture recognition}
+\textbf{Hardware Requirements for the Gesture Recognition Device}
+\begin{verbatim}1) Microsoft Kinect 
+2) Laptop (Processing unit)
+\end{verbatim}
+\textbf{Software Requirements for the Gesture Recognition Device}
+\begin{verbatim}
+1) Microsoft Kinect SDK 
+\end{verbatim}
+\textbf{Functional Requirements for Gesture Recognition Device}
+\begin{verbatim}
+1) Processing unit should be connected to the internet
+2) The Microsoft Kinect should be interfaced with the processing unit
+3) The user should be recognised on the processing unit screen
+4) The movement of the users hand should be tracked by the sensors
+5) For a recognised gesture, the program should trigger the python program
+\end{verbatim}
+\subsection{Internet Module}
+\textbf{Software Requirements for the Internet module }
+\begin{verbatim}
+1) SSH (Putty)2) XRDP (remote desktop) VNC viewer 3) Terminal emulator for android
+\end{verbatim}
+\textbf{Functional Requirements for the Internet module}
+\begin{verbatim}
+1) Activate the SSH tunnel
+2) Forward the recognised gesture signals from the processing unit connected with the Kinect to the robot
+\end{verbatim}
+\subsection{Analysis}
+Robot is built using the raspberry-pi, the reason for choosing which over others is made clear in the subsequent chapters. The chassis is built with 4 wheels and an L298N motor driver that is interfaced with the RPI. The gesture signals received trigger the python program to drive the wheels of the robot. The Microsoft Kinect is connected to a Windows PC which hosts the C\# program written to interact with the Kinect. The program can identify the user using the coordinates sent from the sensors and hence the movement tracking is done. On the completion of a gesture, the necessary signals are sent through the SSH tunnel which are then picked up by the robot program.

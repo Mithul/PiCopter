@@ -1,0 +1,16 @@
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Raspberry Pi}}{12}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces L298N Motor Driver}}{13}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Schematic Diagram of Microsoft Kinect}}{14}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Raspberry-pi camera}}{15}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Block Digram}}{16}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Flow Diagram from Input to Output}}{17}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The Preliminary Robot which could Only be Moved through Computer or Phone}}{25}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The Fully Functional Robot without the Camera}}{26}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Recognition of Skeleton using Kinect}}{28}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Programming for Kinect using C\# WPF Application}}{29}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Software Flow Diagram}}{31}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Project Cost for each Part}}{32}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for Robot to Move based on Internet Speed}}{34}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Time taken for Robot to Move in Different Networks based on Internet Speed}}{34}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Time taken to Recognise Gesture based on Number of People in Front of Kinect}}{35}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Response based on type of gesture}}{35}
