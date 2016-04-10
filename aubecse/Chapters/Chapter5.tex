@@ -29,12 +29,12 @@ There are 3 kinds of outputs based on the input to the quadcopter.\newline
 \textbf{Process}\newline
 \textbf{Code for Python Server}\newline
 \begin{lstlisting}
-s = socket.socket()         
+s = socket.socket()       
 host = '0.0.0.0'      
 port = 12345          
-s.bind((host, port))   
-s.listen(5)            
-c, addr = s.accept()   
+s.bind((host, port)) 
+s.listen(5)          
+c, addr = s.accept() 
 print 'Got connection from', addr
 bus = smbus.SMBus(1)
 while True:
@@ -53,7 +53,7 @@ while True:
     except Exception as e:
       print e
 quadcopter.stop()
-c.close()        
+c.close()      
 \end{lstlisting} 
 \textbf{Code for Balancing the Quad using PID}\newline
 \begin{lstlisting}
@@ -200,19 +200,22 @@ while(app_running)
 The objective of the project was to build a semi-autonomous quadcopter capable of self-controlled, stable flight guided via wireless communication through an Android app. 
 A quadcopter, also called a quadrotor helicopter or quadrotor, is a multirotor helicopter that is lifted and propelled by four rotors. Quadcopters differ from conventional helicopters. They use rotors which are able to vary the pitch of their blades dynamically as they move around the rotor hub. In the early days of flight, quadcopters (then referred to as 'quadrotors') were seen as possible solutions to some of the persistent problems in vertical flight; torque-induced control issues (as well as efficiency issues originating from the tail rotor, which generates no useful lift) can be eliminated by counter-rotation and the relatively short blades are much easier to construct.
 The quadcopter utilises Raspberry Pi microcomputer that runs Python and takes care of all the on-board computation. It also holds an accelerometer, gyroscope, IMU sensor, GPS and a Raspberry Pi native camera.
-The Raspberry Pi through python programming, interfaces with the IMU to find out the current orientation of the quadcopter and accordingly controls the motors. The IMU consists of an accelerometer, gyroscope ( and an optional magnetometer ) which accurately provides the current orientation of quadcopter including the G-force and angular velocity. The Raspberry Pi interfaces with the IMU using an I2C interface that allows it to communicate with the accelerometers, gyroscopes and magnetometers independently using only 2 pins(viz. SCL and SDA pins) by using separate addresses for each. The Pi gets the accelerometer and gyroscope angles separately for each axis and computes on them to find out the overall orientation of the quadcopter.
-The Raspberry Pi can only supply digital signals that is 0 or 1 i.e. on or off. This does not allow us to directly control the motors to vary their speed. The Electronic Speed Controller ( ESC ) allows such digital signals to be converted to variable voltage and allow speed regulation of motors by supplying a PWM signal to them. PWM signals are achieved by sending pulses at a certain frequency while controlling the amount of time the pulse is on in a cycle. The longer the pulse is high during a cycle, the higher the voltage supplied to the motor. The ESC also allows an external power souce such as a battery to be used for powering the motors. Our drone uses a 10V LiPo battery. LiPo batteries are commonly used for powering drones because they have high discharge rates required to power the four motors functioning at high speed and requiring order of 20A of current. 
-
-Write PID stuff here
-
-The quadcopter's flight is controlled using a PID ( Proportional-Integral-Derivative ) controller.  The PID algorithm takes in the roll,pitch and yaw values fed by the IMU and calculates the required orientation values.
-
-Write Python Server here
-
-The quadcopter flight and on-board operations are controlled via WiFi using an Android app. JSON-encoded data is sent from the app to the python server running on the quadcopter which decodes the data and executes the required programs.
-The quadcopter houses a native Pi camera module which has the ability to take high quality photos and videos. It interfaces with the Raspberry Pi using a Camera Serial Interface. 
+The Raspberry Pi through python programming, interfaces with the IMU to find out the current orientation of the quadcopter and accordingly controls the motors. The IMU consists of an accelerometer, gyroscope (and an optional magnetometer) which accurately provides the current orientation of quadcopter including the G-force and angular velocity. The Raspberry Pi interfaces with the IMU using an I2C interface that allows it to communicate with the accelerometers, gyroscopes and magnetometers independently using only 2 pins(viz. SCL and SDA pins) by using separate addresses for each. The Pi gets the accelerometer and gyroscope angles separately for each axis and computes on them to find out the overall orientation of the quadcopter.
+The Raspberry Pi can only supply digital signals that is 0 or 1 i.e. on or off. This does not allow us to directly control the motors to vary their speed. The Electronic Speed Controller (ESC) allows such digital signals to be converted to variable voltage and allow speed regulation of motors by supplying a PWM signal to them. PWM signals are achieved by sending pulses at a certain frequency while controlling the amount of time the pulse is on in a cycle. The longer the pulse is high during a cycle, the higher the voltage supplied to the motor. The ESC also allows an external power souce such as a battery to be used for powering the motors. Our drone uses a 10V LiPo battery. LiPo batteries are commonly used for powering drones because they have high discharge rates required to power the four motors functioning at high speed and requiring order of 20A of current. 
+\newline
+The quadcopter's flight is controlled using a PID controller. On an abstract level, The PID algorithm is a closed-loop feedback mechanism that is used in control systems. The controller attempts to minimize the error by adjusting control inputs(P,I,D values). In the quadcopter, the PID controller will be taking data measured by the IMU sensor and comparing that against expected values to alter the speed of the motors to compensate for any differences and maintain balance. The PID controller calculation algorithm involves three separate constant parameters viz. the proportional, the integral and derivative values, denoted P, I, and D. Heuristically, these values can be interpreted in terms of time: P depends on the present error, I on the accumulation of past errors and D is a prediction of future errors, based on current rate of change.
+\newline
+The Proportional Gain Coefficient(P) is the most important value. This coefficient determines which value is more important - those measured by the gyroscopes or those defined by human control. The higher the coefficient, the more sensitive the quadcopter becomes to angular change. If 'P' is too high, the quadcopter will start to oscillate. 
+\newline
+The Integral Gain Coefficient(I) is used to increase precision of angular position. This term is extremely useful for combating turbulence due to wind and motors. If this value becomes too high, the reaction speed of the drone will decrease.
+\newline
+The Derivative Gain Coefficient(D) is used to allow the quadcopter to reach the desired altitude more quickly as it amplifies the user input. It is dangerous to increase this value as the quadcopter may become highly susceptible to small changes.
+\newline
+The quadcopter flight and on-board operations are controlled via WiFi using an Android app. It receives signals encoded as JSON objects as steady stream from the App. The signal carries altitude, trims, motor speeds and camera information to the RPi. The signal is received by a Python server running on the RPi which is decoded and fed as input to the Quadcopter program.  
+\newline
+The quadcopter also houses a native Pi camera module which has the ability to take high quality photos and videos. It interfaces with the Raspberry Pi using a Camera Serial Interface. 
 The function of the quadcopter is to take pictures and perform two major image-processing operations viz. Panorama Stitching and 3D-Model Reconstruction.
-The drone can take several images of a wide physical space. The Pi then stitches the images together using OpenCV image-processing library to construct a panorama image ( which is a wide photo obtained from multiple images ). The second operation is 3D Model reconstruction wherein, the images taken by the quadcopter can be fed to a Structure from Motion ( SfM ) algorithm to construct sparse point clouds.
+The drone can take several images of a wide physical space. The Pi then stitches the images together using OpenCV image-processing library to construct a panorama image (which is a wide photo obtained from multiple images). The second operation is 3D Model reconstruction wherein, the images taken by the quadcopter can be fed to a Structure from Motion (SfM) algorithm to construct sparse point clouds.
 The quadcopter itself is small enough to control its flight and large enough to hold all the on-board equipment.
 
 
@@ -233,14 +236,14 @@ The quadcopter itself is small enough to control its flight and large enough to 
 
 
 \subsection{Image-Processing Module}
-The objective of the project is to build a quadcopter that can perform Panorama Stitching and 3D Reconstruction of images taken during its flight. The reason we chose these functions is because the drone is mobile and can reach and capture pictures of inaccessible locations like tall buildings and surveying wide-open spaces. OpenCV is an open-source image processing library which has an enormous number of functionally-rich libraries and detailed online documentation. OpenCV  Version 3.1.0 ( the latest version ) is used to provide image-processing support in this project.
-The image-processing module is divided into two parts – Stitching and Reconstruction. The initial stages are the same for both the operations i.e. Acquisition of images, Detecting Features and Matching Features.  Feature detection is accomplished using SURF ( Speeded Up Robust Features  algorithm and Feature Matching is done by building Kd-Trees and using (K-Nearest Neighbours) Flann Algorithm.
-For Panorama Stitching, after feature-matching, RANSAC ( Random Sample Consensus ) is used to detect outliers and construct a homography matrix. The Homography matrix is then used to warp the images and construct a panorama. The stitching process is quite fast for fewer images but in order to speed up the process for a large number of images, we have implemented a multi-threaded stitching algorithm that stitches images in parallel, thereby, reducing the time without compromising on the quality(distortion) of the panorama generated.
+The objective of the project is to build a quadcopter that can perform Panorama Stitching and 3D Reconstruction of images taken during its flight. The reason we chose these functions is because the drone is mobile and can reach and capture pictures of inaccessible locations like tall buildings and surveying wide-open spaces. OpenCV is an open-source image processing library which has an enormous number of functionally-rich libraries and detailed online documentation. OpenCV  Version 3.1.0 (the latest version) is used to provide image-processing support in this project.
+The image-processing module is divided into two parts – Stitching and Reconstruction. The initial stages are the same for both the operations i.e. Acquisition of images, Detecting Features and Matching Features.  Feature detection is accomplished using SURF (Speeded Up Robust Features  algorithm and Feature Matching is done by building Kd-Trees and using (K-Nearest Neighbours) Flann Algorithm.
+For Panorama Stitching, after feature-matching, RANSAC (Random Sample Consensus) is used to detect outliers and construct a homography matrix. The Homography matrix is then used to warp the images and construct a panorama. The stitching process is quite fast for fewer images but in order to speed up the process for a large number of images, we have implemented a multi-threaded stitching algorithm that stitches images in parallel, thereby, reducing the time without compromising on the quality(distortion) of the panorama generated.
  3D-Recontruction is implemented by using Structure from Motion(SfM) algorithm. The preliminary stage is to calibrate the Pi Camera and calculate intrinsic and extrinsic camera paramaters. Once camera calibration is complete, the images have to be preprocessed to collect metadata i.e. EXIF tags which hold important GPS, latitude, longitude and camera information. The next stages are the feature detection and matching stages which have been described above. Matching features are then collected into tracks and a graph of these good “tracks” is constructed. The next stage is to use the graph to find common tracks and construct the 3D point cloud in incrementally. Initially, two images with a large number of matches are chosen for the “bootstrap reconstruction”. The reconstruction consists of triangulating the 2D points to 3D points which can be visualized as a point cloud. Consequently, the rest of the images' points are added incrementally to the point cloud. After each addition, “Bundle Adjustment” is done to minimize the reprojection error. This is the most computationally-intensive step. Once all the images have been added to the reconstruction, the final point cloud is generated and stored as a “.ply” file. The Point Cloud is visualized in an interactive browser environment using a Javascript Library called, “threeJS” on a remote system.   
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm, height = 12cm]{SkeletalRecognition.jpg}
+  \includegraphics[width = 15cm, height = 12cm]{pano.png}
   \caption{Panorama Stitching of test images}
   \label{pano}	
 \end{figure}
@@ -253,7 +256,23 @@ For Panorama Stitching, after feature-matching, RANSAC ( Random Sample Consensus
 \end{figure}
 
 \subsection{Android App}
-Todo
+The Android App is used to control all the operations on the quadcopter. It implements a virtual Joystick interface for easy user-interaction.
+The interface consists of two joysticks, buttons to start the quadcopter program, enable camera mode, dynamically alter x and y trim values and a text box for feeding in the IP address of the RPi.
+\newline
+The two joysticks - left and right are for for altitude control and motor control respectively. The user can swipe upwards and downwards on the left joystick to increase and decrease the height of the quadcopter.  Similarly, the user can swipe in all directions on the right joystick to control the speed of individual motors depending on the distance from the center of the joystick. 
+\newline
+The x and y trim values can be dynamically changed using the app. These values are used to add bias to the quadcopter and control its stability. 
+\newline
+The camera button can enable or disable camera mode on the quadcopter. Enabling it allows the RPi camera to begin shooting pictures with an interval of 1 second while disabling it stops the camera program.
+\newline
+Using an Android app to remotely control UAVs is a level up from traditional RC controllers as it allows users greater flexibility. Users can now control many more aspects of the quadcopter apart from height and orientation such as camera control and bias using a simple and attractive user interface.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 15cm, height = 12cm]{app.png}
+  \caption{Android App Joystick Interface}
+  \label{app} 
+\end{figure}
 
 \section{Software Implementation Flow}
 

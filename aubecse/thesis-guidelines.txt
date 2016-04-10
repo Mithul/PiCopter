@@ -31,11 +31,11 @@ Then the contents go in the natural flow as formulated in thesis.tex
 
 Most of the LaTeX related doubts can be cleared by first finding a similar place in the bethesis.pdf, and then looking at the appropriate place in the .tex or .bib.  The bethesis covers most of the situations that are likely to occur. 
 
-(For example, to force a upper case letter in an article title, enclose it in braces. That is, to get 'Reiser', use '{R}eiser'. So if you had found that your list of references shows it as 'reiser', you should have looked in bethesis.pdf, seen whether there is a similar situation, and then looked at the .tex or .bib to see how it is done. )
+(For example, to force a upper case letter in an article title, enclose it in braces. That is, to get 'Reiser', use '{R}eiser'. So if you had found that your list of references shows it as 'reiser', you should have looked in bethesis.pdf, seen whether there is a similar situation, and then looked at the .tex or .bib to see how it is done.)
 
 Most of the other issues are likely to be with your usage of LaTeX, rather than with the style file. Please check on the internet whether what you are doing is correct. Even if what you are doing is correct and there is some problem, find a "work around" to get what you want. 
 
-( 
+(
 The following changes are only for next year's FYP batches, since it does not directly affect the output. 
 
 The .bib file: 

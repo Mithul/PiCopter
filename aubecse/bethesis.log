@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.7)  9 APR 2016 20:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.7)  10 APR 2016 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -723,12 +723,7 @@ Missing character: There is no ì in font ptmr7t!
 )
 (./Chapters/Chapter2.tex
 Underfull \hbox (badness 10000) in paragraph at lines 9--2
-[]\OT1/ptm/m/n/14.4 The project is di-vided into three main mod-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--2
-\OT1/ptm/m/n/14.4 ules. The first mod-ule is the quad-copter it-self.
+[]\OT1/ptm/m/n/14.4 The project is di-vided into three main mod-ules.
  []
 
 [1
@@ -795,73 +790,104 @@ Missing character: There is no ì in font ptmr7t!
  [10
 
 ] [11]
-<Figures/rpi.png, id=79, 731.73375pt x 668.4975pt>
-File: Figures/rpi.png Graphic file (type png)
- <use Figures/rpi.png>
-Package pdftex.def Info: Figures/rpi.png used on input line 57.
-(pdftex.def)             Requested size: 426.79526pt x 341.43924pt.
+<Figures/rpi2.jpg, id=79, 5037.82124pt x 3377.61874pt>
+File: Figures/rpi2.jpg Graphic file (type jpg)
+ <use Figures/rpi2.jpg>
+Package pdftex.def Info: Figures/rpi2.jpg used on input line 57.
+(pdftex.def)             Requested size: 426.78703pt x 341.38934pt.
 
-Overfull \hbox (14.79526pt too wide) in paragraph at lines 57--58
+Overfull \hbox (14.78703pt too wide) in paragraph at lines 57--58
  [][] 
  []
 
-<Figures/motor.jpg, id=80, 757.83125pt x 602.25pt>
-File: Figures/motor.jpg Graphic file (type jpg)
- <use Figures/motor.jpg>
-Package pdftex.def Info: Figures/motor.jpg used on input line 67.
-(pdftex.def)             Requested size: 426.7994pt x 341.44815pt.
+<Figures/gpio_header.png, id=80, 959.585pt x 1027.84pt>
+File: Figures/gpio_header.png Graphic file (type png)
 
-Overfull \hbox (14.7994pt too wide) in paragraph at lines 67--68
+<use Figures/gpio_header.png>
+Package pdftex.def Info: Figures/gpio_header.png used on input line 64.
+(pdftex.def)             Requested size: 426.78703pt x 341.431pt.
+
+Overfull \hbox (14.78703pt too wide) in paragraph at lines 64--65
  [][] 
  []
 
-[12 <./Figures/rpi.png>]
-<Figures/kinect.png, id=84, 432.86719pt x 222.07968pt>
-File: Figures/kinect.png Graphic file (type png)
+[12 <./Figures/rpi2.jpg>]
 
-<use Figures/kinect.png>
-Package pdftex.def Info: Figures/kinect.png used on input line 78.
-(pdftex.def)             Requested size: 369.90053pt x 199.1684pt.
+LaTeX Warning: File `motor.jpg' not found on input line 75.
 
-Underfull \hbox (badness 1496) in paragraph at lines 75--81
+
+! Package pdftex.def Error: File `motor.jpg' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.75 ...cs[width = 15cm, height = 12cm]{motor.jpg}
+                                                  
+? 
+
+Overfull \hbox (14.90857pt too wide) in paragraph at lines 75--76
+ [][] 
+ []
+
+[13 <./Figures/gpio_header.png>] <Figures/IMU.jpg, id=87, 706.64pt x 529.98pt>
+File: Figures/IMU.jpg Graphic file (type jpg)
+
+<use Figures/IMU.jpg>
+Package pdftex.def Info: Figures/IMU.jpg used on input line 86.
+(pdftex.def)             Requested size: 369.89175pt x 199.1706pt.
+
+Underfull \hbox (badness 1496) in paragraph at lines 83--89
 []\OT1/ptm/m/n/14.4 An inertial measurement unit (IMU) is an electronic device
  []
 
-[13 <./Figures/motor.jpg>] <Figures/camera.jpg, id=88, 602.25pt x 602.25pt>
-File: Figures/camera.jpg Graphic file (type jpg)
+[14] <Figures/picam.png, id=93, 526.96875pt x 435.12563pt>
+File: Figures/picam.png Graphic file (type png)
 
-<use Figures/camera.jpg>
-Package pdftex.def Info: Figures/camera.jpg used on input line 87.
-(pdftex.def)             Requested size: 199.16583pt x 170.71487pt.
+<use Figures/picam.png>
+Package pdftex.def Info: Figures/picam.png used on input line 95.
+(pdftex.def)             Requested size: 199.17271pt x 170.72078pt.
 
-Underfull \hbox (badness 6445) in paragraph at lines 84--90
+Underfull \hbox (badness 6445) in paragraph at lines 92--98
 []\OT1/ptm/m/n/14.4 The Raspberry Pi camera module can be used to take
  []
 
-[14 <./Figures/kinect.png>]
-<Figures/Blocks.jpg, id=93, 1145.27875pt x 578.16pt>
+[15 <./Figures/IMU.jpg>] <Figures/Blocks.jpg, id=97, 1145.27875pt x 578.16pt>
 File: Figures/Blocks.jpg Graphic file (type jpg)
- <use Figures/Blocks.jpg>
-Package pdftex.def Info: Figures/Blocks.jpg used on input line 96.
+
+<use Figures/Blocks.jpg>
+Package pdftex.def Info: Figures/Blocks.jpg used on input line 104.
 (pdftex.def)             Requested size: 455.2374pt x 455.24165pt.
 
-Overfull \hbox (43.2374pt too wide) in paragraph at lines 96--97
+Overfull \hbox (43.2374pt too wide) in paragraph at lines 104--105
  [][] 
  []
 
-[15 <./Figures/camera.jpg>]
-<Figures/Flows.jpg, id=97, 982.67125pt x 926.46124pt>
+[16 <./Figures/picam.png>]
+<Figures/circuit_dgm.png, id=102, 509.905pt x 292.09125pt>
+File: Figures/circuit_dgm.png Graphic file (type png)
+
+<use Figures/circuit_dgm.png>
+Package pdftex.def Info: Figures/circuit_dgm.png used on input line 113.
+(pdftex.def)             Requested size: 455.26897pt x 455.2861pt.
+
+Overfull \hbox (43.26897pt too wide) in paragraph at lines 113--114
+ [][] 
+ []
+
+[17 <./Figures/Blocks.jpg>]
+<Figures/Flows.jpg, id=107, 982.67125pt x 926.46124pt>
 File: Figures/Flows.jpg Graphic file (type jpg)
  <use Figures/Flows.jpg>
-Package pdftex.def Info: Figures/Flows.jpg used on input line 108.
+Package pdftex.def Info: Figures/Flows.jpg used on input line 122.
 (pdftex.def)             Requested size: 455.24306pt x 540.61345pt.
 
-Overfull \hbox (43.24306pt too wide) in paragraph at lines 108--109
+Overfull \hbox (43.24306pt too wide) in paragraph at lines 122--123
  [][] 
  []
 
-[16 <./Figures/Blocks.jpg>] [17 <./Figures/Flows.jpg>])
-(./Chapters/Chapter5.tex [18]
+[18 <./Figures/circuit_dgm.png>] [19 <./Figures/Flows.jpg>])
+(./Chapters/Chapter5.tex [20]
 Underfull \hbox (badness 2932) in paragraph at lines 7--8
 []\OT1/ptm/m/n/14.4 Input to the system consists of sensor data by the IMU,
  []
@@ -871,14 +897,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--17
 
  []
 
-[19
+[21
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 19--31
 
  []
 
-[20]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
@@ -898,7 +924,7 @@ Overfull \hbox (12.83975pt too wide) in paragraph at lines 68--69
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[21]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 85--94
 
  []
@@ -908,7 +934,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--94
 
  []
 
-[22]
+[24]
 Overfull \hbox (62.24016pt too wide) in paragraph at lines 107--108
 [][][][][][][][][][][][][][][][][][] 
  []
@@ -918,40 +944,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--114
 
  []
 
-[23] [24] [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 208--209
-[]\OT1/ptm/m/n/14.4 The quadcopter's flight is controlled using a PID (
- []
-
-
-Underfull \hbox (badness 2189) in paragraph at lines 208--209
-\OT1/ptm/m/n/14.4 Proportional-Integral-Derivative ) controller. The PID algori
-thm
- []
-
-[27] <Figures/InitialRobot.jpg, id=139, 4288.02pt x 2858.68pt>
+[25] [26] [27] [28] [29]
+<Figures/InitialRobot.jpg, id=147, 4288.02pt x 2858.68pt>
 File: Figures/InitialRobot.jpg Graphic file (type jpg)
 
 <use Figures/InitialRobot.jpg>
-Package pdftex.def Info: Figures/InitialRobot.jpg used on input line 221.
+Package pdftex.def Info: Figures/InitialRobot.jpg used on input line 224.
 (pdftex.def)             Requested size: 426.73337pt x 312.9727pt.
 
-Overfull \hbox (14.73337pt too wide) in paragraph at lines 221--222
+Overfull \hbox (14.73337pt too wide) in paragraph at lines 224--225
  [][] 
  []
 
-<Figures/SecondRobot.jpg, id=140, 4288.02pt x 2858.68pt>
+[30] <Figures/SecondRobot.jpg, id=151, 4288.02pt x 2858.68pt>
 File: Figures/SecondRobot.jpg Graphic file (type jpg)
 
 <use Figures/SecondRobot.jpg>
-Package pdftex.def Info: Figures/SecondRobot.jpg used on input line 228.
+Package pdftex.def Info: Figures/SecondRobot.jpg used on input line 231.
 (pdftex.def)             Requested size: 426.73337pt x 312.9727pt.
 
-Overfull \hbox (14.73337pt too wide) in paragraph at lines 228--229
+Overfull \hbox (14.73337pt too wide) in paragraph at lines 231--232
  [][] 
  []
 
-[28 <./Figures/InitialRobot.jpg>]
+[31 <./Figures/InitialRobot.jpg>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ì in font ptmr7t!
@@ -986,59 +1002,83 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-Underfull \hbox (badness 1430) in paragraph at lines 236--240
-\OT1/ptm/m/n/14.4 OpenCV Version 3.1.0 ( the latest version ) is used to provid
-e
+Underfull \hbox (badness 2302) in paragraph at lines 239--243
+[]\OT1/ptm/m/n/14.4 The objective of the project is to build a quadcopter that
  []
 
 
-Underfull \hbox (badness 1142) in paragraph at lines 236--240
-\OT1/ptm/m/n/14.4 stages are the same for both the operations i.e. Acquisition 
-of
+Underfull \hbox (badness 1033) in paragraph at lines 239--243
+\OT1/ptm/m/n/14.4 taken during its flight. The reason we chose these functions 
+is
  []
 
 
-Underfull \hbox (badness 2237) in paragraph at lines 236--240
-\OT1/ptm/m/n/14.4 and Feature Matching is done by building Kd-Trees and using
+Underfull \hbox (badness 1142) in paragraph at lines 239--243
+\OT1/ptm/m/n/14.4 inaccessible locations like tall buildings and surveying wide
+-open
  []
 
-[29 <./Figures/SecondRobot.jpg>]
-<Figures/SkeletalRecognition.jpg, id=147, 4288.02pt x 2858.68pt>
-File: Figures/SkeletalRecognition.jpg Graphic file (type jpg)
 
-<use Figures/SkeletalRecognition.jpg>
-Package pdftex.def Info: Figures/SkeletalRecognition.jpg used on input line 243
-.
-(pdftex.def)             Requested size: 426.73337pt x 341.41286pt.
+Underfull \hbox (badness 1888) in paragraph at lines 239--243
+\OT1/ptm/m/n/14.4 of images, Detecting Features and Matching Features. Feature
+ []
 
-Overfull \hbox (14.73337pt too wide) in paragraph at lines 243--244
+[32 <./Figures/SecondRobot.jpg>]
+<Figures/pano.png, id=159, 593.21625pt x 306.14375pt>
+File: Figures/pano.png Graphic file (type png)
+ <use Figures/pano.png>
+Package pdftex.def Info: Figures/pano.png used on input line 246.
+(pdftex.def)             Requested size: 426.80762pt x 341.4492pt.
+
+Overfull \hbox (14.80762pt too wide) in paragraph at lines 246--247
  [][] 
  []
 
-[30] <Figures/WPF.jpg, id=151, 4288.02pt x 2858.68pt>
+[33] <Figures/WPF.jpg, id=163, 4288.02pt x 2858.68pt>
 File: Figures/WPF.jpg Graphic file (type jpg)
  <use Figures/WPF.jpg>
-Package pdftex.def Info: Figures/WPF.jpg used on input line 250.
+Package pdftex.def Info: Figures/WPF.jpg used on input line 253.
 (pdftex.def)             Requested size: 426.73337pt x 341.41286pt.
 
-Overfull \hbox (14.73337pt too wide) in paragraph at lines 250--251
+Overfull \hbox (14.73337pt too wide) in paragraph at lines 253--254
  [][] 
  []
 
-[31 <./Figures/SkeletalRecognition.jpg>]
-<Figures/software.png, id=155, 734.745pt x 691.58376pt>
+[34 <./Figures/pano.png>]
+Underfull \hbox (badness 1728) in paragraph at lines 259--269
+\OT1/ptm/m/n/14.4 quadcopter. It implements a virtual Joystick interface for ea
+sy
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 259--269
+\OT1/ptm/m/n/14.4 The camera button can enable or disable camera mode on the
+ []
+
+[35 <./Figures/WPF.jpg>] <Figures/app.png, id=170, 1927.2pt x 1084.05pt>
+File: Figures/app.png Graphic file (type png)
+
+<use Figures/app.png>
+Package pdftex.def Info: Figures/app.png used on input line 272.
+(pdftex.def)             Requested size: 426.77895pt x 341.42793pt.
+
+Overfull \hbox (14.77895pt too wide) in paragraph at lines 272--273
+ [][] 
+ []
+
+<Figures/software.png, id=171, 734.745pt x 691.58376pt>
 File: Figures/software.png Graphic file (type png)
 
 <use Figures/software.png>
-Package pdftex.def Info: Figures/software.png used on input line 262.
+Package pdftex.def Info: Figures/software.png used on input line 281.
 (pdftex.def)             Requested size: 426.80264pt x 341.43275pt.
 
-Overfull \hbox (14.80264pt too wide) in paragraph at lines 262--263
+Overfull \hbox (14.80264pt too wide) in paragraph at lines 281--282
  [][] 
  []
 
-[32 <./Figures/WPF.jpg>]) (./Chapters/Chapter6.tex [33 <./Figures/software.png>
-] <Figures/graph4.png, id=164, 528.97626pt x 334.24875pt>
+[36 <./Figures/app.png>]) (./Chapters/Chapter6.tex [37 <./Figures/software.png>
+] <Figures/graph4.png, id=179, 528.97626pt x 334.24875pt>
 File: Figures/graph4.png Graphic file (type png)
 
 <use Figures/graph4.png>
@@ -1054,10 +1094,10 @@ Overfull \hbox (56.21317pt too wide) in paragraph at lines 17--31
 [][] 
  []
 
-[34
+[38
 
  <./Figures/graph4.png>]
-<Figures/graph2.png, id=169, 934.49126pt x 314.17375pt>
+<Figures/graph2.png, id=185, 934.49126pt x 314.17375pt>
 File: Figures/graph2.png Graphic file (type png)
 
 <use Figures/graph2.png>
@@ -1068,7 +1108,7 @@ Overfull \hbox (14.79121pt too wide) in paragraph at lines 40--41
  [][] 
  []
 
-[35] <Figures/graph1.png, id=173, 936.49875pt x 303.1325pt>
+[39] <Figures/graph1.png, id=190, 936.49875pt x 303.1325pt>
 File: Figures/graph1.png Graphic file (type png)
 
 <use Figures/graph1.png>
@@ -1079,7 +1119,7 @@ Overfull \hbox (14.7935pt too wide) in paragraph at lines 48--49
  [][] 
  []
 
-<Figures/graph3.png, id=174, 620.3175pt x 433.62pt>
+<Figures/graph3.png, id=191, 620.3175pt x 433.62pt>
 File: Figures/graph3.png Graphic file (type png)
  <use Figures/graph3.png>
 Package pdftex.def Info: Figures/graph3.png used on input line 55.
@@ -1089,8 +1129,8 @@ Overfull \hbox (14.78906pt too wide) in paragraph at lines 55--56
  [][] 
  []
 
-[36 <./Figures/graph2.png> <./Figures/graph1.png>]
-<Figures/graph5.png, id=180, 942.52126pt x 421.575pt>
+[40 <./Figures/graph2.png> <./Figures/graph1.png>]
+<Figures/graph5.png, id=197, 942.52126pt x 421.575pt>
 File: Figures/graph5.png Graphic file (type png)
  <use Figures/graph5.png>
 Package pdftex.def Info: Figures/graph5.png used on input line 63.
@@ -1100,7 +1140,7 @@ Overfull \hbox (14.79126pt too wide) in paragraph at lines 63--64
  [][] 
  []
 
-) (./Chapters/Chapter7.tex [37 <./Figures/graph3.png> <./Figures/graph5.png>]
+) (./Chapters/Chapter7.tex [41 <./Figures/graph3.png> <./Figures/graph5.png>]
 Underfull \hbox (badness 2261) in paragraph at lines 5--7
 \OT1/ptm/m/n/14.4 photogrammetry, terrain exploration and mapping, archaeologic
 al
@@ -1112,12 +1152,12 @@ Underfull \hbox (badness 1648) in paragraph at lines 11--66
 
  []
 
-(./Appendices/AppendixA.tex [38
+(./Appendices/AppendixA.tex [42
 
-] [39] [40
+] [43] [44
 
-] [41] [42] [43] [44] [45] [46]
-[47] [48] [49]) [50]
+] [45] [46] [47] [48] [49] [50]
+[51] [52] [53]) [54]
 No file bethesis.bbl.
 \tf@toc=\write5
 \openout5 = `bethesis.toc'.
@@ -1130,23 +1170,23 @@ No file bethesis.bbl.
 
 (./bethesis.aux) ) 
 Here is how much of TeX's memory you used:
- 8066 strings out of 495028
- 113044 string characters out of 6181497
+ 8088 strings out of 495028
+ 113288 string characters out of 6181497
  340683 words of memory out of 5000000
- 11136 multiletter control sequences out of 15000+600000
- 29341 words of font info for 65 fonts, out of 8000000 for 9000
+ 11155 multiletter control sequences out of 15000+600000
+ 29510 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,40p,1838b,1637s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,40p,2132b,1637s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on bethesis.pdf (61 pages, 17081804 bytes).
+Output written on bethesis.pdf (65 pages, 19197004 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
+ 265 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

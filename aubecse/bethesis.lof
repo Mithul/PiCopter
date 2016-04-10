@@ -1,16 +1,19 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Raspberry Pi}}{12}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces 40A 3s ESC}}{13}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces IMU Sensor}}{14}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Raspberry Pi camera}}{15}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Block Digram}}{16}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Flow Diagram from Input to Output}}{17}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The Preliminary Quadcopter without the camera}}{28}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces The Fully Functional Quadcopter with the Camera}}{29}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Panorama Stitching of test images}}{31}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces 3D Reconstruction of test images}}{32}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Software Flow Diagram}}{33}
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Project Cost for each Part}}{34}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for Robot to Move based on Internet Speed}}{36}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Time taken for Robot to Move in Different Networks based on Internet Speed}}{36}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Time taken to Recognise Gesture based on Number of People in Front of Kinect}}{37}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Response based on type of gesture}}{37}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Raspberry Pi 2 GPIO Header}}{13}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces 40A 3s ESC}}{14}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces IMU Sensor}}{15}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Raspberry Pi camera}}{16}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Block Digram}}{17}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Circuit Digram}}{18}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Flow Diagram from Input to Output}}{19}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The Preliminary Quadcopter without the camera}}{31}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The Fully Functional Quadcopter with the Camera}}{32}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Panorama Stitching of test images}}{34}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces 3D Reconstruction of test images}}{35}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Android App Joystick Interface}}{36}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Software Flow Diagram}}{37}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Project Cost for each Part}}{38}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for Robot to Move based on Internet Speed}}{40}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Time taken for Robot to Move in Different Networks based on Internet Speed}}{40}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Time taken to Recognise Gesture based on Number of People in Front of Kinect}}{41}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Response based on type of gesture}}{41}
