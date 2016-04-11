@@ -3,3 +3,7 @@ build/*
 Pano/pano_dataset/
 *.pyc
 *.*~
+img/*
+img
+/img
+/img/*

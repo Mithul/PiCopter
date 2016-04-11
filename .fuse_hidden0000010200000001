@@ -5,7 +5,6 @@ from threading import Thread
 from utils.butterworth import Butterworth
 import os
 import argparse
-from Pano.cam import PiCam
 
 
 parser = argparse.ArgumentParser(
@@ -425,11 +424,8 @@ if __name__ == "__main__":
 
     quadcopter = Quad(mymotor1, mymotor2, mymotor3, mymotor4, imu_controller)
 
-    camera = PiCam('img',1)
-    # p.take_pic()
-
     print ("""init > i | balance > b | stop > s | PID > p | set_zero > r
-    \n increase_height > a | decrease_height > z | Emergency_zero > x | Picture p | Stop shooting o""")
+    \n increase_height > a | decrease_height > z | Emergency_zero > x""")
 
     if len(args.config) > 0:
         print("Reading file")
@@ -443,12 +439,6 @@ if __name__ == "__main__":
     try:
         while cycling:
             res = raw_input()
-            if res == 'p':
-                camera.shoot()
-                print 'Back to main'
-            if res == 'o':
-                print "stopping"
-                camera.stop()
             if res == 'i':
                 quadcopter.motor_init()
             if res == 'a':

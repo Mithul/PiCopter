@@ -6,6 +6,7 @@ import smbus
 #import time
 import sensors.imu2 as imu
 from motor.motor_pigpio import Motor as motor
+from Pano.cam import PiCam
 
 import time
 import traceback
@@ -38,7 +39,7 @@ class Server(object):
 		self.quadcopter.set_zero_z()
 		print self.quadcopter.zero_x,self.quadcopter.zero_y,self.quadcopter.zero_z
 		time.sleep(2)
-		self.quadcopter.balancer()
+		# self.quadcopter.balancer()
 		print 'Zero set'
 		pr=0
 		p=0
@@ -100,6 +101,10 @@ class Server(object):
 		        	height = (int(data['Height'])+70)/2
 		        	print "message",x,y,z,height
 		        	self.quadcopter.set_parameters(x, y, z, height)
+		        	if data['capture']==True:
+		        		self.camera.shoot()
+		        	else:
+		        		self.camera.stop()
 		        if data['messageType']==Server.TUNE_MESSAGE:
 		     		print data['P']
 		        	pr = int(data['PR'])
@@ -143,6 +148,9 @@ class Server(object):
 
 		pass
 
+	def setCam(self, camera):
+		self.camera = camera
+
 	def stop(self):
 		c.close()                # Close the connection
 		pass
@@ -157,10 +165,14 @@ if __name__ == "__main__":
 	mymotor2 = motor('fr', 18, debug=False, simulation=False)  # RR
 	mymotor3 = motor('bl', 27, debug=False, simulation=False)  # FR
 	mymotor4 = motor('fl', 22, debug=False, simulation=False)  # FL
+    
+	camera = PiCam('img',1)
 
 	quadcopter = Quad(mymotor1, mymotor2, mymotor3, mymotor4, imu_controller)
 
 	server = Server(quadcopter, mymotor1, mymotor2, mymotor3, mymotor4)
+
+	server.setCam(camera)
 
 	server.connect()
 	server.start()

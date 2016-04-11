@@ -1,21 +1,40 @@
 from cv2 import *
 import picamera
-from time import sleep
+from threading import Thread
+import time
 # initialize the camera
 class PiCam:
-	def __init__(self,name,threshold=5):
+	def __init__(self,name,interval=5):
 		self.camera = picamera.PiCamera()
 		self.name = name
-		self.threshold = threshold
+		self.interval = interval
+		self.running = False
+		self.thread = None
+
+	def shoot(self):
+		print "Started Shooting"
+		if self.thread == None:
+			self.thread = Thread(target=self.take_pic)
+			self.running = True
+			self.thread.start()
+		print "Im back"
+
 
 	def take_pic(self):
-		for i in xrange(self.threshold):
-			im_name = self.name+"/"+str(i)+".jpg"
+		while self.running:
+			im_name = self.name+"/"+str(int(time.time()))+".jpg"
+			print "image",im_name
 			self.camera.capture(im_name)
-			sleep(0.5)
+			time.sleep(self.interval)
 
-	def change_threshold(self,new_threshold):
-		self.threshold = new_threshold
+	def stop(self):
+		print "Stopped"
+		if self.thread:
+			self.thread.join(0)
+		self.running = False
+
+	def change_interval(self,interval):
+		self.interval = interval
 
 	def view_images(self):
 		for i in xrange(self.threshold):
@@ -23,5 +42,5 @@ class PiCam:
 			cv2.imshow("Image",im_name)
 			cv2.waitKey(0)
 
-p = PiCam('img',10)
-p.take_pic()
+# p = PiCam('img',10)
+# p.take_pic()
