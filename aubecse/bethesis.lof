@@ -15,7 +15,11 @@
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Android App Joystick Interface\relax }}{36}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Software Flow Diagram\relax }}{37}
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Project Cost for each Part\relax }}{38}
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for Robot to Move based on Internet Speed\relax }}{40}
+=======
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for computation of panorama stitching\relax }}{40}
+>>>>>>> 735047b3daf75a81c27b0c3b54c401868827cb13
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Time taken for Robot to Move in Different Networks based on Internet Speed\relax }}{40}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Time taken to Recognise Gesture based on Number of People in Front of Kinect\relax }}{41}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Response based on type of gesture\relax }}{41}
