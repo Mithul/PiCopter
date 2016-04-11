@@ -3,10 +3,11 @@
 \chapter{CONCLUSIONS} % Write in your own chapter title
 \section{Contributions}
 TODO
-This project establishes a method to integrate the latest advances in aerial robotics and image processing that can ultimately be used for a multitude of applications in domains including aerial photogrammetry, terrain exploration and mapping, archaeological surveys, movie-making and security. The quadcopter combines the two most-often used image-processing functionalities - Panorama and 3D Reconstruction. The extreme mobility of the drone and powerful computing power of the Raspberry Pi form an effective combination for this purpose. 
+This project establishes a method to integrate the latest advances in aerial robotics and image processing that can ultimately be used for a multitude of applications in domains including aerial photogrammetry, terrain exploration and mapping, archaeological surveys, movie-making and security. The quadcopter combines the two most-often used image-processing functionalities - Panorama and 3D Reconstruction. The extreme mobility of the drone and powerful computing power of the Raspberry Pi form an effective combination for this purpose.
+The ability to take panaroma pictures allows the quadcopter to reach remote destinations inaccessible by humans and perform a complete panaroma stitching to enable survey of such locations.
+The ability of the quadcopter to do 3D object reconstruction allows recreation of navigable 3D scenes from locations where the pictures are taken.
 \section{Future Work}
-TODO
-Write stuff about how the quad can be improved
+The quadcopter can be made completely autonomous by adding a GPS sensor for navigation and distance sensors or multiple cameras implementing obstacle detection to avoid obstacles. This will enable the user to input the location to the quadcopter where it flies and takes pictures that it will use for 3D reconstruction and panorama stitching.
 
 The quadcopter's RPi camera currently takes pictures all at once and produces the final Panorama and 3D point cloud. This could be refined to perform the reconstruction and panorama stitching dynamically as pictures are clicked. Various options for panorama such as Polar, Cylindrical etc can be added. With regard to 3D reconstruction, the point cloud generated is a sparse 3D reconstruction of the object. This could be extended to create dense point clouds which would be more realistic.
 With the integration of these new features, the drone could be used for dynamic terrain mapping, disaster relief, surveillance and tracking.

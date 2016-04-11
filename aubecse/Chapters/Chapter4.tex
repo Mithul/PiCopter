@@ -54,15 +54,21 @@ It can connect to a network by using an external user-supplied USB Ethernet or W
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm, height = 12cm]{rpi2.jpg}
+  \includegraphics[width = 15cm]{rpi2.jpg}
   \caption{Raspberry Pi}
   \label{RPi}	
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm, height = 12cm]{gpio_header.png}
+  \includegraphics[height = 10cm]{gpio_header.png}
   \caption{Raspberry Pi 2 GPIO Header}
+  \label{RPi Pins} 
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 15cm]{GPIO_pins.jpg}
+  \caption{Raspberry Pi 2 GPIO Pins}
   \label{RPi Pins} 
 \end{figure}
 
@@ -72,7 +78,7 @@ The Electronic Speed Controller is a circuit which varies the motor's speed, dir
 This quadcopter uses a 40A, 3s ESC.
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm, height = 12cm]{motor.jpg}
+  \includegraphics[width = 12cm]{ESC.jpg}
   \caption{40A 3s ESC}
   \label{40A 3s ESC}	
 \end{figure}
@@ -83,7 +89,7 @@ This quadcopter uses a 40A, 3s ESC.
 An inertial measurement unit (IMU) is an electronic device that measures and reports a body's specific force, angular rate, and sometimes the magnetic field surrounding the body, using a combination of accelerometers and gyroscopes and magnetometers. IMUs are typically used to maneuver aircraft, including UAVs. This project uses a 9DOF IMU sensor with a 3-axis accelerometer, 3-axis gyroscope and 3-axis magnetometer. The accelerometer measures acceleration and has high accuracy. The gyroscope measures the angular velocity and is used to stabilize flight. It is less accurate than the accelerometer and is prone to drift errors. 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 13cm, height = 7cm]{IMU.jpg}
+  \includegraphics[width = 15cm]{IMU.jpg}
   \caption{IMU Sensor}
   \label{IMU Sensor}	
 \end{figure}
@@ -92,7 +98,7 @@ An inertial measurement unit (IMU) is an electronic device that measures and rep
 The Raspberry Pi camera module can be used to take high-definition video, as well as photographs. The camera has a five megapixel fixed-focus camera that supports 1080p30, 720p60 and VGA90 video modes, as well as stills capture. It attaches via a 15cm ribbon cable to the CSI port on the Raspberry Pi. It can be configured using the Python Picamera library. The project uses the Pi Camera to capture images for panorama stitching and 3D reconstruction.
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 7cm, height = 6cm]{picam.png}
+  \includegraphics[width = 10cm]{picam.png}
   \caption{Raspberry Pi camera}
   \label{RPi camera}	
 \end{figure}
@@ -101,16 +107,25 @@ The Raspberry Pi camera module can be used to take high-definition video, as wel
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 16cm, height = 16cm]{Blocks.jpg}
+  \includegraphics[width = 15cm]{Blocks.jpg}
   \caption{Block Digram}
   \label{block}	
+\end{figure}
+
+\section{Architecture Diagram}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 15cm]{circuit_dgm.png}
+  \caption{Circuit Digram}
+  \label{circuit} 
 \end{figure}
 
 \section{Circuit Diagram}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 16cm, height = 16cm]{circuit_dgm.png}
+  \includegraphics[width = 15cm]{circuit_dgm.png}
   \caption{Circuit Digram}
   \label{circuit} 
 \end{figure}
@@ -119,7 +134,7 @@ The Raspberry Pi camera module can be used to take high-definition video, as wel
 \section{Flow Diagram}
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 16cm, height = 19cm]{Flows.jpg}
+  \includegraphics[width = 15cm]{Flows.jpg}
   \caption{Flow Diagram from Input to Output}
   \label{Flow}	
 \end{figure}

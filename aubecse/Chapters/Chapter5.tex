@@ -221,15 +221,15 @@ The quadcopter itself is small enough to control its flight and large enough to 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm, height = 11cm]{InitialRobot.jpg}
+  \includegraphics[height = 10cm]{Quad.jpg}
   \caption{The Preliminary Quadcopter without the camera}
   \label{first quadcopter}	
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm, height = 11cm]{SecondRobot.jpg}
-  \caption{The Fully Functional Quadcopter with the Camera}
+  \includegraphics[height = 10cm]{Wiring.jpg}
+  \caption{Closer look at the wiring of the quadcopter}
   \label{second quadcopter}	
 \end{figure}
 
@@ -237,24 +237,34 @@ The quadcopter itself is small enough to control its flight and large enough to 
 
 \subsection{Image-Processing Module}
 The objective of the project is to build a quadcopter that can perform Panorama Stitching and 3D Reconstruction of images taken during its flight. The reason we chose these functions is because the drone is mobile and can reach and capture pictures of inaccessible locations like tall buildings and surveying wide-open spaces. OpenCV is an open-source image processing library which has an enormous number of functionally-rich libraries and detailed online documentation. OpenCV  Version 3.1.0 (the latest version) is used to provide image-processing support in this project.
-The image-processing module is divided into two parts – Stitching and Reconstruction. The initial stages are the same for both the operations i.e. Acquisition of images, Detecting Features and Matching Features.  Feature detection is accomplished using SURF (Speeded Up Robust Features  algorithm and Feature Matching is done by building Kd-Trees and using (K-Nearest Neighbours) Flann Algorithm.
-For Panorama Stitching, after feature-matching, RANSAC (Random Sample Consensus) is used to detect outliers and construct a homography matrix. The Homography matrix is then used to warp the images and construct a panorama. The stitching process is quite fast for fewer images but in order to speed up the process for a large number of images, we have implemented a multi-threaded stitching algorithm that stitches images in parallel, thereby, reducing the time without compromising on the quality(distortion) of the panorama generated.
- 3D-Recontruction is implemented by using Structure from Motion(SfM) algorithm. The preliminary stage is to calibrate the Pi Camera and calculate intrinsic and extrinsic camera paramaters. Once camera calibration is complete, the images have to be preprocessed to collect metadata i.e. EXIF tags which hold important GPS, latitude, longitude and camera information. The next stages are the feature detection and matching stages which have been described above. Matching features are then collected into tracks and a graph of these good “tracks” is constructed. The next stage is to use the graph to find common tracks and construct the 3D point cloud in incrementally. Initially, two images with a large number of matches are chosen for the “bootstrap reconstruction”. The reconstruction consists of triangulating the 2D points to 3D points which can be visualized as a point cloud. Consequently, the rest of the images' points are added incrementally to the point cloud. After each addition, “Bundle Adjustment” is done to minimize the reprojection error. This is the most computationally-intensive step. Once all the images have been added to the reconstruction, the final point cloud is generated and stored as a “.ply” file. The Point Cloud is visualized in an interactive browser environment using a Javascript Library called, “threeJS” on a remote system.   
+The image-processing module is divided into two parts – Stitching and Reconstruction. The initial stages are the same for both the operations i.e. Acquisition of images, Detecting Features and Matching Features. Feature detection is accomplished using SURF (Speeded Up Robust Features  algorithm and Feature Matching is done by building Kd-Trees and using (K-Nearest Neighbours) Flann Algorithm. Feature detection yields keypoints(x,y pixel coordinates and descriptors which accurately describe the region around each pixel).
+For Panorama Stitching, after feature-matching, RANSAC (Random Sample Consensus) is used to detect outliers and construct a homography matrix. The Homography matrix is essential to the construction of the panorama image as it relates the pixel coordinates in each pair of images. It is then used to warp the images and construct a panorama by aligning them. The stitching process is quite fast for a smaller number images but increases as the number of images increases. In order to speed up the process we have implemented a multi-threaded stitching algorithm that stitches images in parallel, thereby, reducing the time without compromising on the quality(distortion) of the panorama generated. The quality of the panorama is improved if images are taken with large overlapping features.
+\newline
+ 3D-Reconstruction is implemented by using Structure from Motion(SfM) algorithm. The preliminary stage is to calibrate the RPi Camera and calculate intrinsic and extrinsic camera paramaters. Once camera calibration is complete, the images have to be preprocessed to collect metadata i.e. EXIF tags which hold important GPS, latitude, longitude and camera information. The next stages are the feature detection and matching stages which have been described above. Matching features are then organized into tracks and a bipartite graph of these "good tracks” is constructed. The next stage is to use the graph to find common tracks and construct the 3D point cloud incrementally. Initially, two images with a large number of matches are chosen for the “bootstrap reconstruction”. The reconstruction consists of triangulating the 2D points to 3D points which can be visualized as a point cloud. Consequently, the rest of the images' points are added incrementally to the point cloud. After each addition, Bundle Adjustment is done to minimize the reprojection error. This is the most computationally-intensive step and uses the Ceres Solver library. Once all the images have been added to the reconstruction, the final point cloud is generated and stored as a “.ply” file. The point cloud is visualized as a sparse 3D reconstruction of the object in an interactive browser environment using a Javascript Library called, “threeJS” on a remote system.   
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm, height = 12cm]{pano.png}
+  \includegraphics[width = 15cm]{pano.png}
   \caption{Panorama Stitching of test images}
   \label{pano}	
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm, height = 12cm]{WPF.jpg}
+  \includegraphics[width = 3cm]{pano3d/3d1.jpg}
+  \includegraphics[width = 3cm]{pano3d/3d2.jpg}
+  \includegraphics[width = 3cm]{pano3d/3d3.jpg}
+  \includegraphics[width = 3cm]{pano3d/3d4.jpg}
+  \includegraphics[width = 3cm]{pano3d/3d5.jpg}
+  \includegraphics[width = 3cm]{pano3d/3d2.jpg}
+  \includegraphics[width = 3cm]{pano3d/3d3.jpg}
+  \includegraphics[width = 3cm]{pano3d/3d5.jpg}
+  \includegraphics[width = 15cm]{pano3d/3d.png}
   \caption{3D Reconstruction of test images}
   \label{recon}	
 \end{figure}
 
+\pagebreak
 \subsection{Android App}
 The Android App is used to control all the operations on the quadcopter. It implements a virtual Joystick interface for easy user-interaction.
 The interface consists of two joysticks, buttons to start the quadcopter program, enable camera mode, dynamically alter x and y trim values and a text box for feeding in the IP address of the RPi.
@@ -269,7 +279,7 @@ Using an Android app to remotely control UAVs is a level up from traditional RC 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm, height = 12cm]{app.png}
+  \includegraphics[width = 15cm]{app.png}
   \caption{Android App Joystick Interface}
   \label{app} 
 \end{figure}
