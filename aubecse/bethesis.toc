@@ -39,15 +39,15 @@
 \contentsline {subsection}{\numberline {5.3.1}Raspberry Pi 2-controlled quadcopter}{28}
 \contentsline {subsection}{\numberline {5.3.2}Image-Processing Module}{32}
 \contentsline {subsection}{\numberline {5.3.3}Android App}{35}
-\contentsline {section}{\numberline {5.4}Software Implementation Flow}{37}
-\contentsline {chapter}{\chapternumberline {6}RESULTS AND DISCUSSION}{38}
-\contentsline {section}{\numberline {6.1}Results}{38}
-\contentsline {subsection}{\numberline {6.1.1}Assessment}{38}
-\contentsline {subsection}{\numberline {6.1.2}Evaluation}{39}
-\contentsline {chapter}{\chapternumberline {7}CONCLUSIONS}{42}
-\contentsline {section}{\numberline {7.1}Contributions}{42}
-\contentsline {section}{\numberline {7.2}Future Work}{42}
-\contentsline {appendix}{\chapternumberline {A}Secure Shell (SSH)}{44}
-\contentsline {section}{\numberline {A.1} Sample Working Code for SSH}{44}
-\contentsline {subsection}{\numberline {A.1.1}Sample Swipe Code}{48}
-\contentsline {section}{\numberline {A.2}Sample Circle Code}{52}
+\contentsline {section}{\numberline {5.4}Overall Component Diagram}{36}
+\contentsline {chapter}{\chapternumberline {6}RESULTS AND DISCUSSION}{37}
+\contentsline {section}{\numberline {6.1}Results}{37}
+\contentsline {subsection}{\numberline {6.1.1}Assessment}{37}
+\contentsline {subsection}{\numberline {6.1.2}Evaluation}{38}
+\contentsline {chapter}{\chapternumberline {7}CONCLUSIONS}{41}
+\contentsline {section}{\numberline {7.1}Contributions}{41}
+\contentsline {section}{\numberline {7.2}Future Work}{41}
+\contentsline {appendix}{\chapternumberline {A}Secure Shell (SSH)}{43}
+\contentsline {section}{\numberline {A.1} Sample Working Code for SSH}{43}
+\contentsline {subsection}{\numberline {A.1.1}Sample Swipe Code}{47}
+\contentsline {section}{\numberline {A.2}Sample Circle Code}{51}

@@ -37,7 +37,7 @@ s.listen(5)
 c, addr = s.accept() 
 print 'Got connection from', addr
 bus = smbus.SMBus(1)
-while True:
+ while True:
   try:
     msg=c.recv(1024)
     data = json.loads(msg)
@@ -251,7 +251,6 @@ For Panorama Stitching, after feature-matching, RANSAC (Random Sample Consensus)
 
 \begin{figure}[H]
   \centering
-<<<<<<< HEAD
   \includegraphics[width = 3cm]{pano3d/3d1.jpg}
   \includegraphics[width = 3cm]{pano3d/3d2.jpg}
   \includegraphics[width = 3cm]{pano3d/3d3.jpg}
@@ -261,14 +260,6 @@ For Panorama Stitching, after feature-matching, RANSAC (Random Sample Consensus)
   \includegraphics[width = 3cm]{pano3d/3d3.jpg}
   \includegraphics[width = 3cm]{pano3d/3d5.jpg}
   \includegraphics[width = 15cm]{pano3d/3d.png}
-=======
-  \includegraphics[width = 2.81cm]{3d1.jpg}
-  \includegraphics[width = 2.81cm]{3d2.jpg}
-  \includegraphics[width = 2.81cm]{3d3.jpg}
-  \includegraphics[width = 2.81cm]{3d4.jpg}
-  \includegraphics[width = 2.81cm]{3d5.jpg}
-  \includegraphics[width = 15cm]{3d.png}
->>>>>>> 735047b3daf75a81c27b0c3b54c401868827cb13
   \caption{3D Reconstruction of test images}
   \label{recon}	
 \end{figure}
@@ -293,12 +284,12 @@ Using an Android app to remotely control UAVs is a level up from traditional RC 
   \label{app} 
 \end{figure}
 
-\section{Software Implementation Flow}
+\section{Overall Component Diagram}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm, height = 12cm]{software.png}
-  \caption{Software Flow Diagram}
+  \includegraphics[width = 15cm]{software_comp.png}
+  \caption{Overall Hardware and Software Component Diagram}
   \label{Software Flow}	
 \end{figure}
 
