@@ -44,10 +44,10 @@
 \contentsline {section}{\numberline {6.1}Results}{37}
 \contentsline {subsection}{\numberline {6.1.1}Assessment}{37}
 \contentsline {subsection}{\numberline {6.1.2}Evaluation}{38}
-\contentsline {chapter}{\chapternumberline {7}CONCLUSIONS}{41}
-\contentsline {section}{\numberline {7.1}Contributions}{41}
-\contentsline {section}{\numberline {7.2}Future Work}{41}
-\contentsline {appendix}{\chapternumberline {A}Secure Shell (SSH)}{43}
-\contentsline {section}{\numberline {A.1} Sample Working Code for SSH}{43}
-\contentsline {subsection}{\numberline {A.1.1}Sample Swipe Code}{47}
-\contentsline {section}{\numberline {A.2}Sample Circle Code}{51}
+\contentsline {chapter}{\chapternumberline {7}CONCLUSIONS}{42}
+\contentsline {section}{\numberline {7.1}Contributions}{42}
+\contentsline {section}{\numberline {7.2}Future Work}{42}
+\contentsline {appendix}{\chapternumberline {A}PID Controller}{44}
+\contentsline {section}{\numberline {A.1}Sample PID Controller Code}{45}
+\contentsline {subsection}{\numberline {A.1.1}Sample Joystick Interface Code}{46}
+\contentsline {section}{\numberline {A.2}Sample Panorama Stitching Code}{53}

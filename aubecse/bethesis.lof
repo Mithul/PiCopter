@@ -17,5 +17,7 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Project Cost for each Part\relax }}{37}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for computation of panorama stitching\relax }}{39}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Time taken for computation of 3D Reconstruction of images\relax }}{39}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Time taken to Recognise Gesture based on Number of People in Front of Kinect\relax }}{40}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Response based on type of gesture\relax }}{40}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Measurement of pitch and roll using complementary filter\relax }}{40}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Derivation of output using PID controller\relax }}{40}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Final output with respect to pitch and roll\relax }}{41}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Output of motors with respect to height\relax }}{41}

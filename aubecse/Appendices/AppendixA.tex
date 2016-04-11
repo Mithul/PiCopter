@@ -1,305 +1,413 @@
 % Appendix A
 
-\chapter{Secure Shell (SSH)}
-SSH uses public-key cryptography to authenticate the remote computer and allow it to authenticate the user, if necessary. There are several ways to use SSH; one is to use automatically generated public-private key pairs to simply encrypt a network connection, and then use password authentication to log on.
+\chapter{PID Controller}
+The quadcopter uses a PID controller where 'P' stands for proportional, 'I' stands for integral and 'D' stands for differential. The Proportional term enables the quadcopter to receive a force proportional to the angle of deviation from the central angle as a corrective force to bring it back to its normal orientation. Thus, by giving a high proportional constant, the directive force that will be calculated for a deviation in angle will be large, however setting too large a 'P' value will cause overcompensation resulting in oscillations that will keep increasing.
 
-Another is to use a manually generated public-private key pair to perform the authentication, allowing users or programs to log in without having to specify a password. In this scenario, anyone can produce a matching pair of different keys (public and private). The public key is placed on all computers that must allow access to the owner of the matching private key (the owner keeps the private key secret). While authentication is based on the private key, the key itself is never transferred through the network during authentication. SSH only verifies whether the same person offering the public key also owns the matching private key. In all versions of SSH it is important to verify unknown public keys, i.e. associate the public keys with identities, before accepting them as valid. Accepting an attacker's public key without validation will authorize an unauthorized attacker as a valid user.
-\section{ Sample Working Code for SSH}
+The Integral term is used to provide a corrective force in cases where the Proportional term cannot compensate for the deviation and angle. In such cases, the deviation and angle is aggregated thereby allowing the quadcopter to get back to its stable state quickly even in cases where turbulence or any external forces are at play. Similar to the Proportional term, too high an integral term  will cause oscillations but of a lower frequency then those caused by the Proportional term.
+
+The Differential term  is used to provide compensation proportional to that of the change in angle of the quadcopter. Thus, having a high differential term will result in a high corrective force being applied in cases where rapid changes in angle occur. This allows the differential term  to either boost or resist the effects of the Proportional and Integral terms because in cases where there are quick angular changes, the Differential term will enable the controller to resist that change and in cases where the compensation is too fast, the Differential term will correspondingly resist fast changes.
+\section{Sample PID Controller Code}
    
 \begin{lstlisting}
+def compute_PID_output( self, kp, ki, kd, angle, old_i, old_angle, limit_p=100, limit_i=100, log=False):
+        p = kp * angle
+        i = old_i + ki * angle
+        d = kd * (angle - old_angle)
+        if p > limit_p:
+            p = limit_p
+        if p < -limit_p:
+            p = -limit_p
+        if i > limit_i:
+            i = limit_i
+        if i < -limit_i:
+            i = -limit_i
+        if log:
+            log.write('\t' + str(p) + '\t' + str(i) + '\t' + str(d) + '\t')
+        return [p + i + d, i]
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Renci.SshNet;
+    def compute_rate_PID_output( self, kpr, kp, ki, kd, gyro, angle, old_i, old_angle, limit_p=100, limit_i=100, limit_pr=100, log=False):
+        p = kp * angle
+        i = old_i + ki * angle
+        d = kd * (angle - old_angle)
+        if p > limit_p:
+            p = limit_p
+        if p < -limit_p:
+            p = -limit_p
+        if i > limit_i:
+            i = limit_i
+        if i < -limit_i:
+            i = -limit_i
+        total = kpr*(p + i + gyro)
+        print total,p,i,kpr,angle,gyro,kp
+        if total > limit_pr:
+            total = limit_pr
+        if total < -limit_pr:
+            total = -limit_pr
+        if log:
+            log.write('\t' + str(p) + '\t' + str(i) + '\t' + str(total) + '\t')
+        return [total, i]
 
-namespace Kinect.Toolbox
-{
-    public static class ssh
-    {
-        public static void right()
-        {
-
-            {
-                try
-                {
-                    using (var client = new SshClient("192.168.0.104", "pi", "teddy"))
-                    {
-                        client.Connect();
-                        client.RunCommand("sudo python robotright.py");
-                        client.Disconnect();
-                    }
-
-
-                }
-                catch
-                {
-
-                }
-            }
-        }
-        public static void left()
-        {
-
-            {
-                try
-                {
-                    using (var client = new SshClient("192.168.0.104", "pi", "teddy"))
-                    {
-                        client.Connect();
-                        client.RunCommand("sudo python robotleft.py");
-                        client.Disconnect();
-                    }
-
-
-                }
-                catch
-                {
-
-                }
-            }
-        }
-        public static void circle()
-        {
-
-            {
-                try
-                {
-                    using (var client = new SshClient("192.168.0.104", "pi", "teddy"))
-                    {
-                        client.Connect();
-                        client.RunCommand("sudo python robotcircle.py");
-                        client.Disconnect();
-                    }
-
-
-                }
-                catch
-                {
-
-                }
-            }
-        }
-        public static void up()
-        {
-
-            {
-                try
-                {
-                    using (var client = new SshClient("192.168.0.104", "pi", "teddy"))
-                    {
-                        client.Connect();
-                        client.RunCommand("sudo python robotup.py");
-                        client.Disconnect();
-                    }
-
-
-                }
-                catch
-                {
-
-                }
-            }
-        }
-        public static void down()
-        {
-
-            {
-                try
-                {
-                    using (var client = new SshClient("192.168.0.104", "pi", "teddy"))
-                    {
-                        client.Connect();
-                        client.RunCommand("sudo python robotdown.py");
-                        client.Disconnect();
-                    }
-
-
-                }
-                catch
-                {
-
-                }
-            }
-        }
-    }
-}
 \end{lstlisting}
     
-\subsection{Sample Swipe Code}
+\subsection{Sample Joystick Interface Code}
 \begin{lstlisting}
-using System;
-using Microsoft.Kinect;
-
-namespace Kinect.Toolbox
-{
-    public class SwipeGestureDetector : GestureDetector
-    {
-        public float SwipeMinimalLength {get;set;}
-        public float SwipeMaximalHeight {get;set;}
-        public int SwipeMininalDuration {get;set;}
-        public int SwipeMaximalDuration {get;set;}
-
-        public SwipeGestureDetector(int windowSize = 20)
-            : base(windowSize)
-        {
-            SwipeMinimalLength = 0.4f;
-            SwipeMaximalHeight = 0.2f;
-            SwipeMininalDuration = 250;
-            SwipeMaximalDuration = 1500;
+package com.example.avi.joystick;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+public class JoyStickClass {
+    private int STICK_ALPHA = 200;
+    private int LAYOUT_ALPHA = 200;
+    private int OFFSET = 0;
+    
+    private Context mContext;
+    private ViewGroup mLayout;
+    private LayoutParams params;
+    private int stick_width, stick_height;
+    
+    private int position_x = 0, position_y = 0, min_distance = 0;
+    private float distance = 0, angle = 0;
+    
+    private DrawCanvas draw;
+    private Paint paint;
+    private Bitmap stick;
+    
+    private boolean touch_state = false;
+    private boolean spring_x=false;
+    private boolean spring_y=false;
+    public JoyStickClass (Context context, ViewGroup layout, int stick_res_id) {
+        mContext = context;
+        stick = BitmapFactory.decodeResource(mContext.getResources(),
+                stick_res_id);
+        
+        stick_width = stick.getWidth();
+        stick_height = stick.getHeight();
+        
+        draw = new DrawCanvas(mContext);
+        paint = new Paint();
+        mLayout = layout;
+        params = mLayout.getLayoutParams();
+    }
+    public void setSpringy(boolean x,boolean y){
+        spring_x = x;
+        spring_y = y;
+    }
+    
+    public void drawStick(MotionEvent arg1) {
+        position_x = (int) (arg1.getX() - (params.width / 2));
+        position_y = (int) (arg1.getY() - (params.height / 2));
+        distance = (float) Math.sqrt(Math.pow(position_x, 2) + Math.pow(position_y, 2));
+        angle = (float) cal_angle(position_x, position_y);
+        if(arg1.getAction() == MotionEvent.ACTION_DOWN) {
+            if(distance <= (params.width / 2) - OFFSET) {
+                draw.position(arg1.getX(), arg1.getY());
+                draw();
+                touch_state = true;
+            }
+        } else if(arg1.getAction() == MotionEvent.ACTION_MOVE && touch_state) {
+            if (distance <= (params.width / 2) - OFFSET) {
+                draw.position(arg1.getX(), arg1.getY());
+                draw();
+            } else if (distance > (params.width / 2) - OFFSET) {
+                float x = (float) (Math.cos(Math.toRadians(cal_angle(position_x, position_y))) * ((params.width / 2) - OFFSET));
+                float y = (float) (Math.sin(Math.toRadians(cal_angle(position_x, position_y))) * ((params.height / 2) - OFFSET));
+                x += (params.width / 2);
+                y += (params.height / 2);
+                position_x = (int)x - params.width / 2;
+                position_y = (int)y - params.height/2;
+                draw.position(x, y);
+                draw();
+            } else {
+                mLayout.removeView(draw);
+            }
         }
-
-        protected bool ScanPositions(Func<Vector3, Vector3, bool> heightFunction, Func<Vector3, Vector3, bool> directionFunction, 
-            Func<Vector3, Vector3, bool> lengthFunction, int minTime, int maxTime)
-        {
-            int start = 0;
-
-            for (int index = 1; index < Entries.Count - 1; index++)
-            {
-                if (!heightFunction(Entries[0].Position, Entries[index].Position) || !directionFunction(Entries[index].Position, Entries[index + 1].Position))
-                {
-                    start = index;
+         else if(arg1.getAction() == MotionEvent.ACTION_UP) {
+            if(spring_x || spring_y) {
+                float x = position_x+params.width/2;
+                float y = position_y+params.width/2;
+                if(spring_x) {
+                    x = (params.width / 2);
+                    position_x=0;
                 }
-
-                if (lengthFunction(Entries[index].Position, Entries[start].Position))
-                {
-                    double totalMilliseconds = (Entries[index].Time - Entries[start].Time).TotalMilliseconds;
-                    if (totalMilliseconds >= minTime && totalMilliseconds <= maxTime)
-                    {
-                        return true;
-                    }
+                if(spring_y) {
+                    position_y=0;
+                    y = (params.height / 2);
                 }
-            }
-
-            return false;
-        }
-
-        protected override void LookForGesture()
-        {
-            // Swipe to right
-            if (ScanPositions((p1, p2) => Math.Abs(p2.Y - p1.Y) < SwipeMaximalHeight, // Height
-                (p1, p2) => p2.X - p1.X > -0.01f, // Progression to right
-                (p1, p2) => Math.Abs(p2.X - p1.X) > SwipeMinimalLength, // Length
-                SwipeMininalDuration, SwipeMaximalDuration)) // Duration
-            {
-               RaiseGestureDetected("SwipeToRight");
-               ssh.right();
-                return;
-            }
-
-            // Swipe to left
-            if (ScanPositions((p1, p2) => Math.Abs(p2.Y - p1.Y) < SwipeMaximalHeight,  // Height
-                (p1, p2) => p2.X - p1.X < 0.01f, // Progression to right
-                (p1, p2) => Math.Abs(p2.X - p1.X) > SwipeMinimalLength, // Length
-                SwipeMininalDuration, SwipeMaximalDuration))// Duration
-            {
-               RaiseGestureDetected("SwipeToLeft");
-               ssh.left();
-                return;
-            }
-            if (ScanPositions((p1, p2) => Math.Abs(p2.X - p1.X) < SwipeMaximalHeight, // Height
-                (p1, p2) => p2.Y - p1.Y > -0.01f, // Progression to up
-                (p1, p2) => Math.Abs(p2.Y - p1.Y) > SwipeMinimalLength, // Length
-                SwipeMininalDuration, SwipeMaximalDuration)) // Duration
-            {
-                RaiseGestureDetected("SwipetoUp");
-                ssh.up();
-                return;
-            }
-            if (ScanPositions((p1, p2) => Math.Abs(p2.X - p1.X) < SwipeMaximalHeight,  // Height
-                (p1, p2) => p2.Y - p1.Y < 0.01f, // Progression to down
-                (p1, p2) => Math.Abs(p2.Y - p1.Y) > SwipeMinimalLength, // Length
-                SwipeMininalDuration, SwipeMaximalDuration))// Duration
-            {
-                RaiseGestureDetected("SwipeToDown");
-                ssh.down();
-                return;
+                draw.position(x, y);
+                draw();
             }
         }
     }
+    
+    public int[] getPosition() {
+        if(distance > min_distance && touch_state) {
+            return new int[] { position_x, position_y };
+        }
+        return new int[] { 0, 0 };
+    }
+    
+    public int getX() {
+        if(distance > min_distance && touch_state) {
+            return (int)((float)position_x*250/getLayoutWidth());
+        }
+        return 0;
+    }
+    
+    public int getY() {
+        if(distance > min_distance && touch_state) {
+            return (int)((float)position_y*250/getLayoutHeight());
+        }
+        return 0;
+    }
+    
+    public float getAngle() {
+        if(distance > min_distance && touch_state) {
+            return angle;
+        }
+        return 0;
+    }
+    
+    public float getDistance() {
+        if(distance > min_distance && touch_state) {
+            return distance;
+        }
+        return 0;
+    }
+    
+    public void setMinimumDistance(int minDistance) {
+        min_distance = minDistance;
+    }
+    
+    public int getMinimumDistance() {return min_distance;}
+    public void setOffset(int offset) {OFFSET = offset;}
+    
+    public int getOffset() {
+        return OFFSET;
+    }
+    
+    public void setStickAlpha(int alpha) {
+        STICK_ALPHA = alpha;
+        paint.setAlpha(alpha);
+    }
+    
+    public int getStickAlpha() {
+        return STICK_ALPHA;
+    }
+    
+    public void setLayoutAlpha(int alpha) {
+        LAYOUT_ALPHA = alpha;
+        mLayout.getBackground().setAlpha(alpha);
+    }
+    
+    public int getLayoutAlpha() {
+        return LAYOUT_ALPHA;
+    }
+    
+    public void setStickSize(int width, int height) {
+        stick = Bitmap.createScaledBitmap(stick, width, height, false);
+        stick_width = stick.getWidth();
+        stick_height = stick.getHeight();
+    }
+    
+    public void setStickWidth(int width) {
+        stick = Bitmap.createScaledBitmap(stick, width, stick_height, false);
+        stick_width = stick.getWidth();
+    }
+    
+    public void setStickHeight(int height) {
+        stick = Bitmap.createScaledBitmap(stick, stick_width, height, false);
+        stick_height = stick.getHeight();
+    }
+    
+    public int getStickWidth() {return stick_width; }
+    
+    public int getStickHeight() {
+        return stick_height;
+    }
+    
+    public void setLayoutSize(int width, int height) {
+        params.width = width;
+        params.height = height;
+    }
+    public int getLayoutWidth() {
+        return params.width;
+    }
+    public int getLayoutHeight() {
+        return params.height;
+    }
+    
+    private double cal_angle(float x, float y) {
+        if(x >= 0 && y >= 0)
+            return Math.toDegrees(Math.atan(y / x));
+        else if(x < 0 && y >= 0)
+            return Math.toDegrees(Math.atan(y / x)) + 180;
+        else if(x < 0 && y < 0)
+            return Math.toDegrees(Math.atan(y / x)) + 180;
+        else if(x >= 0 && y < 0)
+            return Math.toDegrees(Math.atan(y / x)) + 360;
+        return 0;
+    }
+     
+    private void draw() {
+        try {
+            mLayout.removeView(draw);
+        } catch (Exception e) { }
+        mLayout.addView(draw);
+    }
+     
+    private class DrawCanvas extends View{
+        float x, y;
+        private DrawCanvas(Context mContext) {
+             super(mContext);
+         }
+         public void onDraw(Canvas canvas) {
+             canvas.drawBitmap(stick, x, y, paint);
+         }
+         private void position(float pos_x, float pos_y) {
+            x = pos_x - (stick_width / 2);
+            y = pos_y - (stick_height / 2);
+         }
+     }
 }
 \end{lstlisting}       
-\section{Sample Circle Code}
+\section{Sample Panorama Stitching Code}
 \begin{lstlisting}
-using System.Linq;
-using System.IO;
-using Microsoft.Kinect;
+import cv2, numpy as np
+import math
+import argparse as ap
+import time
+from threading import Thread
 
-namespace Kinect.Toolbox
-{
-    public class TemplatedGestureDetector : GestureDetector
-    {
-        public float Epsilon { get; set; }
-        public float MinimalScore { get; set; }
-        public float MinimalSize { get; set; }
-        readonly LearningMachine learningMachine;
-        RecordedPath path;
-        readonly string gestureName;
+def extract_features(image1,image2, surfThreshold=1000, algorithm='SURF'):
+  try:
+    image_gs1 = cv2.cvtColor(image1,cv2.COLOR_BGR2GRAY)
+  except TypeError:
+    return
+  try:
+    image_gs2 = cv2.cvtColor(image2,cv2.COLOR_BGR2GRAY)
+  except TypeError:
+    return
+  detector = cv2.xfeatures2d.SURF_create()
+  (keypoints1,descriptors1) = detector.detectAndCompute(image_gs1,None)
+  (keypoints2,descriptors2) = detector.detectAndCompute(image_gs2,None)
+  keypoints1,keypoints2 = np.float32([kp.pt for kp in keypoints1]), np.float32([kp.pt for kp in keypoints2])
+  return (keypoints1, descriptors1,keypoints2, descriptors2)
 
-        public bool IsRecordingPath
-        {
-            get { return path != null; }
-        }
+def find_correspondences(keypoints1, descriptors1, keypoints2, descriptors2):
+  matches = match_flann(descriptors1, descriptors2)
+  points1 = np.float32([keypoints1[i] for (_, i) in matches])
+  points2 = np.float32([keypoints2[i] for (i, _) in matches])
+  return (points1, points2)
 
-        public LearningMachine LearningMachine
-        {
-            get { return learningMachine; }
-        }
+def calculate_size(size_image1, size_image2, homography):
+  (h1, w1) = size_image1[:2]
+  (h2, w2) = size_image2[:2]
+  top_left = np.dot(homography,np.asarray([0,0,1]))
+  top_right = np.dot(homography,np.asarray([w2,0,1]))
+  bottom_left = np.dot(homography,np.asarray([0,h2,1]))
+  bottom_right = np.dot(homography,np.asarray([w2,h2,1]))
+  top_left = top_left/top_left[2]
+  top_right = top_right/top_right[2]
+  bottom_left = bottom_left/bottom_left[2]
+  bottom_right = bottom_right/bottom_right[2]
+  pano_left = int(min(top_left[0], bottom_left[0], 0))
+  pano_right = int(max(top_right[0], bottom_right[0], w1))
+  W = pano_right - pano_left
+  pano_top = int(min(top_left[1], top_right[1], 0))
+  pano_bottom = int(max(bottom_left[1], bottom_right[1], h1))
+  H = pano_bottom - pano_top
+  size = (W, H)
+  X = int(min(top_left[0], bottom_left[0], 0))
+  Y = int(min(top_left[1], top_right[1], 0))
+  offset = (-X, -Y)
+  return (size, offset)
 
-        public TemplatedGestureDetector(string gestureName, Stream kbStream, int windowSize = 60)
-            : base(windowSize)
-        {
-            Epsilon = 0.035f;
-            MinimalScore = 0.80f;
-            MinimalSize = 0.1f;
-            this.gestureName = gestureName;
-            learningMachine = new LearningMachine(kbStream);
-        }
+def merge_images(image1, image2, homography, size, offset, keypoints):
+  (h1, w1) = image1.shape[:2]
+  (h2, w2) = image2.shape[:2]
+  panorama = np.zeros((size[1], size[0], 3), np.uint8)
+  (ox, oy) = offset
+  translation = np.matrix([
+    [1.0, 0.0, ox],
+    [0, 1.0, oy],
+    [0.0, 0.0, 1.0]
+  ])
+  homography = translation * homography
+  cv2.warpPerspective(image2, homography, size, panorama)
+  panorama[oy:h1+oy, ox:ox+w1] = image1
+  height, width = panorama.shape[:2]
+  crop_h = int(0.05 * height)
+  crop_w = int(0.015 * width)
+  panorama = panorama[crop_h:-crop_h, crop_w:-crop_w]
+  panorama = panorama[int(oy*0.7):,:]
+  return panorama
 
-        public override void Add(SkeletonPoint position, KinectSensor sensor)
-        {
-            base.Add(position, sensor);
+def match_flann(des1, des2,ratio=0.75):
+    matcher = cv2.DescriptorMatcher_create('BruteForce')
+    rawMatches = matcher.knnMatch(des1, des2, 2)
+    matches = []
+    for m in rawMatches:
+      if len(m) == 2 and m[0].distance < m[1].distance * ratio:
+        matches.append((m[0].trainIdx, m[0].queryIdx))
+    return matches
+  
+def draw_correspondences(image1, image2, points1, points2):
+  (h1, w1) = image1.shape[:2]
+  (h2, w2) = image2.shape[:2]
+  image = np.zeros((max(h1, h2), w1 + w2, 3), np.uint8)
+  image[:h1, :w1] = image1
+  image[:h2, w1:w1+w2] = image2
+  for (x1, y1), (x2, y2) in zip(np.int32(points1), np.int32(points2)):
+    cv2.line(image, (x1, y1), (x2+w1, y2), (2555, 0, 255), lineType=cv2.LINE_AA)
+  return image
 
-            if (path != null)
-            {
-                path.Points.Add(position.ToVector2());
-            }
-        }
-
-        protected override void LookForGesture()
-        {
-            if (LearningMachine.Match(Entries.Select(e => new Vector2(e.Position.X, e.Position.Y)).ToList(), Epsilon, MinimalScore, MinimalSize))
-            {
-                RaiseGestureDetected(gestureName);
-                ssh.circle();
-            }
-        }
-
-        public void StartRecordTemplate()
-        {
-            path = new RecordedPath(WindowSize);
-        }
-
-        public void EndRecordTemplate()
-        {
-            LearningMachine.AddPath(path);
-            path = null;
-        }
-
-        public void SaveState(Stream kbStream)
-        {
-            LearningMachine.Persist(kbStream);
-        }
-    }
-}
+def pano(images,i):
+  if (i+1) <= (len(images)-1):
+    try:
+      image1 = cv2.imread(images[i])
+    except TypeError:
+      image1 = images[i]
+    try:
+      image2 = cv2.imread(images[i+1])
+    except TypeError:
+      image2 = images[i+1]
+  else:
+    return  
+  (keypoints1, descriptors1,keypoints2, descriptors2) = extract_features(image1,image2)
+  (points1, points2) = find_correspondences(keypoints1, descriptors1, keypoints2, descriptors2)
+  correspondences = draw_correspondences(image1, image2, points1, points2)
+  cv2.imwrite('pano_dataset/door/correspondences.jpg', correspondences)
+  try:
+    (homography, _) = cv2.findHomography(points2,points1,cv2.RANSAC,4)
+  except Exception:
+    print 'Not enough matches!'
+    return -1
+  (size, offset) = calculate_size(image1.shape, image2.shape, homography)
+  images[i] = merge_images(image1, image2, homography, size, offset, (points1, points2))
+  if(len(images) == 2):#final panorama
+    filename = 'pano_dataset/door/pano_ multi_final'+str(i)+'.jpg'
+  else:
+    filename = 'pano_dataset/door/pano_multi'+str(i)+'.jpg'
+  cv2.imwrite(filename,images[i])
+  
+if __name__ == '__main__':
+  import time
+  st = time.time()
+  images = ['pano_dataset/door/door1.jpg','pano_dataset/door/door2.jpg','pano_dataset/door/door3.jpg','pano_dataset/door/door4.jpg','pano_dataset/door/door5.jpg','pano_dataset/door/door6.jpg','pano_dataset/door/door7.jpg']
+  n = len(images)
+  val = int(math.ceil(math.log(len(images),2)))+1
+  for q in range(val):
+    for i in xrange(0,len(images),1):
+          print 'i: ',i,' len: ',len(images)
+          t = Thread(target=pano, args=(images,i))
+          t.start()
+          t.join()
+          if i+1 <= len(images)-1:
+            del images[i+1]
 \end{lstlisting}
