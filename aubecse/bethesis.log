@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.7)  10 APR 2016 18:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.1)  11 APR 2016 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **bethesis.tex
 (./bethesis.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 2 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/memoir/memoir.cls
-Document Class: memoir 2013/05/30 v3.7b configurable book, report, article docu
+Document Class: memoir 2015/04/23 v3.7d configurable book, report, article docu
 ment class
 \onelineskip=\skip41
 \lxvchars=\skip42
@@ -33,7 +33,7 @@ Package ifluatex Info: LuaTeX not detected.
 \trimedge=\skip47
 
 (/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
-Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
 \et@xins=\count81
 )
 (/usr/share/texlive/texmf-dist/tex/latex/memoir/mem14.clo
@@ -189,8 +189,8 @@ File: mem14.clo 2008/01/30 v0.4 memoir class 14pt size option
 \afterepigraphskip=\skip125
 \epigraphwidth=\skip126
 \epigraphrule=\skip127
-LaTeX Info: Redefining \em on input line 7492.
-LaTeX Info: Redefining \emph on input line 7500.
+LaTeX Info: Redefining \em on input line 7533.
+LaTeX Info: Redefining \emph on input line 7541.
 \tocentryskip=\skip128
 \tocbaseline=\skip129
 \cftparskip=\skip130
@@ -273,8 +273,8 @@ LaTeX Info: Redefining \emph on input line 7500.
 \FrameRule=\dimen145
 \FrameSep=\dimen146
 \c@cp@cntr=\count119
-LaTeX Info: Redefining \: on input line 11958.
-LaTeX Info: Redefining \! on input line 11960.
+LaTeX Info: Redefining \: on input line 12050.
+LaTeX Info: Redefining \! on input line 12052.
 \c@ism@mctr=\count120
 \c@xsm@mctr=\count121
 \c@csm@mctr=\count122
@@ -382,14 +382,14 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Info: Redefining \hbar on input line 50.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks22
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
@@ -397,7 +397,7 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -414,14 +414,14 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@width=\dimen148
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
-Package: lipsum 2011/04/14 v1.2 150 paragraphs of Lorem Ipsum dummy text
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count139
 )
 (/usr/share/texlive/texmf-dist/tex/latex/acronym/acronym.sty
-Package: acronym 2012/10/29 v1.38 Support for acronyms (Tobias Oetiker)
+Package: acronym 2015/03/21 v1.41 Support for acronyms (Tobias Oetiker)
 
 (/usr/share/texlive/texmf-dist/tex/latex/bigfoot/suffix.sty
-Package: suffix 2006/07/15 1.5 Variant command support
+Package: suffix 2006/07/15 1.5a Variant command support
 )
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
@@ -468,83 +468,172 @@ Sidefootvsep and sidefootheight: 17.5pt and 589.74994pt
 ******************************************************
 
 \c@nauthors=\count143
+) (/usr/share/texlive/texmf-dist/tex/latex/floatrow/floatrow.sty
+Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen150
+\captionmargin@=\dimen151
+\captionwidth=\dimen152
+\caption@tempdima=\dimen153
+\caption@indent=\dimen154
+\caption@parindent=\dimen155
+\caption@hangindent=\dimen156
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+\c@float@type=\count144
+\float@exts=\toks25
+
+
+! LaTeX Error: Command \newfloat already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.255    {\flrow@restylefloat{yes}\newfloat@}}
+                                              
+? 
+\float@box=\box30
+\@floatcapt=\box31
+Package floatrow Info: Modified float package code loaded on input line 455.
+Package floatrow Info: Modified rotfloat package code loaded on input line 473.
+
+\FR@everyfloat=\toks26
+\flrow@foot=\insert228
+\FB@wd=\dimen157
+\FBo@wd=\dimen158
+\FBc@wd=\dimen159
+\FBo@ht=\skip191
+\FBc@ht=\skip192
+\FBf@ht=\skip193
+\FBo@max=\skip194
+\FBc@max=\skip195
+\FBf@max=\skip196
+\c@FBl@b=\count145
+\floatbox@depth=\count146
+\c@FRobj=\count147
+\c@FRsobj=\count148
+\Xhsize=\skip197
+\sXhsize=\skip198
+\Zhsize=\skip199
+\sZhsize=\skip200
+\flrow@rowbox=\box32
+\FR@Zunitlength=\dimen160
+\c@FBcnt=\count149
+\FPOScnt=\count150
+\LTleft=\skip201
+\LTright=\skip202
+\LTleft=\skip203
+\LTright=\skip204
+\flrow@types=\toks27
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+
+
+Class memoir Warning: You are using the caption package with the memoir class. 
+To prepare we will now reset all captioning macros and configurations to kernel
+ defaults, and then let the caption package take over. Please remember to use t
+he caption package interfaces in order to configure your captions. .
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\vskip \abovecaptionski
+p \sbox \@tempboxa {#1: #2}\ifdim \wd \@tempboxa >\hsize #1: #2\par \else \glob
+al \@minipagefalse \hb@xt@ \hsize {\hfil \box \@tempboxa \hfil }\fi \vskip \bel
+owcaptionskip .
+\c@ContinuedFloat=\count151
+Package caption Info: float package is loaded.
+Package caption Info: floatrow package is loaded.
+)
+\c@subfigure=\count152
+\c@subtable=\count153
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count144
-\lst@gtempboxa=\box30
-\lst@token=\toks25
-\lst@length=\count145
-\lst@currlwidth=\dimen150
-\lst@column=\count146
-\lst@pos=\count147
-\lst@lostspace=\dimen151
-\lst@width=\dimen152
-\lst@newlines=\count148
-\lst@lineno=\count149
-\lst@maxwidth=\dimen153
+\lst@mode=\count154
+\lst@gtempboxa=\box33
+\lst@token=\toks28
+\lst@length=\count155
+\lst@currlwidth=\dimen161
+\lst@column=\count156
+\lst@pos=\count157
+\lst@lostspace=\dimen162
+\lst@width=\dimen163
+\lst@newlines=\count158
+\lst@lineno=\count159
+\lst@maxwidth=\dimen164
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-\c@lstnumber=\count150
-\lst@skipnumbers=\count151
-\lst@framebox=\box31
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count160
+\lst@skipnumbers=\count161
+\lst@framebox=\box34
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2013/08/26 1.5b listings configuration
+File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
-Package: listings 2013/08/26 1.5b (Carsten Heinz)
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count152
-\float@exts=\toks26
-\float@box=\box32
-\@float@everytoks=\toks27
-\@floatcapt=\box33
+Package color Info: Driver file: pdftex.def on input line 142.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2013/08/26 1.5b listings language file
-) (./bethesis.aux)
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+) (./bethesis.aux
+
+LaTeX Warning: Label `RPi Pins' multiply defined.
+
+
+LaTeX Warning: Label `circuit' multiply defined.
+
+)
 \openout1 = `bethesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 40.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-\big@size=\dimen154
+\big@size=\dimen165
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count153
-\scratchdimen=\dimen155
-\scratchbox=\box34
-\nofMPsegments=\count154
-\nofMParguments=\count155
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count156
-\MPscratchDim=\dimen156
-\MPnumerator=\count157
-\makeMPintoPDFobject=\count158
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count162
+\scratchdimen=\dimen166
+\scratchbox=\box35
+\nofMPsegments=\count163
+\nofMParguments=\count164
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count165
+\MPscratchDim=\dimen167
+\MPnumerator=\count166
+\makeMPintoPDFobject=\count167
+\everyMPtoPDFconversion=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -584,46 +673,50 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count159
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: floatrow package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count168
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 40
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 42
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 40
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 42
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 40
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 42
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 40
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 42
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 42.
 
 <Figures/annauniv.png, id=1, 144.54pt x 134.5025pt>
 File: Figures/annauniv.png Graphic file (type png)
  <use Figures/annauniv.png>
-Package pdftex.def Info: Figures/annauniv.png used on input line 40.
+Package pdftex.def Info: Figures/annauniv.png used on input line 42.
 (pdftex.def)             Requested size: 86.72466pt x 80.7021pt.
 
 [1
@@ -631,18 +724,18 @@ Package pdftex.def Info: Figures/annauniv.png used on input line 40.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Figures/annauniv.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 \OT1/ptm/b/n/14.4 COPTER IM-PLE-MENT-ING PANORAMA AND 3D RE-
  []
 
 
-Underfull \hbox (badness 1147) in paragraph at lines 41--41
+Underfull \hbox (badness 1147) in paragraph at lines 43--43
 \OT1/ptm/b/n/14.4 CON-STUC-TION \OT1/ptm/m/n/14.4 is the \OT1/ptm/m/it/14.4 bon
 afide \OT1/ptm/m/n/14.4 work of \OT1/ptm/b/n/14.4 AVINASH RAMESH
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 \OT1/ptm/b/n/14.4 (2012103009)\OT1/ptm/m/n/14.4 , \OT1/ptm/b/n/14.4 MITHUL MATH
 -IVANAN (2012103037) \OT1/ptm/m/n/14.4 and
  []
@@ -655,42 +748,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--41
 
 
 ] (./FrontMatter/abstract.tex)
-Underfull \hbox (badness 3668) in paragraph at lines 1--44
+Underfull \hbox (badness 3668) in paragraph at lines 1--46
 []\OT1/ptm/m/n/14.4 Quadcopters are one of the most pop-u-lar tech-nolo-gies of
 
  []
 
 
-Underfull \hbox (badness 3668) in paragraph at lines 1--44
+Underfull \hbox (badness 3668) in paragraph at lines 1--46
 \OT1/ptm/m/n/14.4 the 21st cen-tury. They have mul-ti-far-i-ous uses rang-ing f
 rom
  []
 
 
-Underfull \hbox (badness 7116) in paragraph at lines 1--44
+Underfull \hbox (badness 7116) in paragraph at lines 1--46
 \OT1/ptm/m/n/14.4 aerial pho-togram-me-try(photography and 3d po-si-tion-ing of
  ob-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--44
+Underfull \hbox (badness 10000) in paragraph at lines 1--46
 \OT1/ptm/m/n/14.4 jects), mil-i-tary surveil-lance, tak-ing panorama shots, mov
 ie-
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 1--44
+Underfull \hbox (badness 1688) in paragraph at lines 1--46
 \OT1/ptm/m/n/14.4 making and de-liv-ery of prod-ucts. It is also an ex-ten-sive
  area
  []
 
 
-Underfull \hbox (badness 4108) in paragraph at lines 1--44
+Underfull \hbox (badness 4108) in paragraph at lines 1--46
 \OT1/ptm/m/n/14.4 of re-search, an ex-am-ple of which would be swarm robotics.
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 1--44
+Underfull \hbox (badness 1033) in paragraph at lines 1--46
 \OT1/ptm/m/n/14.4 of ob-ject-s/-to-pog-ra-phy and re-con-struct-ing 3D rep-re-s
 en-ta-tions of it.
  []
@@ -790,65 +883,64 @@ Missing character: There is no “ in font ptmr7t!
  [10
 
 ] [11]
-<Figures/rpi2.jpg, id=79, 5037.82124pt x 3377.61874pt>
+<Figures/rpi2.jpg, id=78, 5037.82124pt x 3377.61874pt>
 File: Figures/rpi2.jpg Graphic file (type jpg)
  <use Figures/rpi2.jpg>
 Package pdftex.def Info: Figures/rpi2.jpg used on input line 57.
-(pdftex.def)             Requested size: 426.78703pt x 341.38934pt.
+(pdftex.def)             Requested size: 426.79134pt x 286.14034pt.
 
-Overfull \hbox (14.78703pt too wide) in paragraph at lines 57--58
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 57--58
  [][] 
  []
 
-<Figures/gpio_header.png, id=80, 959.585pt x 1027.84pt>
+<Figures/gpio_header.png, id=79, 959.585pt x 1027.84pt>
 File: Figures/gpio_header.png Graphic file (type png)
 
 <use Figures/gpio_header.png>
 Package pdftex.def Info: Figures/gpio_header.png used on input line 64.
-(pdftex.def)             Requested size: 426.78703pt x 341.431pt.
+(pdftex.def)             Requested size: 265.63641pt x 284.52756pt.
 
-Overfull \hbox (14.78703pt too wide) in paragraph at lines 64--65
+<Figures/GPIO_pins.jpg, id=80, 1631.49525pt x 989.01495pt>
+File: Figures/GPIO_pins.jpg Graphic file (type jpg)
+
+<use Figures/GPIO_pins.jpg>
+Package pdftex.def Info: Figures/GPIO_pins.jpg used on input line 70.
+(pdftex.def)             Requested size: 426.79134pt x 258.7224pt.
+
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 70--71
  [][] 
  []
 
-[12 <./Figures/rpi2.jpg>]
+[12 <./Figures/rpi2.jpg>] <Figures/ESC.jpg, id=84, 602.25pt x 402.50375pt>
+File: Figures/ESC.jpg Graphic file (type jpg)
 
-LaTeX Warning: File `motor.jpg' not found on input line 75.
-
-
-! Package pdftex.def Error: File `motor.jpg' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.75 ...cs[width = 15cm, height = 12cm]{motor.jpg}
-                                                  
-? 
-
-Overfull \hbox (14.90857pt too wide) in paragraph at lines 75--76
- [][] 
- []
-
-[13 <./Figures/gpio_header.png>] <Figures/IMU.jpg, id=87, 706.64pt x 529.98pt>
+<use Figures/ESC.jpg>
+Package pdftex.def Info: Figures/ESC.jpg used on input line 81.
+(pdftex.def)             Requested size: 341.43306pt x 228.20117pt.
+ [13 <./Figures/gpio_header.png> <./Figures/GPIO_pins.jpg>] <Figures/IMU.jpg, i
+d=88, 706.64pt x 529.98pt>
 File: Figures/IMU.jpg Graphic file (type jpg)
+ <use Figures/IMU.jpg>
+Package pdftex.def Info: Figures/IMU.jpg used on input line 92.
+(pdftex.def)             Requested size: 426.79134pt x 320.09302pt.
 
-<use Figures/IMU.jpg>
-Package pdftex.def Info: Figures/IMU.jpg used on input line 86.
-(pdftex.def)             Requested size: 369.89175pt x 199.1706pt.
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 92--93
+ [][] 
+ []
 
-Underfull \hbox (badness 1496) in paragraph at lines 83--89
+
+Underfull \hbox (badness 1496) in paragraph at lines 89--95
 []\OT1/ptm/m/n/14.4 An inertial measurement unit (IMU) is an electronic device
  []
 
-[14] <Figures/picam.png, id=93, 526.96875pt x 435.12563pt>
+[14 <./Figures/ESC.jpg>] <Figures/picam.png, id=93, 526.96875pt x 435.12563pt>
 File: Figures/picam.png Graphic file (type png)
 
 <use Figures/picam.png>
-Package pdftex.def Info: Figures/picam.png used on input line 95.
-(pdftex.def)             Requested size: 199.17271pt x 170.72078pt.
+Package pdftex.def Info: Figures/picam.png used on input line 101.
+(pdftex.def)             Requested size: 284.52756pt x 234.95105pt.
 
-Underfull \hbox (badness 6445) in paragraph at lines 92--98
+Underfull \hbox (badness 6445) in paragraph at lines 98--104
 []\OT1/ptm/m/n/14.4 The Raspberry Pi camera module can be used to take
  []
 
@@ -856,10 +948,10 @@ Underfull \hbox (badness 6445) in paragraph at lines 92--98
 File: Figures/Blocks.jpg Graphic file (type jpg)
 
 <use Figures/Blocks.jpg>
-Package pdftex.def Info: Figures/Blocks.jpg used on input line 104.
-(pdftex.def)             Requested size: 455.2374pt x 455.24165pt.
+Package pdftex.def Info: Figures/Blocks.jpg used on input line 110.
+(pdftex.def)             Requested size: 426.79134pt x 215.45087pt.
 
-Overfull \hbox (43.2374pt too wide) in paragraph at lines 104--105
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 110--111
  [][] 
  []
 
@@ -868,26 +960,34 @@ Overfull \hbox (43.2374pt too wide) in paragraph at lines 104--105
 File: Figures/circuit_dgm.png Graphic file (type png)
 
 <use Figures/circuit_dgm.png>
-Package pdftex.def Info: Figures/circuit_dgm.png used on input line 113.
-(pdftex.def)             Requested size: 455.26897pt x 455.2861pt.
+Package pdftex.def Info: Figures/circuit_dgm.png used on input line 119.
+(pdftex.def)             Requested size: 426.79134pt x 244.49031pt.
 
-Overfull \hbox (43.26897pt too wide) in paragraph at lines 113--114
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 119--120
  [][] 
  []
 
-[17 <./Figures/Blocks.jpg>]
+File: Figures/circuit_dgm.png Graphic file (type png)
+<use Figures/circuit_dgm.png>
+Package pdftex.def Info: Figures/circuit_dgm.png used on input line 128.
+(pdftex.def)             Requested size: 426.79134pt x 244.49031pt.
+
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 128--129
+ [][] 
+ []
+
+[17 <./Figures/Blocks.jpg> <./Figures/circuit_dgm.png>]
 <Figures/Flows.jpg, id=107, 982.67125pt x 926.46124pt>
 File: Figures/Flows.jpg Graphic file (type jpg)
  <use Figures/Flows.jpg>
-Package pdftex.def Info: Figures/Flows.jpg used on input line 122.
-(pdftex.def)             Requested size: 455.24306pt x 540.61345pt.
+Package pdftex.def Info: Figures/Flows.jpg used on input line 137.
+(pdftex.def)             Requested size: 426.79134pt x 402.37123pt.
 
-Overfull \hbox (43.24306pt too wide) in paragraph at lines 122--123
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 137--138
  [][] 
  []
 
-[18 <./Figures/circuit_dgm.png>] [19 <./Figures/Flows.jpg>])
-(./Chapters/Chapter5.tex [20]
+[18] [19 <./Figures/Flows.jpg>]) (./Chapters/Chapter5.tex [20]
 Underfull \hbox (badness 2932) in paragraph at lines 7--8
 []\OT1/ptm/m/n/14.4 Input to the system consists of sensor data by the IMU,
  []
@@ -944,30 +1044,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--114
 
  []
 
-[25] [26] [27] [28] [29]
-<Figures/InitialRobot.jpg, id=147, 4288.02pt x 2858.68pt>
-File: Figures/InitialRobot.jpg Graphic file (type jpg)
+[25] [26] [27] [28] [29] <Figures/Quad.jpg, id=148, 585.387pt x 390.258pt>
+File: Figures/Quad.jpg Graphic file (type jpg)
 
-<use Figures/InitialRobot.jpg>
-Package pdftex.def Info: Figures/InitialRobot.jpg used on input line 224.
-(pdftex.def)             Requested size: 426.73337pt x 312.9727pt.
+<use Figures/Quad.jpg>
+Package pdftex.def Info: Figures/Quad.jpg used on input line 224.
+(pdftex.def)             Requested size: 426.79301pt x 284.52756pt.
 
-Overfull \hbox (14.73337pt too wide) in paragraph at lines 224--225
+Overfull \hbox (14.79301pt too wide) in paragraph at lines 224--225
  [][] 
  []
 
-[30] <Figures/SecondRobot.jpg, id=151, 4288.02pt x 2858.68pt>
-File: Figures/SecondRobot.jpg Graphic file (type jpg)
+[30] <Figures/Wiring.jpg, id=152, 585.387pt x 390.258pt>
+File: Figures/Wiring.jpg Graphic file (type jpg)
 
-<use Figures/SecondRobot.jpg>
-Package pdftex.def Info: Figures/SecondRobot.jpg used on input line 231.
-(pdftex.def)             Requested size: 426.73337pt x 312.9727pt.
+<use Figures/Wiring.jpg>
+Package pdftex.def Info: Figures/Wiring.jpg used on input line 231.
+(pdftex.def)             Requested size: 426.79301pt x 284.52756pt.
 
-Overfull \hbox (14.73337pt too wide) in paragraph at lines 231--232
+Overfull \hbox (14.79301pt too wide) in paragraph at lines 231--232
  [][] 
  []
 
-[31 <./Figures/InitialRobot.jpg>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -1023,8 +1121,8 @@ Underfull \hbox (badness 1888) in paragraph at lines 239--243
 \OT1/ptm/m/n/14.4 of images, Detecting Features and Matching Features. Feature
  []
 
-[32 <./Figures/SecondRobot.jpg>]
-<Figures/pano.png, id=159, 593.21625pt x 306.14375pt>
+[31 <./Figures/Quad.jpg> <./Figures/Wiring.jpg>] [32]
+<Figures/pano.png, id=160, 593.21625pt x 306.14375pt>
 File: Figures/pano.png Graphic file (type png)
  <use Figures/pano.png>
 Package pdftex.def Info: Figures/pano.png used on input line 246.
@@ -1034,81 +1132,111 @@ Overfull \hbox (14.80762pt too wide) in paragraph at lines 246--247
  [][] 
  []
 
-[33] <Figures/WPF.jpg, id=163, 4288.02pt x 2858.68pt>
-File: Figures/WPF.jpg Graphic file (type jpg)
- <use Figures/WPF.jpg>
-Package pdftex.def Info: Figures/WPF.jpg used on input line 253.
-(pdftex.def)             Requested size: 426.73337pt x 341.41286pt.
+[33] <Figures/3d1.jpg, id=164, 722.7pt x 481.8pt>
+File: Figures/3d1.jpg Graphic file (type jpg)
+ <use Figures/3d1.jpg>
+Package pdftex.def Info: Figures/3d1.jpg used on input line 253.
+(pdftex.def)             Requested size: 79.95216pt x 53.29958pt.
 
-Overfull \hbox (14.73337pt too wide) in paragraph at lines 253--254
- [][] 
+<Figures/3d2.jpg, id=165, 722.7pt x 481.8pt>
+File: Figures/3d2.jpg Graphic file (type jpg)
+ <use Figures/3d2.jpg>
+Package pdftex.def Info: Figures/3d2.jpg used on input line 254.
+(pdftex.def)             Requested size: 79.95216pt x 53.29958pt.
+
+<Figures/3d3.jpg, id=166, 722.7pt x 481.8pt>
+File: Figures/3d3.jpg Graphic file (type jpg)
+ <use Figures/3d3.jpg>
+Package pdftex.def Info: Figures/3d3.jpg used on input line 255.
+(pdftex.def)             Requested size: 79.95216pt x 53.29958pt.
+
+<Figures/3d4.jpg, id=167, 722.7pt x 481.8pt>
+File: Figures/3d4.jpg Graphic file (type jpg)
+ <use Figures/3d4.jpg>
+Package pdftex.def Info: Figures/3d4.jpg used on input line 256.
+(pdftex.def)             Requested size: 79.95216pt x 53.29958pt.
+
+<Figures/3d5.jpg, id=168, 722.7pt x 481.8pt>
+File: Figures/3d5.jpg Graphic file (type jpg)
+ <use Figures/3d5.jpg>
+Package pdftex.def Info: Figures/3d5.jpg used on input line 257.
+(pdftex.def)             Requested size: 79.95216pt x 53.29958pt.
+
+<Figures/3d.png, id=169, 1428.08531pt x 556.32843pt>
+File: Figures/3d.png Graphic file (type png)
+ <use Figures/3d.png>
+Package pdftex.def Info: Figures/3d.png used on input line 258.
+(pdftex.def)             Requested size: 426.79134pt x 166.26315pt.
+
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 253--259
+ [] 
  []
 
-[34 <./Figures/pano.png>]
-Underfull \hbox (badness 1728) in paragraph at lines 259--269
+
+Underfull \hbox (badness 1728) in paragraph at lines 264--274
 \OT1/ptm/m/n/14.4 quadcopter. It implements a virtual Joystick interface for ea
 sy
  []
 
 
-Underfull \hbox (badness 2096) in paragraph at lines 259--269
+Underfull \hbox (badness 2096) in paragraph at lines 264--274
 \OT1/ptm/m/n/14.4 The camera button can enable or disable camera mode on the
  []
 
-[35 <./Figures/WPF.jpg>] <Figures/app.png, id=170, 1927.2pt x 1084.05pt>
+[34 <./Figures/pano.png> <./Figures/3d1.jpg> <./Figures/3d2.jpg> <./Figures/3d3
+.jpg> <./Figures/3d4.jpg> <./Figures/3d5.jpg> <./Figures/3d.png>]
+<Figures/app.png, id=173, 1927.2pt x 1084.05pt>
 File: Figures/app.png Graphic file (type png)
-
-<use Figures/app.png>
-Package pdftex.def Info: Figures/app.png used on input line 272.
+ <use Figures/app.png>
+Package pdftex.def Info: Figures/app.png used on input line 277.
 (pdftex.def)             Requested size: 426.77895pt x 341.42793pt.
 
-Overfull \hbox (14.77895pt too wide) in paragraph at lines 272--273
+Overfull \hbox (14.77895pt too wide) in paragraph at lines 277--278
  [][] 
  []
 
-<Figures/software.png, id=171, 734.745pt x 691.58376pt>
+[35] <Figures/software.png, id=177, 734.745pt x 691.58376pt>
 File: Figures/software.png Graphic file (type png)
 
 <use Figures/software.png>
-Package pdftex.def Info: Figures/software.png used on input line 281.
+Package pdftex.def Info: Figures/software.png used on input line 286.
 (pdftex.def)             Requested size: 426.80264pt x 341.43275pt.
 
-Overfull \hbox (14.80264pt too wide) in paragraph at lines 281--282
+Overfull \hbox (14.80264pt too wide) in paragraph at lines 286--287
  [][] 
  []
 
 [36 <./Figures/app.png>]) (./Chapters/Chapter6.tex [37 <./Figures/software.png>
-] <Figures/graph4.png, id=179, 528.97626pt x 334.24875pt>
-File: Figures/graph4.png Graphic file (type png)
+] <Figures/cost.png, id=185, 445.665pt x 274.02374pt>
+File: Figures/cost.png Graphic file (type png)
+ <use Figures/cost.png>
+Package pdftex.def Info: Figures/cost.png used on input line 11.
+(pdftex.def)             Requested size: 426.79134pt x 262.42006pt.
 
-<use Figures/graph4.png>
-Package pdftex.def Info: Figures/graph4.png used on input line 11.
-(pdftex.def)             Requested size: 528.97496pt x 334.24792pt.
-
-Overfull \hbox (14.78955pt too wide) in paragraph at lines 11--12
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 11--12
  [][] 
  []
 
 
 Overfull \hbox (56.21317pt too wide) in paragraph at lines 17--31
-[][] 
+ [][] 
  []
 
 [38
 
- <./Figures/graph4.png>]
-<Figures/graph2.png, id=185, 934.49126pt x 314.17375pt>
-File: Figures/graph2.png Graphic file (type png)
+ <./Figures/cost.png>]
+<Figures/panotime.png, id=190, 441.90094pt x 270.25969pt>
+File: Figures/panotime.png Graphic file (type png)
 
-<use Figures/graph2.png>
-Package pdftex.def Info: Figures/graph2.png used on input line 40.
-(pdftex.def)             Requested size: 426.79121pt x 199.16733pt.
+<use Figures/panotime.png>
+Package pdftex.def Info: Figures/panotime.png used on input line 40.
+(pdftex.def)             Requested size: 426.79134pt x 261.02989pt.
 
-Overfull \hbox (14.79121pt too wide) in paragraph at lines 40--41
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 40--41
  [][] 
  []
 
-[39] <Figures/graph1.png, id=190, 936.49875pt x 303.1325pt>
+[39] <Figures/graph1.png, id=195, 936.49875pt x 303.1325pt>
 File: Figures/graph1.png Graphic file (type png)
 
 <use Figures/graph1.png>
@@ -1119,7 +1247,7 @@ Overfull \hbox (14.7935pt too wide) in paragraph at lines 48--49
  [][] 
  []
 
-<Figures/graph3.png, id=191, 620.3175pt x 433.62pt>
+<Figures/graph3.png, id=196, 620.3175pt x 433.62pt>
 File: Figures/graph3.png Graphic file (type png)
  <use Figures/graph3.png>
 Package pdftex.def Info: Figures/graph3.png used on input line 55.
@@ -1129,8 +1257,8 @@ Overfull \hbox (14.78906pt too wide) in paragraph at lines 55--56
  [][] 
  []
 
-[40 <./Figures/graph2.png> <./Figures/graph1.png>]
-<Figures/graph5.png, id=197, 942.52126pt x 421.575pt>
+[40 <./Figures/panotime.png> <./Figures/graph1.png>]
+<Figures/graph5.png, id=201, 942.52126pt x 421.575pt>
 File: Figures/graph5.png Graphic file (type png)
  <use Figures/graph5.png>
 Package pdftex.def Info: Figures/graph5.png used on input line 63.
@@ -1141,20 +1269,26 @@ Overfull \hbox (14.79126pt too wide) in paragraph at lines 63--64
  []
 
 ) (./Chapters/Chapter7.tex [41 <./Figures/graph3.png> <./Figures/graph5.png>]
-Underfull \hbox (badness 2261) in paragraph at lines 5--7
+Underfull \hbox (badness 2261) in paragraph at lines 5--9
 \OT1/ptm/m/n/14.4 photogrammetry, terrain exploration and mapping, archaeologic
 al
  []
 
+
+Underfull \hbox (badness 1043) in paragraph at lines 5--9
+\OT1/ptm/m/n/14.4 perform a complete panaroma stitching to enable survey of suc
+h
+ []
+
 )
-Underfull \hbox (badness 1648) in paragraph at lines 11--66
+Underfull \hbox (badness 1648) in paragraph at lines 12--68
 []\OT1/ptm/m/n/14.4 The quadcopter's RPi camera currently takes pictures all at
 
  []
 
-(./Appendices/AppendixA.tex [42
+[42
 
-] [43] [44
+] (./Appendices/AppendixA.tex [43] [44
 
 ] [45] [46] [47] [48] [49] [50]
 [51] [52] [53]) [54]
@@ -1168,25 +1302,28 @@ No file bethesis.bbl.
 \tf@lot=\write7
 \openout7 = `bethesis.lot'.
 
-(./bethesis.aux) ) 
+(./bethesis.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8088 strings out of 495028
- 113288 string characters out of 6181497
- 340683 words of memory out of 5000000
- 11155 multiletter control sequences out of 15000+600000
- 29510 words of font info for 66 fonts, out of 8000000 for 9000
+ 9670 strings out of 495000
+ 140343 string characters out of 6181169
+ 380283 words of memory out of 5000000
+ 12748 multiletter control sequences out of 15000+600000
+ 29047 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,12n,40p,2132b,1637s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on bethesis.pdf (65 pages, 19197004 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on bethesis.pdf (65 pages, 9855473 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
+ 266 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
 
