@@ -1,23 +1,21 @@
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Raspberry Pi\relax }}{12}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Raspberry Pi 2 GPIO Header\relax }}{13}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Raspberry Pi 2 GPIO Pins\relax }}{13}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 40A 3s ESC\relax }}{14}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces IMU Sensor\relax }}{15}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Raspberry Pi camera\relax }}{16}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Block Digram\relax }}{17}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Circuit Digram\relax }}{17}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Circuit Digram\relax }}{18}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Flow Diagram from Input to Output\relax }}{19}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The Preliminary Quadcopter without the camera\relax }}{31}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Closer look at the wiring of the quadcopter\relax }}{31}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Panorama Stitching of test images\relax }}{34}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces 3D Reconstruction of test images\relax }}{34}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Raspberry Pi\relax }}{13}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Raspberry Pi 2 GPIO Header\relax }}{14}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Raspberry Pi 2 GPIO Pins\relax }}{14}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 40A 3s ESC\relax }}{15}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces IMU Sensor\relax }}{16}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Raspberry Pi camera\relax }}{17}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Block Digram\relax }}{18}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Circuit Digram\relax }}{18}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Flow Diagram from Input to Output\relax }}{19}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The Preliminary Quadcopter without the camera. It carries the ESC, IMU sensor and the RPi. It also has 4 propeller guards (blue) to protect the propellers from excessive damage. \relax }}{31}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Closer look at the wiring of the quadcopter\relax }}{32}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Incremental panorama stitching of test images\relax }}{34}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces 3D Reconstruction of test images where colored point cloud is rendered on the browser which can be inspected closer.\relax }}{34}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Android App Joystick Interface\relax }}{36}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Overall Hardware and Software Component Diagram\relax }}{36}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Overall Hardware and Software Component Diagram describing the flow of execution\relax }}{36}
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Project Cost for each Part\relax }}{37}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for computation of panorama stitching\relax }}{39}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Time taken for computation of 3D Reconstruction of images\relax }}{39}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Measurement of pitch and roll using complementary filter\relax }}{40}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Derivation of output using PID controller\relax }}{40}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Final output with respect to pitch and roll\relax }}{41}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Output of motors with respect to height\relax }}{41}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for computation of panorama stitching is directly proportional to the number of images. It stabilizes slightly when the image count is greater than seven.\relax }}{39}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Measurement of pitch and roll using complementary filter\relax }}{40}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Derivation of output using PID controller\relax }}{40}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Final output with respect to pitch and roll\relax }}{41}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Output of motors with respect to height\relax }}{41}
