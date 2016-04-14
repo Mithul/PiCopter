@@ -15,7 +15,5 @@
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Overall Hardware and Software Component Diagram describing the flow of execution\relax }}{36}
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Project Cost for each Part\relax }}{37}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Time taken for computation of panorama stitching is directly proportional to the number of images. It stabilizes slightly when the image count is greater than seven.\relax }}{39}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Measurement of pitch and roll using complementary filter\relax }}{40}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Derivation of output using PID controller\relax }}{40}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Final output with respect to pitch and roll\relax }}{41}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Output of motors with respect to height\relax }}{41}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Measurement of pitch and roll using complementary filter \relax }}{40}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Output of motors with respect to height\relax }}{41}

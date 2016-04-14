@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.7)  13 APR 2016 13:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.15)  15 APR 2016 01:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **bethesis.tex
 (./bethesis.tex
 LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/memoir/memoir.cls
 Document Class: memoir 2013/05/30 v3.7b configurable book, report, article docu
 ment class
@@ -18,8 +18,10 @@ ment class
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-Class memoir Info: An `ifetex' package is being emulated on input line 265.
+(/usr/share/texlive/texmf-dist/tex/latex/ifetex/ifetex.sty
+Package: ifetex 2011/12/15 v1.2 ifetex
 
+(/usr/share/texlive/texmf-dist/tex/plain/ifetex/ifetex.tex))
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
@@ -313,7 +315,6 @@ Package delarray [2008/07/23] emulated by memoir.
 Package enumerate [2008/07/23] emulated by memoir.
 Package epigraph [2008/07/23] emulated by memoir.
 Package ifmtarg [2008/07/23] emulated by memoir.
-Package ifetex [2008/07/23] emulated by memoir.
 Package index [2008/07/23] emulated by memoir.
 Package makeidx [2008/07/23] emulated by memoir.
 Package moreverb [2008/07/23] emulated by memoir.
@@ -598,10 +599,10 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 LaTeX Warning: Label `RPi Pins' multiply defined.
 
 
-LaTeX Warning: Label `Measurement of pitch and roll' multiply defined.
-
-
 LaTeX Warning: Label `Motor output' multiply defined.
+
+
+LaTeX Warning: Label `Measurement of pitch and roll' multiply defined.
 
 )
 \openout1 = `bethesis.aux'.
@@ -1462,48 +1463,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--48
 File: Figures/complementary.png Graphic file (type png)
 
 <use Figures/complementary.png>
-Package pdftex.def Info: Figures/complementary.png used on input line 53.
+Package pdftex.def Info: Figures/complementary.png used on input line 55.
 (pdftex.def)             Requested size: 426.79134pt x 253.63272pt.
 
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 53--54
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 55--56
  [][] 
  []
 
-[39 <./Figures/pano.jpg>] <Figures/pid.png, id=199, 727.21687pt x 343.2825pt>
-File: Figures/pid.png Graphic file (type png)
-
-<use Figures/pid.png>
-Package pdftex.def Info: Figures/pid.png used on input line 63.
-(pdftex.def)             Requested size: 426.79134pt x 201.47157pt.
-
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 63--64
- [][] 
- []
-
-<Figures/output.png, id=200, 734.745pt x 436.63126pt>
-File: Figures/output.png Graphic file (type png)
- <use Figures/output.png>
-Package pdftex.def Info: Figures/output.png used on input line 70.
-(pdftex.def)             Requested size: 426.79134pt x 253.63272pt.
-
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 70--71
- [][] 
- []
-
-[40 <./Figures/complementary.png> <./Figures/pid.png>]
-<Figures/motorsop.png, id=204, 741.52031pt x 435.87843pt>
+[39 <./Figures/pano.jpg>] [40 <./Figures/complementary.png>]
+<Figures/motorsop.png, id=202, 741.52031pt x 435.87843pt>
 File: Figures/motorsop.png Graphic file (type png)
 
 <use Figures/motorsop.png>
-Package pdftex.def Info: Figures/motorsop.png used on input line 77.
+Package pdftex.def Info: Figures/motorsop.png used on input line 73.
 (pdftex.def)             Requested size: 426.79134pt x 250.88089pt.
 
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 77--78
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 73--74
  [][] 
  []
 
-) (./Chapters/Chapter7.tex [41 <./Figures/output.png> <./Figures/motorsop.png>]
+<Figures/pid.png, id=203, 727.21687pt x 343.2825pt>
+File: Figures/pid.png Graphic file (type png)
+ <use Figures/pid.png>
+Package pdftex.def Info: Figures/pid.png used on input line 82.
+(pdftex.def)             Requested size: 341.43306pt x 161.17517pt.
 
+<Figures/output.png, id=204, 734.745pt x 436.63126pt>
+File: Figures/output.png Graphic file (type png)
+ <use Figures/output.png>
+Package pdftex.def Info: Figures/output.png used on input line 88.
+(pdftex.def)             Requested size: 341.43306pt x 202.90485pt.
+
+[41 <./Figures/motorsop.png>]) (./Chapters/Chapter7.tex [42 <./Figures/pid.png>
+ <./Figures/output.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 5--10
 
  []
@@ -1547,9 +1539,9 @@ Underfull \hbox (badness 2318) in paragraph at lines 11--68
 \OT1/ptm/m/n/14.4 The drone could also be equipped with heat sensors to detect
  []
 
-[42
+[43
 
-] (./Appendices/AppendixA.tex [43]
+] (./Appendices/AppendixA.tex [44]
 Underfull \hbox (badness 1609) in paragraph at lines 4--14
 []\OT1/ptm/m/n/14.4 The quadcopter uses a PID controller where 'P' stands for
  []
@@ -1581,9 +1573,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--14
 
  []
 
-[44
+[45
 
-] [45] [46] [47] [48] [49]) [50] (./bethesis.bbl
+] [46] [47] [48] [49] [50]) [51] (./bethesis.bbl
 bibitemlist
 
 Underfull \hbox (badness 1442) in paragraph at lines 16--20
@@ -1601,7 +1593,7 @@ Underfull \hbox (badness 2343) in paragraph at lines 22--26
 nd
  []
 
-) [51
+) [52
 
 
 ]
@@ -1620,23 +1612,27 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9686 strings out of 495028
- 140607 string characters out of 6181497
- 375009 words of memory out of 5000000
- 12735 multiletter control sequences out of 15000+600000
- 29341 words of font info for 65 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
+ 9734 strings out of 493304
+ 141438 string characters out of 6139871
+ 379664 words of memory out of 5000000
+ 13013 multiletter control sequences out of 15000+600000
+ 34841 words of font info for 78 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
  42i,12n,40p,1005b,1635s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on bethesis.pdf (63 pages, 9930593 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol
+/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on bethesis.pdf (64 pages, 9965362 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 158 compressed objects within 2 object streams
+ 284 PDF objects out of 1000 (max. 8388607)
+ 175 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  136 words of extra memory for PDF output out of 10000 (max. 10000000)
 
