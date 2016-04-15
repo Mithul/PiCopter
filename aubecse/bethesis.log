@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.15)  15 APR 2016 02:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.15)  15 APR 2016 10:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,7 +1016,7 @@ Missing character: There is no “ in font ptmr7t!
  [11
 
 ] [12]
-<Figures/rpi2.jpg, id=457, 5037.82124pt x 3377.61874pt>
+<Figures/rpi2.jpg, id=459, 5037.82124pt x 3377.61874pt>
 File: Figures/rpi2.jpg Graphic file (type jpg)
  <use Figures/rpi2.jpg>
 Package pdftex.def Info: Figures/rpi2.jpg used on input line 58.
@@ -1026,14 +1026,14 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 58--59
  [][] 
  []
 
-<Figures/gpio_header.png, id=458, 959.585pt x 1027.84pt>
+<Figures/gpio_header.png, id=460, 959.585pt x 1027.84pt>
 File: Figures/gpio_header.png Graphic file (type png)
 
 <use Figures/gpio_header.png>
 Package pdftex.def Info: Figures/gpio_header.png used on input line 65.
 (pdftex.def)             Requested size: 265.63641pt x 284.52756pt.
 
-<Figures/GPIO_pins.jpg, id=459, 4531.93124pt x 2747.26375pt>
+<Figures/GPIO_pins.jpg, id=461, 4531.93124pt x 2747.26375pt>
 File: Figures/GPIO_pins.jpg Graphic file (type jpg)
 
 <use Figures/GPIO_pins.jpg>
@@ -1044,14 +1044,14 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 71--72
  [][] 
  []
 
-[13 <./Figures/rpi2.jpg>] <Figures/ESC.jpg, id=465, 602.25pt x 402.50375pt>
+[13 <./Figures/rpi2.jpg>] <Figures/ESC.jpg, id=467, 602.25pt x 402.50375pt>
 File: Figures/ESC.jpg Graphic file (type jpg)
 
 <use Figures/ESC.jpg>
 Package pdftex.def Info: Figures/ESC.jpg used on input line 84.
 (pdftex.def)             Requested size: 341.43306pt x 228.20117pt.
  [14 <./Figures/gpio_header.png> <./Figures/GPIO_pins.jpg>] <Figures/IMU.jpg, i
-d=470, 706.64pt x 529.98pt>
+d=472, 706.64pt x 529.98pt>
 File: Figures/IMU.jpg Graphic file (type jpg)
  <use Figures/IMU.jpg>
 Package pdftex.def Info: Figures/IMU.jpg used on input line 95.
@@ -1067,7 +1067,7 @@ Underfull \hbox (badness 1496) in paragraph at lines 92--98
  []
 
 [15 <./Figures/ESC.jpg>]
-<Figures/picam.png, id=475, 526.96875pt x 435.12563pt>
+<Figures/picam.png, id=477, 526.96875pt x 435.12563pt>
 File: Figures/picam.png Graphic file (type png)
  <use Figures/picam.png>
 Package pdftex.def Info: Figures/picam.png used on input line 104.
@@ -1077,7 +1077,7 @@ Underfull \hbox (badness 6445) in paragraph at lines 101--107
 []\OT1/ptm/m/n/14.4 The Raspberry Pi camera module can be used to take
  []
 
-[16 <./Figures/IMU.jpg>] <Figures/Blocks.jpg, id=480, 1145.27875pt x 578.16pt>
+[16 <./Figures/IMU.jpg>] <Figures/Blocks.jpg, id=482, 1145.27875pt x 578.16pt>
 File: Figures/Blocks.jpg Graphic file (type jpg)
 
 <use Figures/Blocks.jpg>
@@ -1089,7 +1089,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 113--114
  []
 
 [17 <./Figures/picam.png>]
-<Figures/circuit_dgm.png, id=486, 509.905pt x 292.09125pt>
+<Figures/circuit_dgm.png, id=488, 509.905pt x 292.09125pt>
 File: Figures/circuit_dgm.png Graphic file (type png)
 
 <use Figures/circuit_dgm.png>
@@ -1100,7 +1100,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 123--124
  [][] 
  []
 
-<Figures/Flows.jpg, id=487, 982.67125pt x 926.46124pt>
+<Figures/Flows.jpg, id=489, 982.67125pt x 926.46124pt>
 File: Figures/Flows.jpg Graphic file (type jpg)
  <use Figures/Flows.jpg>
 Package pdftex.def Info: Figures/Flows.jpg used on input line 132.
@@ -1212,7 +1212,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 146--154
 
  []
 
-[26] [27] <Figures/Quad.jpg, id=664, 1626.075pt x 1084.05pt>
+[26] [27] <Figures/Quad.jpg, id=666, 1626.075pt x 1084.05pt>
 File: Figures/Quad.jpg Graphic file (type jpg)
 
 <use Figures/Quad.jpg>
@@ -1321,7 +1321,7 @@ Underfull \hbox (badness 1540) in paragraph at lines 206--247
 
  []
 
-[28] [29] [30] <Figures/Wiring.jpg, id=682, 1626.075pt x 1084.05pt>
+[28] [29] [30] <Figures/Wiring.jpg, id=684, 1626.075pt x 1084.05pt>
 File: Figures/Wiring.jpg Graphic file (type jpg)
 
 <use Figures/Wiring.jpg>
@@ -1378,41 +1378,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 257--275
  []
 
 [32 <./Figures/Wiring.jpg>] [33]
-<Figures/pano.png, id=696, 593.21625pt x 306.14375pt>
+<Figures/pano.png, id=698, 593.21625pt x 306.14375pt>
 File: Figures/pano.png Graphic file (type png)
  <use Figures/pano.png>
 Package pdftex.def Info: Figures/pano.png used on input line 278.
 (pdftex.def)             Requested size: 312.9803pt x 161.52667pt.
 
-<Figures/pano3d/3d1.jpg, id=697, 722.7pt x 481.8pt>
+<Figures/pano3d/3d1.jpg, id=699, 722.7pt x 481.8pt>
 File: Figures/pano3d/3d1.jpg Graphic file (type jpg)
 
 <use Figures/pano3d/3d1.jpg>
 Package pdftex.def Info: Figures/pano3d/3d1.jpg used on input line 285.
 (pdftex.def)             Requested size: 73.97733pt x 49.31497pt.
 
-<Figures/pano3d/3d2.jpg, id=698, 722.7pt x 481.8pt>
+<Figures/pano3d/3d2.jpg, id=700, 722.7pt x 481.8pt>
 File: Figures/pano3d/3d2.jpg Graphic file (type jpg)
 
 <use Figures/pano3d/3d2.jpg>
 Package pdftex.def Info: Figures/pano3d/3d2.jpg used on input line 286.
 (pdftex.def)             Requested size: 73.97733pt x 49.31497pt.
 
-<Figures/pano3d/3d3.jpg, id=699, 722.7pt x 481.8pt>
+<Figures/pano3d/3d3.jpg, id=701, 722.7pt x 481.8pt>
 File: Figures/pano3d/3d3.jpg Graphic file (type jpg)
 
 <use Figures/pano3d/3d3.jpg>
 Package pdftex.def Info: Figures/pano3d/3d3.jpg used on input line 287.
 (pdftex.def)             Requested size: 73.97733pt x 49.31497pt.
 
-<Figures/pano3d/3d4.jpg, id=700, 722.7pt x 481.8pt>
+<Figures/pano3d/3d4.jpg, id=702, 722.7pt x 481.8pt>
 File: Figures/pano3d/3d4.jpg Graphic file (type jpg)
 
 <use Figures/pano3d/3d4.jpg>
 Package pdftex.def Info: Figures/pano3d/3d4.jpg used on input line 288.
 (pdftex.def)             Requested size: 73.97733pt x 49.31497pt.
 
-<Figures/pano3d/3d5.jpg, id=701, 722.7pt x 481.8pt>
+<Figures/pano3d/3d5.jpg, id=703, 722.7pt x 481.8pt>
 File: Figures/pano3d/3d5.jpg Graphic file (type jpg)
 
 <use Figures/pano3d/3d5.jpg>
@@ -1432,7 +1432,7 @@ File: Figures/pano3d/3d5.jpg Graphic file (type jpg)
 Package pdftex.def Info: Figures/pano3d/3d5.jpg used on input line 292.
 (pdftex.def)             Requested size: 73.97733pt x 49.31497pt.
 
-<Figures/pano3d/3d.png, id=702, 1428.08531pt x 556.32843pt>
+<Figures/pano3d/3d.png, id=704, 1428.08531pt x 556.32843pt>
 File: Figures/pano3d/3d.png Graphic file (type png)
 
 <use Figures/pano3d/3d.png>
@@ -1445,7 +1445,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 285--294
 
 [34 <./Figures/pano.png> <./Figures/pano3d/3d1.jpg> <./Figures/pano3d/3d2.jpg> 
 <./Figures/pano3d/3d3.jpg> <./Figures/pano3d/3d4.jpg> <./Figures/pano3d/3d5.jpg
-> <./Figures/pano3d/3d.png>] <Figures/app.png, id=707, 1927.2pt x 1084.05pt>
+> <./Figures/pano3d/3d.png>] <Figures/app.png, id=709, 1927.2pt x 1084.05pt>
 File: Figures/app.png Graphic file (type png)
 
 <use Figures/app.png>
@@ -1487,7 +1487,7 @@ Underfull \hbox (badness 1635) in paragraph at lines 300--319
 \OT1/ptm/m/n/14.4 Using an Android app to remotely control UAVs is a level up
  []
 
-[35] <Figures/software_comp.png, id=712, 797.98125pt x 335.2525pt>
+[35] <Figures/software_comp.png, id=714, 797.98125pt x 335.2525pt>
 File: Figures/software_comp.png Graphic file (type png)
 
 <use Figures/software_comp.png>
@@ -1499,7 +1499,7 @@ Overfull \hbox (14.7879pt too wide) in paragraph at lines 324--325
  []
 
 ) (./Chapters/Chapter6.tex [36 <./Figures/app.png> <./Figures/software_comp.png
->] <Figures/cost.png, id=717, 445.665pt x 274.02374pt>
+>] <Figures/cost.png, id=719, 445.665pt x 274.02374pt>
 File: Figures/cost.png Graphic file (type png)
  <use Figures/cost.png>
 Package pdftex.def Info: Figures/cost.png used on input line 11.
@@ -1516,100 +1516,64 @@ Overfull \hbox (56.21317pt too wide) in paragraph at lines 17--31
 
 [37
 
- <./Figures/cost.png>] <Figures/pano.jpg, id=723, 803.0pt x 602.25pt>
+ <./Figures/cost.png>] <Figures/pano.jpg, id=725, 803.0pt x 602.25pt>
 File: Figures/pano.jpg Graphic file (type jpg)
 
 <use Figures/pano.jpg>
-Package pdftex.def Info: Figures/pano.jpg used on input line 45.
+Package pdftex.def Info: Figures/pano.jpg used on input line 42.
 (pdftex.def)             Requested size: 398.33858pt x 298.76253pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--48
-
- []
-
-[38] <Figures/complementary.png, id=732, 734.745pt x 436.63126pt>
+ [38]
+<Figures/complementary.png, id=734, 734.745pt x 436.63126pt>
 File: Figures/complementary.png Graphic file (type png)
 
 <use Figures/complementary.png>
-Package pdftex.def Info: Figures/complementary.png used on input line 55.
+Package pdftex.def Info: Figures/complementary.png used on input line 52.
 (pdftex.def)             Requested size: 426.79134pt x 253.63272pt.
 
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 55--56
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 52--53
  [][] 
  []
 
 [39 <./Figures/pano.jpg>] [40 <./Figures/complementary.png>]
-<Figures/motorsop.png, id=746, 741.52031pt x 435.87843pt>
+<Figures/motorsop.png, id=747, 741.52031pt x 435.87843pt>
 File: Figures/motorsop.png Graphic file (type png)
 
 <use Figures/motorsop.png>
-Package pdftex.def Info: Figures/motorsop.png used on input line 73.
+Package pdftex.def Info: Figures/motorsop.png used on input line 71.
 (pdftex.def)             Requested size: 426.79134pt x 250.88089pt.
 
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 73--74
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 71--72
  [][] 
  []
 
-<Figures/pid.png, id=748, 727.21687pt x 343.2825pt>
+<Figures/pid.png, id=749, 727.21687pt x 343.2825pt>
 File: Figures/pid.png Graphic file (type png)
  <use Figures/pid.png>
-Package pdftex.def Info: Figures/pid.png used on input line 82.
+Package pdftex.def Info: Figures/pid.png used on input line 80.
 (pdftex.def)             Requested size: 341.43306pt x 161.17517pt.
 
-<Figures/output.png, id=749, 734.745pt x 436.63126pt>
+<Figures/output.png, id=750, 734.745pt x 436.63126pt>
 File: Figures/output.png Graphic file (type png)
  <use Figures/output.png>
-Package pdftex.def Info: Figures/output.png used on input line 88.
+Package pdftex.def Info: Figures/output.png used on input line 86.
 (pdftex.def)             Requested size: 341.43306pt x 202.90485pt.
 
 [41 <./Figures/motorsop.png>]) (./Chapters/Chapter7.tex [42 <./Figures/pid.png>
  <./Figures/output.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 5--10
+Underfull \hbox (badness 1199) in paragraph at lines 7--9
+[]\OT1/ptm/m/n/14.4 The ability to take panaroma pictures allows the quadcopter
 
  []
 
 
-Underfull \hbox (badness 2020) in paragraph at lines 5--10
-\OT1/ptm/m/n/14.4 The ability to take panaroma pictures allows the quadcopter t
-o
- []
+Underfull \hbox (badness 1648) in paragraph at lines 12--13
+[]\OT1/ptm/m/n/14.4 The quadcopter's RPi camera currently takes pictures all at
 
-
-Underfull \hbox (badness 1320) in paragraph at lines 5--10
-\OT1/ptm/m/n/14.4 reach remote destinations inaccessible by humans and perform 
-a
- []
-
-
-Underfull \hbox (badness 1571) in paragraph at lines 5--10
-\OT1/ptm/m/n/14.4 complete panaroma stitching to enable survey of such location
-s.
- []
-
-)
-Underfull \hbox (badness 10000) in paragraph at lines 11--76
-
- []
-
-
-Underfull \hbox (badness 1748) in paragraph at lines 11--76
-\OT1/ptm/m/n/14.4 be refined to perform the reconstruction and panorama stitchi
-ng
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--76
-
- []
-
-
-Underfull \hbox (badness 2318) in paragraph at lines 11--76
-\OT1/ptm/m/n/14.4 The drone could also be equipped with heat sensors to detect
  []
 
 [43
 
-] (./Appendices/AppendixA.tex [44]
+]) (./Appendices/AppendixA.tex [44]
 Underfull \hbox (badness 1609) in paragraph at lines 4--14
 []\OT1/ptm/m/n/14.4 The quadcopter uses a PID controller where 'P' stands for
  []
@@ -1705,10 +1669,10 @@ ic/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol
 /usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bethesis.pdf (64 pages, 9984036 bytes).
+Output written on bethesis.pdf (64 pages, 9984110 bytes).
 PDF statistics:
- 1099 PDF objects out of 1200 (max. 8388607)
- 982 compressed objects within 10 object streams
+ 1100 PDF objects out of 1200 (max. 8388607)
+ 983 compressed objects within 10 object streams
  454 named destinations out of 1000 (max. 500000)
  560 words of extra memory for PDF output out of 10000 (max. 10000000)
 
