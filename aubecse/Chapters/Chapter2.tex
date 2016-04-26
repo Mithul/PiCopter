@@ -1,31 +1,24 @@
 % Chapter 2
 \chapter{RELATED WORK} % Chapter Title in ALL CAPSacs
-A significant amount of research and work has gone into the quadcopter. There have been several algorithms for controlling the stability of the quadcopter such as PID(Proportional-Integral-Derivative) and Fuzzy Logic. With improvements to open source image processing libraries like OpenCV and the development of RaspberryPi microcomputer, the capability and use of drones for various activities have increased.
-\par
- Alex G. Kendall, Nishaad N. Salvapantula and Karl A. Stol developed an on-board object-tracking control of a quadcopter with monocular vision \cite{kendall2014board}. This project used a Raspberry Pi for processing along with a camera module and sensors as input to the OpenCV library for object tracking based on the color of the objects.
- \newline
-  While our project also makes use of the RPi and OpenCV for image processing, it does not perform object tracking. Our project does not deal with tracking and we have focused largely on the flight stability and image processing modules.
-\par
-Quadcopters are predominantly controlled using Radio Control joysticks. Since Android phones are ubiquitous now, we developed a virtual joystick interface to control the flight of the quadcopter as an Android app. The app is also used for directing image-processing functions of the drone.
+A significant amount of research and work has gone into the quadcopter. Algorithms for controlling the stability of the quadcopter such as PID(Proportional-Integral-Derivative) and Fuzzy Logic exist. With improvements to open source image processing libraries like OpenCV and the development of RaspberryPi microcomputer, the capability and use of drones for various activities have increased.
+\newline \newline
+ Alex G. Kendall et al had developed an on-board object-tracking control of a quadcopter with monocular vision \cite{kendall2014board} which made use of a RPi for processing along with a camera module and sensors as input to the OpenCV library whic performed object tracking based on the color of the objects. While our project also made use of the RPi and OpenCV for image processing, it focused largely on the flight stability and image processing modules and did not perform object tracking.
+\newline \newline
+Quadcopters are predominantly controlled using Radio Control joysticks. Since Android phones are ubiquitous now, a virtual joystick interface was developed to control the flight and the image-processing functions of the quadcopter as an Android app.
 \newline 
 \newline 
-\par
-Since our quadcopter's functions are panorama stitching and 3D reconstruction, we needed to develop an interface for rendering the results.  A. Zul Azfar and Hazry Desa \cite{azfar2011simple} had developed a Graphical User Interface for monitoring the flight dynamics and orientation of a remotely-operated quadcopter using LABView software.The motion of the quadcopter could be captured on the GUI using LabVIEW software. 
-\par
-The quadcopter’s processing was done on-board using Arduino microcontroller and the balancing and stability were managed using an IMU sensor. This was a path-breaking paper as it demonstrated how an unmanned aerial vehicle could be controlled from a remote station. The project did not concern itself with the stability of the drone or perform any specialized functions.
-\par
- Priyanga M. And Raja Ramanan \cite{proc-disc-2009} developed a UAV for Video Surveillance to prevent unauthorized soil-mining operations. It used a RPi for on-board processing of live feeds from a webcam. The videos could be viewed on a webpage in real-time using WiFi. The drone used a GPS to calculate position and follow the target. The project demonstrated how a drone could be used for practical and real-time applications such as surveillance and tracking with high accuracy. 
-\newline
- In our project, signals from the app are sent as JSON-encoded data using WiFi to the Python server running on the quadcopter. The quadcopter itself is controlled remotely via WiFi using the Android App.
-\par
-Image processing on-board the quadcopter has been implemented by K.S. Shilpashree, Lokesha H and Hadimani Shivkumar \cite{ijarcce-disc-2015} in their paper, “Implementation of Image Processing on Raspberry Pi”. They have described the purpose of  image-enhancing algorithms to improve the quality of the images taken by the drone due to compromised image quality from unstable flight. Image-enhancing algorithms such as Rudin-Osher-Fatemi de-noising model (ROF) have been implemented. 
-\par
-Shawn McCann's thesis on “3D Reconstruction from Multiple Images” \cite{stan-disc-2015} has tried to identify various techniques for dense and sparse reconstructions using Structure from Motion(SfM) algorithms.He has demonstrated and implemented the complete flow of 3D Reconstruction using the open source Bundler software. Our project makes use of VLFeat which has SfM support and OpenCV which offers a variety of useful libraries for feature detection and matching. 
-\newline
-In both projects, Bundle Adjustment module was used to minimize reprojection errors and generate sparse point clouds. While \cite{stan-disc-2015} rendered the point clouds using third-party tools(MeshLab), our project uses an interactive JS library called, threeJS which renders the point cloud on a browser.
-\par
-Argentim, Lucas M and Rezende, Willian C and Santos, Paulo E and Aguiar, Renato A's paper on PID, LQR and LQR-PID on a quadcopter platform \cite{argentim2013pid} compared the stability of the use of a PID, LQR or a PID tuned with a LQR loop. Our project uses the PID controller loop as the LQR loop,though robust and produce a very low steady state error, have a big transition delay due to using six feedback gains, which may cause lag in the time taken between sensing the angle and computing the output due to the limited computing capacity of the Raspberry Pi used in our project.
-\par
-Drone technology has advanced enormously along the lines of photography, surveillance, exploration and mapping of terrains and delivery. We were inspired by the mobility combined with the computational power of the RPi from these projects and hence, decided to build one.
-\par
+Since our quadcopter's functions were panorama stitching and 3D reconstruction, an interface was required to render the results.  A. Zul Azfar and Hazry Desa \cite{azfar2011simple} had developed a Graphical User Interface for monitoring the flight dynamics and orientation of a remotely-operated quadcopter using LABView software.The motion of the quadcopter could be captured on the GUI using LabVIEW software. The quadcopter’s processing was done on-board using Arduino microcontroller and the balancing and stability were managed using an IMU sensor. This was a path-breaking paper as it demonstrated how an unmanned aerial vehicle could be controlled from a remote station. The project did not concern itself with the stability of the drone or perform any specialized functions.
+\newline \newline
+ Priyanga M. and Raja Ramanan \cite{proc-disc-2009} had developed a UAV for Video Surveillance to prevent unauthorized soil-mining operations. It used a RPi for on-board processing of live feeds from a webcam. The videos could be viewed on a webpage in real-time using WiFi. The drone used a GPS to calculate position and follow the target. The project demonstrated how a drone could be used for practical and real-time applications such as surveillance and tracking with high accuracy. 
+\newline \newline
+ In our project, signals from the app were sent as JSON-encoded data using WiFi to the Python server running on the quadcopter. The quadcopter itself was controlled remotely via WiFi using the Android App.
+\newline \newline
+Image processing on-board the quadcopter had been implemented by Shilpashree et al \cite{ijarcce-disc-2015} in their paper, “Implementation of Image Processing on Raspberry Pi”. They had described the purpose of  image-enhancing algorithms to improve the quality of the images taken by the drone due to compromised image quality from unstable flight. Image-enhancing algorithms such as Rudin-Osher-Fatemi de-noising model (ROF) had been implemented. 
+\newline \newline
+Shawn McCann's thesis on “3D Reconstruction from Multiple Images” \cite{stan-disc-2015} had tried to identify various techniques for dense and sparse reconstructions using Structure from Motion(SfM) algorithms. He had demonstrated and implemented the complete flow of 3D Reconstruction using the open source Bundler software. Our project made use of VLFeat for SfM support and OpenCV which offers libraries for feature detection and matching. In both projects, bundle adjustment was used to minimize reprojection errors and generate sparse point clouds. While \cite{stan-disc-2015} rendered the point clouds using third-party tools(MeshLab), our project made use of an interactive JS library called, threeJS which renderered the point cloud on a browser.
+\newline \newline
+Argentim et al wrote a paper on PID, LQR and LQR-PID on a quadcopter platform \cite{argentim2013pid} compared the stability of the use of a PID, LQR or a PID tuned with a LQR loop. Our project used the PID controller loop as the LQR loop. Although it was robust and produced a very low steady state error, it had a big transition delay due to six feedback gains, which caused a lag in the time taken between sensing the angle and computing the output due to the limited computing power of the RPi.
+\newline \newline
+Drone technology has advanced enormously along the lines of photography, surveillance, mapping of terrains and delivery. The mobility combined with the computational power of the RPi from these projects motivated us to build one of our own.
+\newline \newline
 The next chapter describes the requirements analysis of the project.

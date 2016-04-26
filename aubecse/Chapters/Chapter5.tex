@@ -204,7 +204,7 @@ while(app_running)
 \section{Modules}
 \subsection{Raspberry Pi 2-controlled quadcopter}
 The objective of the project was to build a semi-autonomous quadcopter capable of self-controlled, stable flight guided via wireless communication through an Android app. 
-A quadcopter, also called a quadrotor helicopter or quadrotor, is a multirotor helicopter that is lifted and propelled by four rotors. Quadcopters differ from conventional helicopters as they use rotors which vary the pitch of their blades dynamically as they move around the rotor hub. 
+A quadcopter (Figure \ref{first quadcopter}), also called a quadrotor-helicopter or quadrotor, is a multirotor helicopter that is lifted and propelled by four rotors. Quadcopters differ from conventional helicopters as they use rotors which vary the pitch of their blades dynamically as they move around the rotor hub. 
 \newline \newline
 In the early days of flight, quadcopters were seen as possible solutions to some of the persistent problems in vertical flight; torque-induced control issues as well as efficiency issues originating from the tail rotor could be eliminated by counter-rotation of the relatively short blades which were also much easier to construct.
 \newline
@@ -216,10 +216,11 @@ The quadcopter utilizes a Raspberry Pi microcomputer that runs a Python server a
 \newline
 The Raspberry Pi can only supply digital signals that is 0 or 1 i.e. on or off. This does not allow us to directly control the motors to vary their speed. The Electronic Speed Controller (ESC) allows such digital signals to be converted to variable voltage and allow speed regulation of motors by supplying a PWM signal to them. PWM signals are achieved by sending pulses at a certain frequency while controlling the amount of time the pulse is on in a cycle. The longer the pulse is high during a cycle, the higher the voltage supplied to the motor. 
 \newline
+\newline
 The ESC also allows an external power souce such as a battery to be used for powering the motors. Our drone uses a 10V LiPo battery. LiPo batteries are commonly used for powering drones because they have high discharge rates required to power the four motors functioning at high speed and requiring order of 20A of current. 
 \newline
 \newline
-The quadcopter's flight is controlled using a PID controller. The PID algorithm is a closed-loop feedback mechanism that is used in control systems. The controller attempts to minimize the error by adjusting control inputs(P,I,D values). In the quadcopter, the PID controller will be taking data measured by the IMU sensor and comparing that against expected values to alter the speed of the motors to compensate for any differences and maintain balance. It involves three separate constant parameters viz. the proportional(P), the integral(I) and derivative(D) values. Heuristically, these values can be interpreted in terms of time: P depends on the present error, I on the accumulation of past errors and D is a prediction of future errors, based on current rate of change.
+The quadcopter's flight is controlled using a PID controller. The PID algorithm is a closed-loop feedback mechanism that is used in control systems. The controller attempts to minimize the error by adjusting control inputs (P,I,D values). In the quadcopter, the PID controller will be taking data measured by the IMU sensor and comparing that against expected values to alter the speed of the motors to compensate for any differences and maintain balance. It involves three separate constant parameters viz. the proportional (P), the integral (I) and derivative (D) values. Heuristically, these values can be interpreted in terms of time: P depends on the present error, I on the accumulation of past errors and D is a prediction of future errors, based on current rate of change.
 \newline
 \newline
 The Proportional Gain Coefficient(P) is the most important value. This coefficient determines which value is more important - those measured by the gyroscopes or those defined by human control. The higher the coefficient, the more sensitive the quadcopter becomes to angular change. If 'P' is too high, the quadcopter will start to oscillate. 
@@ -236,8 +237,8 @@ The quadcopter flight and on-board operations are controlled via WiFi using an A
 \newline
 The quadcopter also houses a native Pi camera module which has the ability to take high quality photos and videos. It interfaces with the Raspberry Pi using a Camera Serial Interface. 
 \newline
-The function of the quadcopter is to take pictures and perform two major image-processing operations viz. Panorama Stitching and 3D-Model Reconstruction.
 \newline
+The function of the quadcopter is to take pictures and perform two major image-processing operations viz. Panorama Stitching and 3D-Model Reconstruction.
 The quadcopter itself is small enough to control its flight and large enough to hold all the on-board equipment.
 \begin{figure}[H]
   \centering
@@ -262,7 +263,7 @@ The image-processing module is divided into two parts – Stitching and Reconstr
 \newline
 \newline
 In panorama stitching, RANSAC (Random Sample Consensus) is used to detect outliers and construct a homography matrix. This is essential as it relates pixel coordinates in each pair of images. It is then used to warp the images and construct the panorama by aligning them.
-A multi-threaded stitching algorithm has been implemented that stitches images in parallel, reducing the time while maintaining the quality of the constructed image. The quality of the panorama is improved if images are taken with large overlapping features.
+A multi-threaded stitching algorithm has been implemented that stitches images in parallel, reducing the time while maintaining the quality of the constructed image (Figure \ref{pano}). The quality of the panorama is improved if images are taken with large overlapping features.
 \newline
 \newline
  3D-Reconstruction is implemented by using the Structure from Motion(SfM) algorithm. The preliminary stage is to calibrate the RPi Camera and calculate intrinsic and extrinsic camera paramaters. Once camera calibration is complete, the images have to be preprocessed to collect metadata i.e. EXIF tags which hold important GPS, latitude, longitude and camera information. 
@@ -271,7 +272,7 @@ A multi-threaded stitching algorithm has been implemented that stitches images i
  The next stages are the feature detection and matching stages which have been described above. Matching features are then organized into tracks and a bipartite graph of these 'good tracks' is constructed. This is used to find common tracks and construct the 3D point cloud incrementally. Reconstruction begins with 'bootstrap reconstruction' using two images. The reconstruction consists of triangulating the 2D points to 3D points which is visualized as a point cloud. Consequently, the rest of the images' points are added incrementally to the point cloud. 
 \newline
 \newline
- After each addition, Bundle Adjustment is done to minimize the reprojection error. Once all the images have been added to the reconstruction, the final point cloud is generated and stored as a '.ply' file. The point cloud is visualized in an interactive browser environment using a Javascript Library called, 'threeJS'.
+ After each addition, Bundle Adjustment is done to minimize the reprojection error. Once all the images have been added to the reconstruction, the final point cloud is generated and stored as a '.ply' file. The point cloud is visualized (Figure \ref{recon}) in an interactive browser environment using a Javascript Library called, 'threeJS'.
 
 \begin{figure}[H]
   \centering
@@ -297,7 +298,7 @@ A multi-threaded stitching algorithm has been implemented that stitches images i
 
 \pagebreak
 \subsection{Android App}
-The Android App is used to control all the operations on the quadcopter. It implements a virtual Joystick interface for easy user-interaction.
+The Android App is used to control all the operations on the quadcopter. It implements a virtual Joystick interface (Figure \ref{app}) for easy user-interaction.
 The interface consists of two joysticks, buttons to start the quadcopter program, enable camera mode, dynamically alter x and y trim values and a text box for feeding in the IP address of the RPi.
 \newline
 \newline
@@ -309,6 +310,7 @@ The camera button can enable or disable camera mode on the quadcopter. Enabling 
 \newline
 \newline
 Using an Android app to remotely control UAVs is a level up from traditional RC controllers as it allows users greater flexibility. Users can now control many more aspects of the quadcopter apart from height and orientation such as camera control and bias using a simple and attractive user interface.
+\newline
 \newline
 The next chapter deals with the Results and Evaluation of test cases.
 \begin{figure}[H]

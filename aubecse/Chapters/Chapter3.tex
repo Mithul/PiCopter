@@ -4,12 +4,13 @@
 
 \section{Requirements}
 \subsection{Quadcopter}
-\textbf{Hardware Requirements for the Quadcopter}
+\noindent
+\textbf {Hardware Requirements for the Quadcopter}
 \begin{verbatim}
-1) Raspberry Pi 2 microcomputer
+1) RPi 2 microcomputer
 2) 9DOF IMU Sensor
 3) 4 BLDC Motors
-4) Raspberry Pi Camera Module
+4) RPi Camera Module
 5) 4 Carbon Fibre Propellers
 6) Battery
 7) Quadcopter Frame
@@ -36,10 +37,11 @@
 5) Quadcopter should move according to the processed flight control signals
 \end{verbatim}
 \subsection{Image Processing}
+\noindent
 \textbf{Hardware Requirements for the Image processing module}
 \begin{verbatim}
-1) Raspberry Pi Camera
-2) Raspberry Pi microcomputer (Processing unit)
+1) RPi Camera
+2) RPi microcomputer (Processing unit)
 \end{verbatim}
 \textbf{Software Requirements for the Image processing module}
 \begin{verbatim}
@@ -48,14 +50,15 @@
 \end{verbatim}
 \textbf{Functional Requirements for Image processing module}
 \begin{verbatim}
-1) The Raspberry Pi should be connected to the WiFi network
-2) The Raspberry Pi Camera should be mounted securely on the quadcopter
+1) The RPi should be connected to the WiFi network
+2) The RPi Camera should be mounted securely on the quadcopter
 3) The quadcopter must be stable enough to take fairly clear pictures
 4) The camera signal from the Android app should be received by the quadcopter
 5) The SD Card must have enough space to store the images taken
-6) The Raspberry Pi must execute the Python program without system failure
+6) The RPi must execute the Python program without system failure
 \end{verbatim}
 \subsection{Android App Module}
+\noindent
 \textbf{Software Requirements for the Android App module }
 \begin{verbatim}
 1) Android Studio IDE
@@ -63,14 +66,14 @@
 \end{verbatim}
 \textbf{Hardware Requirements for the Android App module}
 \begin{verbatim}
-3) Android phone supporting minimum API 18
+1) Android phone supporting minimum API 18
 \end{verbatim}
 \textbf{Functional Requirements for the Android App module}
 \begin{verbatim}
 1) Create the Mobile Hotspot
-2) Send motion, orientation and camera signals from the app to the Raspberry Pi
+2) Send motion, orientation and camera signals from the app to the RPi
 \end{verbatim}
 \subsection{Analysis}
-The quadcopter is built using the Raspberry Pi. The Raspberry Pi was used beacuse of its computational power, portability and immense opern-source support. The quadcopter is built with 4 motors, propellers, an IMU sensor, ESC and a Raspberry Pi native camera that is interfaced with the Raspberry Pi. The Android app sends JSON-encoded signals to the Pi.The Raspberry Pi hosts a Python server which decodes the signals received and triggers the appropriate Python program to fly the quadcopter and take pictures. The IMU sensor detects the orientation of the quadcopter and feeds that data to the quadcopter balancing program. The program can then use the roll,pitch and yaw data to compute the required orientation of the quadcopter. The Pi Camera takes images which are processed using OpenCV image processing library on the Pi and saved on the SD Card.
-\newline
+The quadcopter is built using the RPi. The RPi was used because of its computational power, portability and immense open-source support. The quadcopter is built with 4 motors, propellers, an IMU sensor, ESC and a RPi native camera that is interfaced with the RPi. The Android app sends JSON-encoded signals to the RPi.The RPi hosts a Python server which decodes the signals received and triggers the appropriate Python program to fly the quadcopter and take pictures. The IMU sensor detects the orientation of the quadcopter and feeds that data to the quadcopter balancing program. The program can then use the roll, pitch and yaw data to compute the required orientation of the quadcopter. The RPi Camera takes images which are processed using OpenCV image processing library on the RPi and saved on the SD Card.
+\newline \newline
 The next chapter describes the System Design.

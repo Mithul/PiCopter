@@ -6,17 +6,12 @@ The Quadcopter UAV is one of the fastest growing technologies of the 21st centur
 A quadcopter, also called a quadrotor helicopter or quadrotor, is a multirotor helicopter that is lifted and propelled by four rotors. Quadcopters differ from conventional helicopters which use rotors which are able to vary the pitch of their blades dynamically as they move around the rotor hub. In the early days of flight, quadcopters (then referred to as 'quadrotors') were seen as possible solutions to some of the persistent problems in vertical flight; torque-induced control issues (as well as efficiency issues originating from the tail rotor, which generates no useful lift) can be eliminated by counter-rotation and the relatively short blades are much easier to construct.
 \newline
 \newline
-It is a highly useful technology that can be used in aerial photogrammetry, reconstructing topographical landscapes for archaeological excavations, reconstruction of buildings and taking panorama shots for movie-making etc. Drones are actively used in real-estate photography where they provide "virtual walkthroughs" to allow buyers to see the elements of the home vividly without actually entering the site.
-\newline
-Drones play a major role in all categories of surveillance from border patrol, building security and road-traffic monitoring. The advantage of using drones is that they're small, highly mobile, quiet and easy to camouflage. 
-\newline 
-Another innovative and popular use for drones is in the product/food delivery sector. There are several security and reliability concerns that challenge their feasibility but new technologies are being developed to combat these issues.
-\newline
+It is a highly useful technology that can be used in aerial photogrammetry, reconstructing topographical landscapes for archaeological excavations, reconstruction of buildings and taking panorama shots for movie-making etc. Drones are actively used in real-estate photography where they provide "virtual walkthroughs" to allow buyers to see the elements of the home vividly without actually entering the site. They play a major role in all categories of surveillance from border patrol, building security and road-traffic monitoring. The advantage is that they're small, highly mobile, quiet and easy to camouflage. Another innovative and popular use for drones is in the product/food delivery sector. There are several security and reliability concerns that challenge their feasibility but new technologies are being developed to combat these issues.
+\newline \newline
 Ultimately, drone technology is advancing in leaps and bounds with every day and it is inevitable that it would soon be a part of our lives, solving many of our problems.
 
 \section{About the project} %All Sub Section headings in Title Case
-The project is divided into three main modules.  
-The first module is the quadcopter itself.
+The project is divided into three main modules. The first module is the quadcopter itself.
 The quadcopter runs on the Raspberry Pi 2 microcomputer which hosts a Debian-based OS (Raspbian Jessie) which allows the use of OpenCV and Python. 
 It has four motors whose speeds are controlled using Pulse Width Modulation(PWM) technique. PWM signals are used to communicate with the ESC which controls the voltage given to the BLDC motors and thus control the speed. The RPi uses pigpio library to issue PWM signals to the ESC. 
 \newline
