@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.12.7)  11 APR 2016 23:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.1)  11 APR 2016 23:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **bethesis.tex
 (./bethesis.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 2 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/memoir/memoir.cls
-Document Class: memoir 2013/05/30 v3.7b configurable book, report, article docu
+Document Class: memoir 2015/04/23 v3.7d configurable book, report, article docu
 ment class
 \onelineskip=\skip41
 \lxvchars=\skip42
@@ -33,7 +33,7 @@ Package ifluatex Info: LuaTeX not detected.
 \trimedge=\skip47
 
 (/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
-Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
 \et@xins=\count81
 )
 (/usr/share/texlive/texmf-dist/tex/latex/memoir/mem14.clo
@@ -189,8 +189,8 @@ File: mem14.clo 2008/01/30 v0.4 memoir class 14pt size option
 \afterepigraphskip=\skip125
 \epigraphwidth=\skip126
 \epigraphrule=\skip127
-LaTeX Info: Redefining \em on input line 7492.
-LaTeX Info: Redefining \emph on input line 7500.
+LaTeX Info: Redefining \em on input line 7533.
+LaTeX Info: Redefining \emph on input line 7541.
 \tocentryskip=\skip128
 \tocbaseline=\skip129
 \cftparskip=\skip130
@@ -273,8 +273,8 @@ LaTeX Info: Redefining \emph on input line 7500.
 \FrameRule=\dimen145
 \FrameSep=\dimen146
 \c@cp@cntr=\count119
-LaTeX Info: Redefining \: on input line 11958.
-LaTeX Info: Redefining \! on input line 11960.
+LaTeX Info: Redefining \: on input line 12050.
+LaTeX Info: Redefining \! on input line 12052.
 \c@ism@mctr=\count120
 \c@xsm@mctr=\count121
 \c@csm@mctr=\count122
@@ -382,14 +382,14 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Info: Redefining \hbar on input line 50.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks22
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
@@ -397,7 +397,7 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -414,14 +414,14 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@width=\dimen148
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
-Package: lipsum 2011/04/14 v1.2 150 paragraphs of Lorem Ipsum dummy text
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count139
 )
 (/usr/share/texlive/texmf-dist/tex/latex/acronym/acronym.sty
-Package: acronym 2012/10/29 v1.38 Support for acronyms (Tobias Oetiker)
+Package: acronym 2015/03/21 v1.41 Support for acronyms (Tobias Oetiker)
 
 (/usr/share/texlive/texmf-dist/tex/latex/bigfoot/suffix.sty
-Package: suffix 2006/07/15 1.5 Variant command support
+Package: suffix 2006/07/15 1.5a Variant command support
 )
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
@@ -573,26 +573,26 @@ Package caption Info: floatrow package is loaded.
 \lst@maxwidth=\dimen164
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count160
 \lst@skipnumbers=\count161
 \lst@framebox=\box34
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2013/08/26 1.5b listings configuration
+File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
-Package: listings 2013/08/26 1.5b (Carsten Heinz)
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: pdftex.def on input line 142.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2013/08/26 1.5b listings language file
+File: lstlang1.sty 2015/06/04 1.6 listings language file
 ) (./bethesis.aux
 
 LaTeX Warning: Label `RPi Pins' multiply defined.
@@ -740,12 +740,6 @@ Underfull \hbox (badness 1147) in paragraph at lines 43--43
 afide \OT1/ptm/m/n/14.4 work of \OT1/ptm/b/n/14.4 AVINASH RAMESH
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
-\OT1/ptm/b/n/14.4 (2012103009)\OT1/ptm/m/n/14.4 , \OT1/ptm/b/n/14.4 MITHUL MATH
--IVANAN (2012103037) \OT1/ptm/m/n/14.4 and
- []
-
 [1
 
 
@@ -889,7 +883,7 @@ Missing character: There is no “ in font ptmr7t!
  [10
 
 ] [11]
-<Figures/rpi2.jpg, id=79, 5037.82124pt x 3377.61874pt>
+<Figures/rpi2.jpg, id=78, 5037.82124pt x 3377.61874pt>
 File: Figures/rpi2.jpg Graphic file (type jpg)
  <use Figures/rpi2.jpg>
 Package pdftex.def Info: Figures/rpi2.jpg used on input line 57.
@@ -899,32 +893,32 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 57--58
  [][] 
  []
 
-<Figures/gpio_header.png, id=80, 959.585pt x 1027.84pt>
+<Figures/gpio_header.png, id=79, 959.585pt x 1027.84pt>
 File: Figures/gpio_header.png Graphic file (type png)
 
 <use Figures/gpio_header.png>
 Package pdftex.def Info: Figures/gpio_header.png used on input line 64.
 (pdftex.def)             Requested size: 265.63641pt x 284.52756pt.
 
-<Figures/GPIO_pins.jpg, id=81, 4531.93124pt x 2747.26375pt>
+<Figures/GPIO_pins.jpg, id=80, 1631.49525pt x 989.01495pt>
 File: Figures/GPIO_pins.jpg Graphic file (type jpg)
 
 <use Figures/GPIO_pins.jpg>
 Package pdftex.def Info: Figures/GPIO_pins.jpg used on input line 70.
-(pdftex.def)             Requested size: 426.79134pt x 258.68718pt.
+(pdftex.def)             Requested size: 426.79134pt x 258.7224pt.
 
 Overfull \hbox (14.79134pt too wide) in paragraph at lines 70--71
  [][] 
  []
 
-[12 <./Figures/rpi2.jpg>] <Figures/ESC.jpg, id=85, 602.25pt x 402.50375pt>
+[12 <./Figures/rpi2.jpg>] <Figures/ESC.jpg, id=84, 602.25pt x 402.50375pt>
 File: Figures/ESC.jpg Graphic file (type jpg)
 
 <use Figures/ESC.jpg>
 Package pdftex.def Info: Figures/ESC.jpg used on input line 81.
 (pdftex.def)             Requested size: 341.43306pt x 228.20117pt.
  [13 <./Figures/gpio_header.png> <./Figures/GPIO_pins.jpg>] <Figures/IMU.jpg, i
-d=89, 706.64pt x 529.98pt>
+d=88, 706.64pt x 529.98pt>
 File: Figures/IMU.jpg Graphic file (type jpg)
  <use Figures/IMU.jpg>
 Package pdftex.def Info: Figures/IMU.jpg used on input line 92.
@@ -939,7 +933,7 @@ Underfull \hbox (badness 1496) in paragraph at lines 89--95
 []\OT1/ptm/m/n/14.4 An inertial measurement unit (IMU) is an electronic device
  []
 
-[14 <./Figures/ESC.jpg>] <Figures/picam.png, id=94, 526.96875pt x 435.12563pt>
+[14 <./Figures/ESC.jpg>] <Figures/picam.png, id=93, 526.96875pt x 435.12563pt>
 File: Figures/picam.png Graphic file (type png)
 
 <use Figures/picam.png>
@@ -950,7 +944,7 @@ Underfull \hbox (badness 6445) in paragraph at lines 98--104
 []\OT1/ptm/m/n/14.4 The Raspberry Pi camera module can be used to take
  []
 
-[15 <./Figures/IMU.jpg>] <Figures/Blocks.jpg, id=98, 1145.27875pt x 578.16pt>
+[15 <./Figures/IMU.jpg>] <Figures/Blocks.jpg, id=97, 1145.27875pt x 578.16pt>
 File: Figures/Blocks.jpg Graphic file (type jpg)
 
 <use Figures/Blocks.jpg>
@@ -962,38 +956,29 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 110--111
  []
 
 [16 <./Figures/picam.png>]
-<Figures/circuit_dgm.png, id=103, 509.905pt x 292.09125pt>
+<Figures/circuit_dgm.png, id=102, 509.905pt x 292.09125pt>
 File: Figures/circuit_dgm.png Graphic file (type png)
 
 <use Figures/circuit_dgm.png>
-Package pdftex.def Info: Figures/circuit_dgm.png used on input line 119.
+Package pdftex.def Info: Figures/circuit_dgm.png used on input line 120.
 (pdftex.def)             Requested size: 426.79134pt x 244.49031pt.
 
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 119--120
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 120--121
  [][] 
  []
 
-File: Figures/circuit_dgm.png Graphic file (type png)
-<use Figures/circuit_dgm.png>
-Package pdftex.def Info: Figures/circuit_dgm.png used on input line 128.
-(pdftex.def)             Requested size: 426.79134pt x 244.49031pt.
-
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 128--129
- [][] 
- []
-
-[17 <./Figures/Blocks.jpg> <./Figures/circuit_dgm.png>]
-<Figures/Flows.jpg, id=108, 982.67125pt x 926.46124pt>
+<Figures/Flows.jpg, id=103, 982.67125pt x 926.46124pt>
 File: Figures/Flows.jpg Graphic file (type jpg)
  <use Figures/Flows.jpg>
-Package pdftex.def Info: Figures/Flows.jpg used on input line 137.
+Package pdftex.def Info: Figures/Flows.jpg used on input line 129.
 (pdftex.def)             Requested size: 426.79134pt x 402.37123pt.
 
-Overfull \hbox (14.79134pt too wide) in paragraph at lines 137--138
+Overfull \hbox (14.79134pt too wide) in paragraph at lines 129--130
  [][] 
  []
 
-[18] [19 <./Figures/Flows.jpg>]) (./Chapters/Chapter5.tex [20]
+[17 <./Figures/Blocks.jpg> <./Figures/circuit_dgm.png>] [18 <./Figures/Flows.jp
+g>]) (./Chapters/Chapter5.tex [19]
 Underfull \hbox (badness 2932) in paragraph at lines 7--8
 []\OT1/ptm/m/n/14.4 Input to the system consists of sensor data by the IMU,
  []
@@ -1003,14 +988,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--17
 
  []
 
-[21
+[20
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 19--31
 
  []
 
-[22]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
@@ -1030,17 +1015,17 @@ Overfull \hbox (12.83975pt too wide) in paragraph at lines 68--69
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 85--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--94
+
+ []
+
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 85--94
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--94
-
- []
-
-[24]
 Overfull \hbox (62.24016pt too wide) in paragraph at lines 107--108
 [][][][][][][][][][][][][][][][][][] 
  []
@@ -1050,25 +1035,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--114
 
  []
 
-[25] [26] [27] [28] [29] <Figures/Quad.jpg, id=149, 1626.075pt x 1084.05pt>
+[24] [25] [26] [27] [28] <Figures/Quad.jpg, id=145, 585.387pt x 390.258pt>
 File: Figures/Quad.jpg Graphic file (type jpg)
 
 <use Figures/Quad.jpg>
 Package pdftex.def Info: Figures/Quad.jpg used on input line 224.
-(pdftex.def)             Requested size: 426.78906pt x 284.52756pt.
+(pdftex.def)             Requested size: 426.79301pt x 284.52756pt.
 
-Overfull \hbox (14.78906pt too wide) in paragraph at lines 224--225
+Overfull \hbox (14.79301pt too wide) in paragraph at lines 224--225
  [][] 
  []
 
-[30] <Figures/Wiring.jpg, id=153, 1626.075pt x 1084.05pt>
+[29] <Figures/Wiring.jpg, id=149, 585.387pt x 390.258pt>
 File: Figures/Wiring.jpg Graphic file (type jpg)
 
 <use Figures/Wiring.jpg>
 Package pdftex.def Info: Figures/Wiring.jpg used on input line 231.
-(pdftex.def)             Requested size: 426.78906pt x 284.52756pt.
+(pdftex.def)             Requested size: 426.79301pt x 284.52756pt.
 
-Overfull \hbox (14.78906pt too wide) in paragraph at lines 231--232
+Overfull \hbox (14.79301pt too wide) in paragraph at lines 231--232
  [][] 
  []
 
@@ -1135,8 +1120,8 @@ Underfull \hbox (badness 1502) in paragraph at lines 239--244
 ite
  []
 
-[31 <./Figures/Quad.jpg> <./Figures/Wiring.jpg>] [32]
-<Figures/pano.png, id=161, 593.21625pt x 306.14375pt>
+[30 <./Figures/Quad.jpg> <./Figures/Wiring.jpg>] [31]
+<Figures/pano.png, id=156, 593.21625pt x 306.14375pt>
 File: Figures/pano.png Graphic file (type png)
  <use Figures/pano.png>
 Package pdftex.def Info: Figures/pano.png used on input line 247.
@@ -1146,35 +1131,35 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 247--248
  [][] 
  []
 
-[33] <Figures/pano3d/3d1.jpg, id=165, 722.7pt x 481.8pt>
+[32] <Figures/pano3d/3d1.jpg, id=161, 722.7pt x 481.8pt>
 File: Figures/pano3d/3d1.jpg Graphic file (type jpg)
 
 <use Figures/pano3d/3d1.jpg>
 Package pdftex.def Info: Figures/pano3d/3d1.jpg used on input line 254.
 (pdftex.def)             Requested size: 85.35826pt x 56.90189pt.
 
-<Figures/pano3d/3d2.jpg, id=166, 722.7pt x 481.8pt>
+<Figures/pano3d/3d2.jpg, id=162, 722.7pt x 481.8pt>
 File: Figures/pano3d/3d2.jpg Graphic file (type jpg)
 
 <use Figures/pano3d/3d2.jpg>
 Package pdftex.def Info: Figures/pano3d/3d2.jpg used on input line 255.
 (pdftex.def)             Requested size: 85.35826pt x 56.90189pt.
 
-<Figures/pano3d/3d3.jpg, id=167, 722.7pt x 481.8pt>
+<Figures/pano3d/3d3.jpg, id=163, 722.7pt x 481.8pt>
 File: Figures/pano3d/3d3.jpg Graphic file (type jpg)
 
 <use Figures/pano3d/3d3.jpg>
 Package pdftex.def Info: Figures/pano3d/3d3.jpg used on input line 256.
 (pdftex.def)             Requested size: 85.35826pt x 56.90189pt.
 
-<Figures/pano3d/3d4.jpg, id=168, 722.7pt x 481.8pt>
+<Figures/pano3d/3d4.jpg, id=164, 722.7pt x 481.8pt>
 File: Figures/pano3d/3d4.jpg Graphic file (type jpg)
 
 <use Figures/pano3d/3d4.jpg>
 Package pdftex.def Info: Figures/pano3d/3d4.jpg used on input line 257.
 (pdftex.def)             Requested size: 85.35826pt x 56.90189pt.
 
-<Figures/pano3d/3d5.jpg, id=169, 722.7pt x 481.8pt>
+<Figures/pano3d/3d5.jpg, id=165, 722.7pt x 481.8pt>
 File: Figures/pano3d/3d5.jpg Graphic file (type jpg)
 
 <use Figures/pano3d/3d5.jpg>
@@ -1194,7 +1179,7 @@ File: Figures/pano3d/3d5.jpg Graphic file (type jpg)
 Package pdftex.def Info: Figures/pano3d/3d5.jpg used on input line 261.
 (pdftex.def)             Requested size: 85.35826pt x 56.90189pt.
 
-<Figures/pano3d/3d.png, id=170, 1428.08531pt x 556.32843pt>
+<Figures/pano3d/3d.png, id=166, 1428.08531pt x 556.32843pt>
 File: Figures/pano3d/3d.png Graphic file (type png)
 
 <use Figures/pano3d/3d.png>
@@ -1205,7 +1190,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 254--263
  [] 
  []
 
-[34 <./Figures/pano.png> <./Figures/pano3d/3d1.jpg> <./Figures/pano3d/3d2.jpg> 
+[33 <./Figures/pano.png> <./Figures/pano3d/3d1.jpg> <./Figures/pano3d/3d2.jpg> 
 <./Figures/pano3d/3d3.jpg> <./Figures/pano3d/3d4.jpg> <./Figures/pano3d/3d5.jpg
 > <./Figures/pano3d/3d.png>]
 Underfull \hbox (badness 1728) in paragraph at lines 269--279
@@ -1218,7 +1203,7 @@ Underfull \hbox (badness 2096) in paragraph at lines 269--279
 \OT1/ptm/m/n/14.4 The camera button can enable or disable camera mode on the
  []
 
-<Figures/app.png, id=174, 1927.2pt x 1084.05pt>
+<Figures/app.png, id=170, 1927.2pt x 1084.05pt>
 File: Figures/app.png Graphic file (type png)
  <use Figures/app.png>
 Package pdftex.def Info: Figures/app.png used on input line 282.
@@ -1228,7 +1213,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 282--283
  [][] 
  []
 
-[35] <Figures/software_comp.png, id=178, 797.98125pt x 335.2525pt>
+[34] <Figures/software_comp.png, id=174, 797.98125pt x 335.2525pt>
 File: Figures/software_comp.png Graphic file (type png)
 
 <use Figures/software_comp.png>
@@ -1239,8 +1224,8 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 291--292
  [][] 
  []
 
-) (./Chapters/Chapter6.tex [36 <./Figures/app.png> <./Figures/software_comp.png
->] <Figures/cost.png, id=182, 445.665pt x 274.02374pt>
+) (./Chapters/Chapter6.tex [35 <./Figures/app.png> <./Figures/software_comp.png
+>] <Figures/cost.png, id=178, 445.665pt x 274.02374pt>
 File: Figures/cost.png Graphic file (type png)
  <use Figures/cost.png>
 Package pdftex.def Info: Figures/cost.png used on input line 11.
@@ -1255,22 +1240,22 @@ Overfull \hbox (56.21317pt too wide) in paragraph at lines 17--31
  [][] 
  []
 
-[37
+[36
 
- <./Figures/cost.png>] <Figures/pano.jpg, id=186, 803.0pt x 602.25pt>
+ <./Figures/cost.png>] <Figures/pano.jpg, id=182, 803.0pt x 602.25pt>
 File: Figures/pano.jpg Graphic file (type jpg)
 
 <use Figures/pano.jpg>
 Package pdftex.def Info: Figures/pano.jpg used on input line 40.
 (pdftex.def)             Requested size: 398.33858pt x 298.76253pt.
- [38] <Figures/recon.jpg, id=191, 803.0pt x 602.25pt>
+ [37] <Figures/recon.jpg, id=186, 803.0pt x 602.25pt>
 File: Figures/recon.jpg Graphic file (type jpg)
 
 <use Figures/recon.jpg>
 Package pdftex.def Info: Figures/recon.jpg used on input line 48.
 (pdftex.def)             Requested size: 398.33858pt x 298.76253pt.
 
-<Figures/complementary.png, id=192, 734.745pt x 436.63126pt>
+<Figures/complementary.png, id=187, 734.745pt x 436.63126pt>
 File: Figures/complementary.png Graphic file (type png)
 
 <use Figures/complementary.png>
@@ -1281,8 +1266,8 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 55--56
  [][] 
  []
 
-[39 <./Figures/pano.jpg> <./Figures/recon.jpg>]
-<Figures/pid.png, id=197, 727.21687pt x 343.2825pt>
+[38 <./Figures/pano.jpg> <./Figures/recon.jpg>]
+<Figures/pid.png, id=192, 727.21687pt x 343.2825pt>
 File: Figures/pid.png Graphic file (type png)
  <use Figures/pid.png>
 Package pdftex.def Info: Figures/pid.png used on input line 65.
@@ -1292,7 +1277,7 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 65--66
  [][] 
  []
 
-<Figures/output.png, id=198, 734.745pt x 436.63126pt>
+<Figures/output.png, id=193, 734.745pt x 436.63126pt>
 File: Figures/output.png Graphic file (type png)
  <use Figures/output.png>
 Package pdftex.def Info: Figures/output.png used on input line 72.
@@ -1302,8 +1287,8 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 72--73
  [][] 
  []
 
-[40 <./Figures/complementary.png> <./Figures/pid.png>]
-<Figures/motorsop.png, id=202, 741.52031pt x 435.87843pt>
+[39 <./Figures/complementary.png> <./Figures/pid.png>]
+<Figures/motorsop.png, id=198, 741.52031pt x 435.87843pt>
 File: Figures/motorsop.png Graphic file (type png)
 
 <use Figures/motorsop.png>
@@ -1314,23 +1299,23 @@ Overfull \hbox (14.79134pt too wide) in paragraph at lines 79--80
  [][] 
  []
 
-) (./Chapters/Chapter7.tex [41 <./Figures/output.png> <./Figures/motorsop.png>]
+) (./Chapters/Chapter7.tex [40 <./Figures/output.png> <./Figures/motorsop.png>]
 )
 Underfull \hbox (badness 1648) in paragraph at lines 11--68
 []\OT1/ptm/m/n/14.4 The quadcopter's RPi camera currently takes pictures all at
 
  []
 
-[42
+[41
 
-] (./Appendices/AppendixA.tex [43]
+] (./Appendices/AppendixA.tex [42]
 Underfull \hbox (badness 1609) in paragraph at lines 4--5
 []\OT1/ptm/m/n/14.4 The quadcopter uses a PID controller where 'P' stands for
  []
 
-[44
+[43
 
-] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56]
+] [44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55]
 Overfull \hbox (922.04057pt too wide) in paragraph at lines 402--403
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1340,7 +1325,7 @@ Overfull \hbox (922.04057pt too wide) in paragraph at lines 402--403
 ]  
  []
 
-) [57]
+) [56]
 No file bethesis.bbl.
 \tf@toc=\write5
 \openout5 = `bethesis.toc'.
@@ -1357,23 +1342,22 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9783 strings out of 495028
- 141932 string characters out of 6181497
- 376009 words of memory out of 5000000
- 12833 multiletter control sequences out of 15000+600000
- 29341 words of font info for 65 fonts, out of 8000000 for 9000
+ 9795 strings out of 495000
+ 142111 string characters out of 6181169
+ 385274 words of memory out of 5000000
+ 12871 multiletter control sequences out of 15000+600000
+ 29047 words of font info for 64 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,12n,40p,2132b,1637s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on bethesis.pdf (68 pages, 9972050 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on bethesis.pdf (67 pages, 9961497 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
+ 271 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 

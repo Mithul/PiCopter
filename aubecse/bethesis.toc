@@ -24,30 +24,29 @@
 \contentsline {subsection}{\numberline {4.2.3}IMU Sensor}{15}
 \contentsline {subsection}{\numberline {4.2.4}Raspberry Pi Camera}{16}
 \contentsline {section}{\numberline {4.3}Block Diagram}{17}
-\contentsline {section}{\numberline {4.4}Architecture Diagram}{17}
-\contentsline {section}{\numberline {4.5}Circuit Diagram}{18}
-\contentsline {section}{\numberline {4.6}Flow Diagram}{19}
-\contentsline {chapter}{\chapternumberline {5}SYSTEM DEVELOPMENT}{21}
-\contentsline {section}{\numberline {5.1}Input and Output to System}{21}
-\contentsline {subsection}{\numberline {5.1.1}Input}{21}
-\contentsline {subsection}{\numberline {5.1.2}Output}{21}
-\contentsline {section}{\numberline {5.2}Input and Output for each module}{22}
-\contentsline {subsection}{\numberline {5.2.1}Raspberry Pi-controlled quadcopter}{22}
-\contentsline {subsection}{\numberline {5.2.2}Image-Processing Module}{24}
-\contentsline {subsection}{\numberline {5.2.3}Android App Module}{26}
-\contentsline {section}{\numberline {5.3}Modules}{28}
-\contentsline {subsection}{\numberline {5.3.1}Raspberry Pi 2-controlled quadcopter}{28}
-\contentsline {subsection}{\numberline {5.3.2}Image-Processing Module}{32}
-\contentsline {subsection}{\numberline {5.3.3}Android App}{35}
-\contentsline {section}{\numberline {5.4}Overall Component Diagram}{36}
-\contentsline {chapter}{\chapternumberline {6}RESULTS AND DISCUSSION}{37}
-\contentsline {section}{\numberline {6.1}Results}{37}
-\contentsline {subsection}{\numberline {6.1.1}Assessment}{37}
-\contentsline {subsection}{\numberline {6.1.2}Evaluation}{38}
-\contentsline {chapter}{\chapternumberline {7}CONCLUSIONS}{42}
-\contentsline {section}{\numberline {7.1}Contributions}{42}
-\contentsline {section}{\numberline {7.2}Future Work}{42}
-\contentsline {appendix}{\chapternumberline {A}PID Controller}{44}
-\contentsline {section}{\numberline {A.1}Sample PID Controller Code}{45}
-\contentsline {section}{\numberline {A.2}Sample Joystick Interface Code}{46}
-\contentsline {section}{\numberline {A.3}Sample Panorama Stitching Code}{53}
+\contentsline {section}{\numberline {4.4}Circuit Diagram}{17}
+\contentsline {section}{\numberline {4.5}Flow Diagram}{18}
+\contentsline {chapter}{\chapternumberline {5}SYSTEM DEVELOPMENT}{20}
+\contentsline {section}{\numberline {5.1}Input and Output to System}{20}
+\contentsline {subsection}{\numberline {5.1.1}Input}{20}
+\contentsline {subsection}{\numberline {5.1.2}Output}{20}
+\contentsline {section}{\numberline {5.2}Input and Output for each module}{21}
+\contentsline {subsection}{\numberline {5.2.1}Raspberry Pi-controlled quadcopter}{21}
+\contentsline {subsection}{\numberline {5.2.2}Image-Processing Module}{23}
+\contentsline {subsection}{\numberline {5.2.3}Android App Module}{25}
+\contentsline {section}{\numberline {5.3}Modules}{27}
+\contentsline {subsection}{\numberline {5.3.1}Raspberry Pi 2-controlled quadcopter}{27}
+\contentsline {subsection}{\numberline {5.3.2}Image-Processing Module}{31}
+\contentsline {subsection}{\numberline {5.3.3}Android App}{34}
+\contentsline {section}{\numberline {5.4}Overall Component Diagram}{35}
+\contentsline {chapter}{\chapternumberline {6}RESULTS AND DISCUSSION}{36}
+\contentsline {section}{\numberline {6.1}Results}{36}
+\contentsline {subsection}{\numberline {6.1.1}Assessment}{36}
+\contentsline {subsection}{\numberline {6.1.2}Evaluation}{37}
+\contentsline {chapter}{\chapternumberline {7}CONCLUSIONS}{41}
+\contentsline {section}{\numberline {7.1}Contributions}{41}
+\contentsline {section}{\numberline {7.2}Future Work}{41}
+\contentsline {appendix}{\chapternumberline {A}PID Controller}{43}
+\contentsline {section}{\numberline {A.1}Sample PID Controller Code}{44}
+\contentsline {section}{\numberline {A.2}Sample Joystick Interface Code}{45}
+\contentsline {section}{\numberline {A.3}Sample Panorama Stitching Code}{52}
