@@ -1,10 +1,15 @@
 % Appendix A
 
 \chapter{PID Controller}
-The quadcopter uses a PID controller where 'P' stands for proportional, 'I' stands for integral and 'D' stands for differential. The Proportional term enables the quadcopter to receive a force proportional to the angle of deviation from the central angle as a corrective force to bring it back to its normal orientation. Thus, by giving a high proportional constant, the directive force that will be calculated for a deviation in angle will be large, however setting too large a 'P' value will cause overcompensation resulting in oscillations that will keep increasing.
-
+The quadcopter uses a PID controller where 'P' stands for proportional, 'I' stands for integral and 'D' stands for differential. 
+\newline
+\newline
+The Proportional term enables the quadcopter to receive a force proportional to the angle of deviation from the central angle as a corrective force to bring it back to its normal orientation. Thus, by giving a high proportional constant, the directive force that will be calculated for a deviation in angle will be large, however setting too large a 'P' value will cause overcompensation resulting in oscillations that will keep increasing.
+\newline
+\newline
 The Integral term is used to provide a corrective force in cases where the Proportional term cannot compensate for the deviation and angle. In such cases, the deviation and angle is aggregated thereby allowing the quadcopter to get back to its stable state quickly even in cases where turbulence or any external forces are at play. Similar to the Proportional term, too high an integral term  will cause oscillations but of a lower frequency then those caused by the Proportional term.
-
+\newline
+\newline
 The Differential term  is used to provide compensation proportional to that of the change in angle of the quadcopter. Thus, having a high differential term will result in a high corrective force being applied in cases where rapid changes in angle occur. This allows the differential term  to either boost or resist the effects of the Proportional and Integral terms because in cases where there are quick angular changes, the Differential term will enable the controller to resist that change and in cases where the compensation is too fast, the Differential term will correspondingly resist fast changes.
 \section{Sample PID Controller Code}
    
@@ -48,240 +53,9 @@ def compute_PID_output( self, kp, ki, kd, angle, old_i, old_angle, limit_p=100, 
         return [total, i]
 
 \end{lstlisting}
-    
-\section{Sample Joystick Interface Code}
-\begin{lstlisting}
-package com.example.avi.joystick;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-public class JoyStickClass {
-    private int STICK_ALPHA = 200;
-    private int LAYOUT_ALPHA = 200;
-    private int OFFSET = 0;
-    
-    private Context mContext;
-    private ViewGroup mLayout;
-    private LayoutParams params;
-    private int stick_width, stick_height;
-    
-    private int position_x = 0, position_y = 0, min_distance = 0;
-    private float distance = 0, angle = 0;
-    
-    private DrawCanvas draw;
-    private Paint paint;
-    private Bitmap stick;
-    
-    private boolean touch_state = false;
-    private boolean spring_x=false;
-    private boolean spring_y=false;
-    public JoyStickClass (Context context, ViewGroup layout, int stick_res_id) {
-        mContext = context;
-        stick = BitmapFactory.decodeResource(mContext.getResources(),
-                stick_res_id);
-        
-        stick_width = stick.getWidth();
-        stick_height = stick.getHeight();
-        
-        draw = new DrawCanvas(mContext);
-        paint = new Paint();
-        mLayout = layout;
-        params = mLayout.getLayoutParams();
-    }
-    public void setSpringy(boolean x,boolean y){
-        spring_x = x;
-        spring_y = y;
-    }
-    
-    public void drawStick(MotionEvent arg1) {
-        position_x = (int) (arg1.getX() - (params.width / 2));
-        position_y = (int) (arg1.getY() - (params.height / 2));
-        distance = (float) Math.sqrt(Math.pow(position_x, 2) + Math.pow(position_y, 2));
-        angle = (float) cal_angle(position_x, position_y);
-        if(arg1.getAction() == MotionEvent.ACTION_DOWN) {
-            if(distance <= (params.width / 2) - OFFSET) {
-                draw.position(arg1.getX(), arg1.getY());
-                draw();
-                touch_state = true;
-            }
-        } else if(arg1.getAction() == MotionEvent.ACTION_MOVE && touch_state) {
-            if (distance <= (params.width / 2) - OFFSET) {
-                draw.position(arg1.getX(), arg1.getY());
-                draw();
-            } else if (distance > (params.width / 2) - OFFSET) {
-                float x = (float) (Math.cos(Math.toRadians(cal_angle(position_x, position_y))) * ((params.width / 2) - OFFSET));
-                float y = (float) (Math.sin(Math.toRadians(cal_angle(position_x, position_y))) * ((params.height / 2) - OFFSET));
-                x += (params.width / 2);
-                y += (params.height / 2);
-                position_x = (int)x - params.width / 2;
-                position_y = (int)y - params.height/2;
-                draw.position(x, y);
-                draw();
-            } else {
-                mLayout.removeView(draw);
-            }
-        }
-         else if(arg1.getAction() == MotionEvent.ACTION_UP) {
-            if(spring_x || spring_y) {
-                float x = position_x+params.width/2;
-                float y = position_y+params.width/2;
-                if(spring_x) {
-                    x = (params.width / 2);
-                    position_x=0;
-                }
-                if(spring_y) {
-                    position_y=0;
-                    y = (params.height / 2);
-                }
-                draw.position(x, y);
-                draw();
-            }
-        }
-    }
-    
-    public int[] getPosition() {
-        if(distance > min_distance && touch_state) {
-            return new int[] { position_x, position_y };
-        }
-        return new int[] { 0, 0 };
-    }
-    
-    public int getX() {
-        if(distance > min_distance && touch_state) {
-            return (int)((float)position_x*250/getLayoutWidth());
-        }
-        return 0;
-    }
-    
-    public int getY() {
-        if(distance > min_distance && touch_state) {
-            return (int)((float)position_y*250/getLayoutHeight());
-        }
-        return 0;
-    }
-    
-    public float getAngle() {
-        if(distance > min_distance && touch_state) {
-            return angle;
-        }
-        return 0;
-    }
-    
-    public float getDistance() {
-        if(distance > min_distance && touch_state) {
-            return distance;
-        }
-        return 0;
-    }
-    
-    public void setMinimumDistance(int minDistance) {
-        min_distance = minDistance;
-    }
-    
-    public int getMinimumDistance() {return min_distance;}
-    public void setOffset(int offset) {OFFSET = offset;}
-    
-    public int getOffset() {
-        return OFFSET;
-    }
-    
-    public void setStickAlpha(int alpha) {
-        STICK_ALPHA = alpha;
-        paint.setAlpha(alpha);
-    }
-    
-    public int getStickAlpha() {
-        return STICK_ALPHA;
-    }
-    
-    public void setLayoutAlpha(int alpha) {
-        LAYOUT_ALPHA = alpha;
-        mLayout.getBackground().setAlpha(alpha);
-    }
-    
-    public int getLayoutAlpha() {
-        return LAYOUT_ALPHA;
-    }
-    
-    public void setStickSize(int width, int height) {
-        stick = Bitmap.createScaledBitmap(stick, width, height, false);
-        stick_width = stick.getWidth();
-        stick_height = stick.getHeight();
-    }
-    
-    public void setStickWidth(int width) {
-        stick = Bitmap.createScaledBitmap(stick, width, stick_height, false);
-        stick_width = stick.getWidth();
-    }
-    
-    public void setStickHeight(int height) {
-        stick = Bitmap.createScaledBitmap(stick, stick_width, height, false);
-        stick_height = stick.getHeight();
-    }
-    
-    public int getStickWidth() {return stick_width; }
-    
-    public int getStickHeight() {
-        return stick_height;
-    }
-    
-    public void setLayoutSize(int width, int height) {
-        params.width = width;
-        params.height = height;
-    }
-    public int getLayoutWidth() {
-        return params.width;
-    }
-    public int getLayoutHeight() {
-        return params.height;
-    }
-    
-    private double cal_angle(float x, float y) {
-        if(x >= 0 && y >= 0)
-            return Math.toDegrees(Math.atan(y / x));
-        else if(x < 0 && y >= 0)
-            return Math.toDegrees(Math.atan(y / x)) + 180;
-        else if(x < 0 && y < 0)
-            return Math.toDegrees(Math.atan(y / x)) + 180;
-        else if(x >= 0 && y < 0)
-            return Math.toDegrees(Math.atan(y / x)) + 360;
-        return 0;
-    }
-     
-    private void draw() {
-        try {
-            mLayout.removeView(draw);
-        } catch (Exception e) { }
-        mLayout.addView(draw);
-    }
-     
-    private class DrawCanvas extends View{
-        float x, y;
-        private DrawCanvas(Context mContext) {
-             super(mContext);
-         }
-         public void onDraw(Canvas canvas) {
-             canvas.drawBitmap(stick, x, y, paint);
-         }
-         private void position(float pos_x, float pos_y) {
-            x = pos_x - (stick_width / 2);
-            y = pos_y - (stick_height / 2);
-         }
-     }
-}
-\end{lstlisting}       
 \section{Sample Panorama Stitching Code}
 \begin{lstlisting}
-import cv2, numpy as np
-import math
-import argparse as ap
-import time
+import cv2,math,time,sys, numpy as np
 from threading import Thread
 
 def extract_features(image1,image2, surfThreshold=1000, algorithm='SURF'):
@@ -356,16 +130,6 @@ def match_flann(des1, des2,ratio=0.75):
       if len(m) == 2 and m[0].distance < m[1].distance * ratio:
         matches.append((m[0].trainIdx, m[0].queryIdx))
     return matches
-  
-def draw_correspondences(image1, image2, points1, points2):
-  (h1, w1) = image1.shape[:2]
-  (h2, w2) = image2.shape[:2]
-  image = np.zeros((max(h1, h2), w1 + w2, 3), np.uint8)
-  image[:h1, :w1] = image1
-  image[:h2, w1:w1+w2] = image2
-  for (x1, y1), (x2, y2) in zip(np.int32(points1), np.int32(points2)):
-    cv2.line(image, (x1, y1), (x2+w1, y2), (2555, 0, 255), lineType=cv2.LINE_AA)
-  return image
 
 def pano(images,i):
   if (i+1) <= (len(images)-1):
@@ -381,8 +145,6 @@ def pano(images,i):
     return  
   (keypoints1, descriptors1,keypoints2, descriptors2) = extract_features(image1,image2)
   (points1, points2) = find_correspondences(keypoints1, descriptors1, keypoints2, descriptors2)
-  correspondences = draw_correspondences(image1, image2, points1, points2)
-  cv2.imwrite('pano_dataset/door/correspondences.jpg', correspondences)
   try:
     (homography, _) = cv2.findHomography(points2,points1,cv2.RANSAC,4)
   except Exception:
@@ -390,16 +152,15 @@ def pano(images,i):
     return -1
   (size, offset) = calculate_size(image1.shape, image2.shape, homography)
   images[i] = merge_images(image1, image2, homography, size, offset, (points1, points2))
-  if(len(images) == 2):#final panorama
-    filename = 'pano_dataset/door/pano_ multi_final'+str(i)+'.jpg'
+  if(len(images) == 2):
+    filename = 'pano_ multi_final'+str(i)+'.jpg'
   else:
-    filename = 'pano_dataset/door/pano_multi'+str(i)+'.jpg'
+    filename = 'pano_multi'+str(i)+'.jpg'
   cv2.imwrite(filename,images[i])
   
 if __name__ == '__main__':
-  import time
   st = time.time()
-  images = ['pano_dataset/door/door1.jpg','pano_dataset/door/door2.jpg','pano_dataset/door/door3.jpg','pano_dataset/door/door4.jpg','pano_dataset/door/door5.jpg','pano_dataset/door/door6.jpg','pano_dataset/door/door7.jpg']
+  images = sys.argv[1:]
   n = len(images)
   val = int(math.ceil(math.log(len(images),2)))+1
   for q in range(val):

@@ -2,6 +2,14 @@
 \usepackage{aubecse}
 \usepackage{floatrow}
 \usepackage{subcaption}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 \settitle{Aerial Eyes - Quadcopter implementing Panorama and 3D Reconstuction}
 \setnauthors{3}
@@ -66,10 +74,11 @@
 \input{./Chapters/Chapter7} % Conclusion
 %
 \appendix
-\input{./Appendices/AppendixA}	% 
+\input{./Appendices/AppendixA}  % 
 %
 \backmatter
+\nocite{*}
 \bibliographystyle{aubecse}
-\bibliography{bethesis1}
+\bibliography{bethesis}
 
 \end{document}

@@ -50,6 +50,7 @@ e) Android App providing virtual joystick interface
 \section{Technology used}
 \subsection{Raspberry Pi 2 Microcomputer}
 The quadcopter is controlled using the Raspberry Pi 2. Raspberry pi (RPI) is a credit card sized microcomputer that runs on a Linux based operating system loaded on its SD card . It includes a 900MHz quad-core ARM Cortex-A7 CPU and 1GB RAM.
+\newline
 It can connect to a network by using an external user-supplied USB Ethernet or WiFi adapter. Furthermore, the RPi has four USB ports, a full HDMI port, 40 GPIO pins and an Ethernet port. Apart from this, the Raspberry Pi has a camera interface which allows a native Pi Camera to be configured and used. It also has a Micro SD Card slot. The advantage of using a RPi over traditional Arduino boards is that the Pi has much greater computational power and thus, more complicated and better stabilization algorithms can be run on it. 
 
 \begin{figure}[H]
@@ -74,7 +75,9 @@ It can connect to a network by using an external user-supplied USB Ethernet or W
 
 
 \subsection{Electronic Speed Controller (ESC)}
-The Electronic Speed Controller is a circuit which varies the motor's speed, direction and acts like a dynamic brake. ESCs are most often used with BLDC motors necessary for translating digital signals to electric current. ESCs are an essential component of modern multirotor crafts that offer high power, high frequency, high resolution 3-phase AC power to the motors in an extremely compact miniature package. These crafts depend entirely on the variable speed of the motors driving the propellers. The large variation and fine RPM control in motor/propeller speed gives all of the control necessary for a quadcopter (and all multirotors) to fly. On a quadcopter, each motor gets its own ESC, each of which connects to the controller. After computing the inputs(the amount of current and direction to be given to each motor), the controller directs each ESC to adjust its speed according to the PWM signal provided.
+The Electronic Speed Controller is a circuit which varies the motor's speed, direction and acts like a dynamic brake. ESCs are most often used with BLDC motors necessary for translating digital signals to electric current. ESCs are an essential component of modern multirotor crafts that offer high power, high frequency, high resolution 3-phase AC power to the motors in an extremely compact miniature package. These crafts depend entirely on the variable speed of the motors driving the propellers. 
+\newline
+The large variation and fine RPM control in motor/propeller speed gives all of the control necessary for a quadcopter (and all multirotors) to fly. On a quadcopter, each motor gets its own ESC, each of which connects to the controller. After computing the inputs(the amount of current and direction to be given to each motor), the controller directs each ESC to adjust its speed according to the PWM signal provided.
 This quadcopter uses a 40A, 3s ESC.
 \begin{figure}[H]
   \centering
@@ -133,7 +136,11 @@ The Raspberry Pi camera module can be used to take high-definition video, as wel
 
 \textbf{Description of Flow Diagram}
 \newline
-The user begins the quadcopter program by clicking a button on the Android App which is sent as input to the Python server on the Raspberry Pi. These signals are sent over a WiFi network using an Android phone as a mobile hotspot. The user can control the altitude of the drone and the individual motors using the virtual Joystick on the app. Signals are sent as JSON-encoded data to the quadcopter. The orientation data i.e. the roll, pitch and yaw values are detected by the IMU sensor on the quadcopter and are fed as input to the balancing algorithm. This data is processed by the python program and the orientation of the quadcopter is automatically corrected using the PID algorithm. When the camera signal is triggered, the Pi Camera begins taking pictures at an interval of 1 second and saves them on the SD Card. Once the camera is disabled, the image-processing program is executed on the captured images. The final results i.e. the Panorama image and the reconstructed 3D Point Cloud are separately rendered on a web browser using a remote laptop on the ground. Thus, the quadcopter is semi-autonomous as its flight is controlled by the user but its stability is automatically corrected. It is remotely controlled using an Android app.
-
+The user begins the quadcopter program by clicking a button on the Android App which is sent as input to the Python server on the Raspberry Pi. These signals are sent over a WiFi network using an Android phone as a mobile hotspot. The user can control the altitude of the drone and the individual motors using the virtual Joystick on the app. Signals are sent as JSON-encoded data to the quadcopter. The orientation data i.e. the roll, pitch and yaw values are detected by the IMU sensor on the quadcopter and are fed as input to the balancing algorithm. This data is processed by the python program and the orientation of the quadcopter is automatically corrected using the PID algorithm. 
+\newline
+\newline
+When the camera signal is triggered, the Pi Camera begins taking pictures at an interval of 1 second and saves them on the SD Card. Once the camera is disabled, the image-processing program is executed on the captured images. The final results i.e. the Panorama image and the reconstructed 3D Point Cloud are separately rendered on a web browser using a remote laptop on the ground. Thus, the quadcopter is semi-autonomous as its flight is controlled by the user but its stability is automatically corrected. It is remotely controlled using an Android app.
+\newline
+The next chapter discusses the System Development of the project.
 
 

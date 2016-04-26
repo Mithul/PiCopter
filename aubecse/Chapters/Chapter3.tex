@@ -72,3 +72,5 @@
 \end{verbatim}
 \subsection{Analysis}
 The quadcopter is built using the Raspberry Pi. The Raspberry Pi was used beacuse of its computational power, portability and immense opern-source support. The quadcopter is built with 4 motors, propellers, an IMU sensor, ESC and a Raspberry Pi native camera that is interfaced with the Raspberry Pi. The Android app sends JSON-encoded signals to the Pi.The Raspberry Pi hosts a Python server which decodes the signals received and triggers the appropriate Python program to fly the quadcopter and take pictures. The IMU sensor detects the orientation of the quadcopter and feeds that data to the quadcopter balancing program. The program can then use the roll,pitch and yaw data to compute the required orientation of the quadcopter. The Pi Camera takes images which are processed using OpenCV image processing library on the Pi and saved on the SD Card.
+\newline
+The next chapter describes the System Design.
