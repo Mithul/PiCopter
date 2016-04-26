@@ -1,0 +1,39 @@
+\begin{thebibliography}{1}
+
+\bibitem{argentim2013pid}
+Lucas~M Argentim, Willian~C Rezende, Paulo~E Santos, and Renato~A Aguiar,
+  ``Pid, lqr and lqr-pid on a quadcopter platform'', In {\em Informatics,
+  Electronics \& Vision (ICIEV), 2013 International Conference on}, pp.  1--6.
+  IEEE, 2013.
+
+\bibitem{azfar2011simple}
+A~Zul Azfar and Desa Hazry, ``Simple gui design for monitoring of a remotely
+  operated quadrotor unmanned aerial vehicle (uav)'', In {\em Signal Processing
+  and its Applications (CSPA), 2011 IEEE 7th International Colloquium on}, pp.
+  23--27. IEEE, 2011.
+
+\bibitem{kendall2014board}
+Alex~G Kendall, Nishaad~N Salvapantula, and Karl~A Stol, ``On-board object
+  tracking control of a quadcopter with monocular vision'', In {\em Unmanned
+  Aircraft Systems (ICUAS), 2014 International Conference on}, pp.  404--411.
+  IEEE, 2014.
+
+\bibitem{ijarcce-disc-2015}
+Lokesha~H. K.S.~Shilpashree and Hadimani Shivkumar, ``Implementation of image
+  processing on raspberry pi'', In {\em International Journal of Advanced
+  Research in Computer and Communication Engineering, Vol. 4, Issue 5, May
+  2015}, 2015.
+
+\bibitem{proc-disc-2009}
+Priyanga M. and Raja Ramanan, ``Unmanned aerial vehicle for video surveillance
+  using raspberry pi'', In {\em International Journal of Innovative Research In
+  Science and, Engineering and Technology, Volume 3, Special Issue 3, March
+  2014, 2014 International Conference on Innovations in Engineering and
+  Technology}. ICIET, 2014.
+
+\bibitem{stan-disc-2015}
+Shawn McCann, ``3d reconstruction from multiple images'', In {\em Project:
+  Computational Vision \& Geometry Lab, Stanford University, 2015}. Stanford
+  University, 2015.
+
+\end{thebibliography}

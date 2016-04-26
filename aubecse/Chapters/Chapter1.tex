@@ -1,0 +1,46 @@
+% Chapter 1
+
+\chapter{INTRODUCTION} % Write in your own chapter title All Chapter headings in CAPS
+\section{General Overview} % All Section headings in Title Case
+The Quadcopter UAV is one of the fastest growing technologies of the 21st century. It has a myriad of uses and is a field of intensive research and continuous development. 
+A quadcopter, also called a quadrotor helicopter or quadrotor, is a multirotor helicopter that is lifted and propelled by four rotors. Quadcopters differ from conventional helicopters which use rotors which are able to vary the pitch of their blades dynamically as they move around the rotor hub. In the early days of flight, quadcopters (then referred to as 'quadrotors') were seen as possible solutions to some of the persistent problems in vertical flight; torque-induced control issues (as well as efficiency issues originating from the tail rotor, which generates no useful lift) can be eliminated by counter-rotation and the relatively short blades are much easier to construct.
+\newline
+\newline
+It is a highly useful technology that can be used in aerial photogrammetry, reconstructing topographical landscapes for archaeological excavations, reconstruction of buildings and taking panorama shots for movie-making etc. Drones are actively used in real-estate photography where they provide "virtual walkthroughs" to allow buyers to see the elements of the home vividly without actually entering the site.
+\newline
+Drones play a major role in all categories of surveillance from border patrol, building security and road-traffic monitoring. The advantage of using drones is that they're small, highly mobile, quiet and easy to camouflage. 
+\newline 
+Another innovative and popular use for drones is in the product/food delivery sector. There are several security and reliability concerns that challenge their feasibility but new technologies are being developed to combat these issues.
+\newline
+Ultimately, drone technology is advancing in leaps and bounds with every day and it is inevitable that it would soon be a part of our lives, solving many of our problems.
+
+\section{About the project} %All Sub Section headings in Title Case
+The project is divided into three main modules.  
+The first module is the quadcopter itself.
+The quadcopter runs on the Raspberry Pi 2 microcomputer which hosts a Debian-based OS (Raspbian Jessie) which allows the use of OpenCV and Python. 
+It has four motors whose speeds are controlled using Pulse Width Modulation(PWM) technique. PWM signals are used to communicate with the ESC which controls the voltage given to the BLDC motors and thus control the speed. The RPi uses pigpio library to issue PWM signals to the ESC. 
+\newline
+\newline
+The flight dynamics including stability and orientation are detected using the IMU(Inertial Measurement Unit) Sensor which consists of an accelerometer, gyroscope and magnetometer. The IMU sensor has 9 degrees of freedom since the accelerometer, gyroscope and magnetometer have 3 axes each. The accelerometer measures the acceleration and tilt while the gyroscope measures the angular velocity. The sensor data are fed to the RPi controller which calculates the current orientation and automatically computes the required orientation of the quadcopter using a PID algorithm. The RPi runs a Python server which receives JSON-encoded altitude, motor speed and trim values which are decoded and used as input by the Quadcopter program. The quadcopter is further equipped with a camera module which takes pictures and feeds them to the RPi's image-processing program which then performs Panorama stitching and 3D Reconstruction of the captured images.
+\newline
+\newline
+The second module performs image processing on the images captured by the RPi camera. It is divided into two parts – Panorama Stitching and 3D Model Reconstruction. The module has been implemented using OpenCV 3.1.0 with Python support. The quadcopter takes pictures using the camera module which are fed to the RPi. OpenCV is used to stitch the images together to create a panorama or a 360 degree view of the environment. Panorama stitching allows one to take individual images of a wide physical space which cannot be covered in a single shot, finds overlapping features, matches them and stitches them into one large, combined shot. This can be used in various applications such as movie-making, aerial photogrammetry and terrain localization and mapping. 
+\newline
+\newline
+The second part of the module deals with 3D reconstruction. The reconstruction algorithm also called Structure from Motion(SfM) algorithm is used to recreate 3D point clouds of buildings or topographies whose pictures are taken by the quadcopter. The point clouds are then visualized on a laptop using a browser. The advantage of using a quadcopter for this purpose is that it can fly to inaccessible locations and take shots which would otherwise be very difficult to capture. It can therefore be used for archaeological surveys, security and dynamic reconstruction of terrain.
+\newline
+\newline
+The third module is the Android App which is used to control the quadcopter. Usually quadcopters are controlled using Radio Controllers but this project makes use of an Android app which will have other functions apart from simply controlling the flight of the drone viz. sending JSON-encoded signals using WiFi to the Python server running on the RPi. The app allows the user to manually control the altitude of the quadcopter, change trim values(which are special values used for stabilizing the quadcopter) and additionally control the speed of individual motors. The app has a virtual joystick interface for simple user-interaction and control.
+
+\section{Organization of the Thesis} %All Sub Section headings in Title Case
+Chapter 1 deals with the general overview and an introduction to the project.
+Chapter 2 discusses the related work that has been accomplished in the field of drone technology and integration of image-processing with UAVs.
+Chapter 3 gives a detailed description of the requirements of the project.
+Chapter 4 describes the System Design.
+Chapter 5 talks about the System Development process.
+Chapter 6 deals with the test cases, results and evaluation.
+Chapter 7 marks the end of the thesis with the project's contributions and future work. 
+
+
+
+

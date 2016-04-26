@@ -1,0 +1,174 @@
+% Appendix A
+
+\chapter{PID Controller}
+The quadcopter uses a PID controller where 'P' stands for proportional, 'I' stands for integral and 'D' stands for differential. 
+\newline
+\newline
+The Proportional term enables the quadcopter to receive a force proportional to the angle of deviation from the central angle as a corrective force to bring it back to its normal orientation. Thus, by giving a high proportional constant, the directive force that will be calculated for a deviation in angle will be large, however setting too large a 'P' value will cause overcompensation resulting in oscillations that will keep increasing.
+\newline
+\newline
+The Integral term is used to provide a corrective force in cases where the Proportional term cannot compensate for the deviation and angle. In such cases, the deviation and angle is aggregated thereby allowing the quadcopter to get back to its stable state quickly even in cases where turbulence or any external forces are at play. Similar to the Proportional term, too high an integral term  will cause oscillations but of a lower frequency then those caused by the Proportional term.
+\newline
+\newline
+The Differential term  is used to provide compensation proportional to that of the change in angle of the quadcopter. Thus, having a high differential term will result in a high corrective force being applied in cases where rapid changes in angle occur. This allows the differential term  to either boost or resist the effects of the Proportional and Integral terms because in cases where there are quick angular changes, the Differential term will enable the controller to resist that change and in cases where the compensation is too fast, the Differential term will correspondingly resist fast changes.
+\section{Sample PID Controller Code}
+   
+\begin{lstlisting}
+def compute_PID_output( self, kp, ki, kd, angle, old_i, old_angle, limit_p=100, limit_i=100, log=False):
+        p = kp * angle
+        i = old_i + ki * angle
+        d = kd * (angle - old_angle)
+        if p > limit_p:
+            p = limit_p
+        if p < -limit_p:
+            p = -limit_p
+        if i > limit_i:
+            i = limit_i
+        if i < -limit_i:
+            i = -limit_i
+        if log:
+            log.write('\t' + str(p) + '\t' + str(i) + '\t' + str(d) + '\t')
+        return [p + i + d, i]
+
+    def compute_rate_PID_output( self, kpr, kp, ki, kd, gyro, angle, old_i, old_angle, limit_p=100, limit_i=100, limit_pr=100, log=False):
+        p = kp * angle
+        i = old_i + ki * angle
+        d = kd * (angle - old_angle)
+        if p > limit_p:
+            p = limit_p
+        if p < -limit_p:
+            p = -limit_p
+        if i > limit_i:
+            i = limit_i
+        if i < -limit_i:
+            i = -limit_i
+        total = kpr*(p + i + gyro)
+        print total,p,i,kpr,angle,gyro,kp
+        if total > limit_pr:
+            total = limit_pr
+        if total < -limit_pr:
+            total = -limit_pr
+        if log:
+            log.write('\t' + str(p) + '\t' + str(i) + '\t' + str(total) + '\t')
+        return [total, i]
+
+\end{lstlisting}
+\section{Sample Panorama Stitching Code}
+\begin{lstlisting}
+import cv2,math,time,sys, numpy as np
+from threading import Thread
+
+def extract_features(image1,image2, surfThreshold=1000, algorithm='SURF'):
+  try:
+    image_gs1 = cv2.cvtColor(image1,cv2.COLOR_BGR2GRAY)
+  except TypeError:
+    return
+  try:
+    image_gs2 = cv2.cvtColor(image2,cv2.COLOR_BGR2GRAY)
+  except TypeError:
+    return
+  detector = cv2.xfeatures2d.SURF_create()
+  (keypoints1,descriptors1) = detector.detectAndCompute(image_gs1,None)
+  (keypoints2,descriptors2) = detector.detectAndCompute(image_gs2,None)
+  keypoints1,keypoints2 = np.float32([kp.pt for kp in keypoints1]), np.float32([kp.pt for kp in keypoints2])
+  return (keypoints1, descriptors1,keypoints2, descriptors2)
+
+def find_correspondences(keypoints1, descriptors1, keypoints2, descriptors2):
+  matches = match_flann(descriptors1, descriptors2)
+  points1 = np.float32([keypoints1[i] for (_, i) in matches])
+  points2 = np.float32([keypoints2[i] for (i, _) in matches])
+  return (points1, points2)
+
+def calculate_size(size_image1, size_image2, homography):
+  (h1, w1) = size_image1[:2]
+  (h2, w2) = size_image2[:2]
+  top_left = np.dot(homography,np.asarray([0,0,1]))
+  top_right = np.dot(homography,np.asarray([w2,0,1]))
+  bottom_left = np.dot(homography,np.asarray([0,h2,1]))
+  bottom_right = np.dot(homography,np.asarray([w2,h2,1]))
+  top_left = top_left/top_left[2]
+  top_right = top_right/top_right[2]
+  bottom_left = bottom_left/bottom_left[2]
+  bottom_right = bottom_right/bottom_right[2]
+  pano_left = int(min(top_left[0], bottom_left[0], 0))
+  pano_right = int(max(top_right[0], bottom_right[0], w1))
+  W = pano_right - pano_left
+  pano_top = int(min(top_left[1], top_right[1], 0))
+  pano_bottom = int(max(bottom_left[1], bottom_right[1], h1))
+  H = pano_bottom - pano_top
+  size = (W, H)
+  X = int(min(top_left[0], bottom_left[0], 0))
+  Y = int(min(top_left[1], top_right[1], 0))
+  offset = (-X, -Y)
+  return (size, offset)
+
+def merge_images(image1, image2, homography, size, offset, keypoints):
+  (h1, w1) = image1.shape[:2]
+  (h2, w2) = image2.shape[:2]
+  panorama = np.zeros((size[1], size[0], 3), np.uint8)
+  (ox, oy) = offset
+  translation = np.matrix([
+    [1.0, 0.0, ox],
+    [0, 1.0, oy],
+    [0.0, 0.0, 1.0]
+  ])
+  homography = translation * homography
+  cv2.warpPerspective(image2, homography, size, panorama)
+  panorama[oy:h1+oy, ox:ox+w1] = image1
+  height, width = panorama.shape[:2]
+  crop_h = int(0.05 * height)
+  crop_w = int(0.015 * width)
+  panorama = panorama[crop_h:-crop_h, crop_w:-crop_w]
+  panorama = panorama[int(oy*0.7):,:]
+  return panorama
+
+def match_flann(des1, des2,ratio=0.75):
+    matcher = cv2.DescriptorMatcher_create('BruteForce')
+    rawMatches = matcher.knnMatch(des1, des2, 2)
+    matches = []
+    for m in rawMatches:
+      if len(m) == 2 and m[0].distance < m[1].distance * ratio:
+        matches.append((m[0].trainIdx, m[0].queryIdx))
+    return matches
+
+def pano(images,i):
+  if (i+1) <= (len(images)-1):
+    try:
+      image1 = cv2.imread(images[i])
+    except TypeError:
+      image1 = images[i]
+    try:
+      image2 = cv2.imread(images[i+1])
+    except TypeError:
+      image2 = images[i+1]
+  else:
+    return  
+  (keypoints1, descriptors1,keypoints2, descriptors2) = extract_features(image1,image2)
+  (points1, points2) = find_correspondences(keypoints1, descriptors1, keypoints2, descriptors2)
+  try:
+    (homography, _) = cv2.findHomography(points2,points1,cv2.RANSAC,4)
+  except Exception:
+    print 'Not enough matches!'
+    return -1
+  (size, offset) = calculate_size(image1.shape, image2.shape, homography)
+  images[i] = merge_images(image1, image2, homography, size, offset, (points1, points2))
+  if(len(images) == 2):
+    filename = 'pano_ multi_final'+str(i)+'.jpg'
+  else:
+    filename = 'pano_multi'+str(i)+'.jpg'
+  cv2.imwrite(filename,images[i])
+  
+if __name__ == '__main__':
+  st = time.time()
+  images = sys.argv[1:]
+  n = len(images)
+  val = int(math.ceil(math.log(len(images),2)))+1
+  for q in range(val):
+    for i in xrange(0,len(images),1):
+          print 'i: ',i,' len: ',len(images)
+          t = Thread(target=pano, args=(images,i))
+          t.start()
+          t.join()
+          if i+1 <= len(images)-1:
+            del images[i+1]
+\end{lstlisting}

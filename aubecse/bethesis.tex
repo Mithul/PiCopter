@@ -1,0 +1,84 @@
+\documentclass[a4paper,oneside,14pt]{memoir}
+\usepackage{aubecse}
+\usepackage{floatrow}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\settitle{Aerial Eyes - Quadcopter implementing Panorama and 3D Reconstuction}
+\setnauthors{3}
+\setauthorone{Avinash Ramesh}{2012103009}
+\setauthortwo{M Mithul}{2012103037}
+\setauthorthree{Shriya Sasank}{2012103069}
+\setguide{Dr. AP Shanthi}{Professor}
+\bachelors % Bachelors of Engineering
+\university{Anna University}
+\setgraddate{May 2016}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{float}
+\definecolor{dkgreen}{rgb}{0,0,0}
+\definecolor{gray}{rgb}{0,0,0}
+\definecolor{mauve}{rgb}{0,0,0}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{gray},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+\frontmatter
+\thetitlepage
+\aucertificate
+\auacknowledge
+\auabstract
+\auabstracttamil
+
+%
+\tableofcontents*
+\listoffigures
+\listoftables
+\listofacronyms{CDMA}
+
+\mainmatter
+\pagestyle{au}
+%\OnehalfSpacing
+\auSpacing  % 0.8 cm using \baselineskip
+
+%
+\input{./Chapters/Chapter1} % Introduction
+\input{./Chapters/Chapter2} % Literature Survey
+\input{./Chapters/Chapter3} % Design
+\input{./Chapters/Chapter4} % Implementation
+\input{./Chapters/Chapter5} % Testing
+\input{./Chapters/Chapter6} % Results
+\input{./Chapters/Chapter7} % Conclusion
+%
+\appendix
+\input{./Appendices/AppendixA}  % 
+%
+\backmatter
+\nocite{*}
+\bibliographystyle{aubecse}
+\bibliography{bethesis}
+
+\end{document}
