@@ -57,7 +57,7 @@ An accelerometer measures all forces that are working on the object, it will als
 \newline \newline
 A Gyroscope accurately measures the change in angle (Fig \ref{fig:filter} gx and gy). Accurate measurement of the current angle can be obtained by integrating the change in angle over time to obtain the overall change in angle. However, the value has the tendency to drift, not returning to zero when the system goes back to its original position. 
 \newline \newline
-The complementary filter combines the two to get a reliable sense of orientation (Fig \ref{fig:filter} pitch and roll). On the short term, data from the gyroscope is used and on the long term, data from the accelerometer is used. The filter looks as follows:
+The complementary filter combines the two to get a reliable sense of orientation (Fig \ref{fig:filter} pitch and roll). On the short term, data from the gyroscope is used and on the long term, data from the accelerometer is used. The filter looks as follows (Equation 6.1):
 \begin{equation}
 angle = 0.98*(angle+gyrData*dt)+0.02*accData
 \end{equation}
@@ -89,7 +89,7 @@ The motor outputs require to be offset by the required height to allow the quadc
   \caption{Derivation and final output from sensed angles}
 \end{figure}
 \noindent
-Figure \ref{fig:pid} shows how the final output and Figure \ref{fig:fpid} shows how sensed pitch and roll are converted to the final output by the PID controller to be used as offset to the motor speed for balancing the quadcopter. The total-x and total-y are computed using the following PID formula:
+Figure \ref{fig:pid} shows how the final output and Figure \ref{fig:fpid} shows how sensed pitch and roll are converted to the final output by the PID controller to be used as offset to the motor speed for balancing the quadcopter. The total-x and total-y are computed using the following PID formula (Equation 6.2):
 \begin{equation}
 motor_{command} = K_p^r*((K_p^a(\theta_{input} - \theta) + K_i^a\int (\theta_{input} - \theta)dt) -\frac{d\theta}{dt})
 \end{equation}
