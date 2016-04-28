@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.1)  28 APR 2016 12:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.11.1)  28 APR 2016 12:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,7 +839,7 @@ Package pdftex.def Info: Figures/annauniv.png used on input line 51.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Figures/annauniv.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 52--52
 \OT1/ptm/m/n/14.4 Certified that this project re-port ti-tled \OT1/ptm/b/n/14.4
- AERIAL EYES -
+ AERIAL EYES-
  []
 
 
@@ -1828,7 +1828,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
 Here is how much of TeX's memory you used:
  13526 strings out of 495000
  198321 string characters out of 6181169
- 463647 words of memory out of 5000000
+ 463645 words of memory out of 5000000
  16211 multiletter control sequences out of 15000+600000
  34547 words of font info for 77 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1842,7 +1842,7 @@ public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/sy
 mbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bethesis.pdf (62 pages, 9969646 bytes).
+Output written on bethesis.pdf (62 pages, 9969639 bytes).
 PDF statistics:
  989 PDF objects out of 1000 (max. 8388607)
  876 compressed objects within 9 object streams
