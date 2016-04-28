@@ -1,46 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: bethesis.aux
 The style file: aubecse.bst
 Database file #1: bethesis.bib
-You've used 6 entries,
+You've used 11 entries,
             1911 wiz_defined-function locations,
-            520 strings with 5281 characters,
-and the built_in function-call counts, 2441 in all, are:
-= -- 246
-> -- 87
+            537 strings with 6161 characters,
+and the built_in function-call counts, 3448 in all, are:
+= -- 331
+> -- 122
 < -- 6
-+ -- 34
-- -- 28
-* -- 168
-:= -- 354
-add.period$ -- 12
-call.type$ -- 6
-change.case$ -- 32
++ -- 49
+- -- 38
+* -- 213
+:= -- 516
+add.period$ -- 22
+call.type$ -- 11
+change.case$ -- 52
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 120
-empty$ -- 220
-format.name$ -- 28
-if$ -- 561
+cite$ -- 11
+duplicate$ -- 155
+empty$ -- 330
+format.name$ -- 38
+if$ -- 776
 int.to.chr$ -- 0
-int.to.str$ -- 6
+int.to.str$ -- 11
 missing$ -- 6
-newline$ -- 21
-num.names$ -- 12
-pop$ -- 47
+newline$ -- 41
+num.names$ -- 22
+pop$ -- 92
 preamble$ -- 1
-purify$ -- 26
+purify$ -- 41
 quote$ -- 0
-skip$ -- 87
+skip$ -- 126
 stack$ -- 0
-substring$ -- 150
-swap$ -- 48
+substring$ -- 175
+swap$ -- 53
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 44
 warning$ -- 0
-while$ -- 30
-width$ -- 7
-write$ -- 62
+while$ -- 40
+width$ -- 13
+write$ -- 107

@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{argentim2013pid}
 Lucas~M Argentim, Willian~C Rezende, Paulo~E Santos, and Renato~A Aguiar,
@@ -34,5 +34,35 @@ Priyanga M. and Raja Ramanan, ``Unmanned aerial vehicle for video surveillance
 Shawn McCann, ``3d reconstruction from multiple images'', In {\em Project:
   Computational Vision \& Geometry Lab, Stanford University, 2015}, pp.  3--7.
   Stanford University, 2015.
+
+\bibitem{wiki:pano}
+Wikipedia, ``Image stitching --- wikipedia{,} the free encyclopedia'', 2015.
+\newblock [Online;
+  \url{https://en.wikipedia.org/w/index.php?title=Image_stitching&oldid=693727653};
+  accessed 15-April-2016].
+
+\bibitem{wiki:3d}
+Wikipedia, ``3d reconstruction --- wikipedia{,} the free encyclopedia'', 2016.
+\newblock [Online;
+  \url{https://en.wikipedia.org/w/index.php?title=3D_reconstruction&oldid=714995129};
+  accessed 15-April-2016].
+
+\bibitem{wiki:pid}
+Wikipedia, ``Pid controller --- wikipedia{,} the free encyclopedia'', 2016.
+\newblock [Online;
+  \url{https://en.wikipedia.org/w/index.php?title=PID_controller&oldid=716008085};
+  accessed 15-April-2016].
+
+\bibitem{wiki:quad}
+Wikipedia, ``Quadcopter --- wikipedia{,} the free encyclopedia'', 2016.
+\newblock [Online;
+  \url{https://en.wikipedia.org/w/index.php?title=Quadcopter&oldid=714919346};
+  accessed 15-April-2016].
+
+\bibitem{wiki:rpi}
+Wikipedia, ``Raspberry pi --- wikipedia{,} the free encyclopedia'', 2016.
+\newblock [Online;
+  \url{https://en.wikipedia.org/w/index.php?title=Raspberry_Pi&oldid=717342422};
+  accessed 15-April-2016].
 
 \end{thebibliography}
