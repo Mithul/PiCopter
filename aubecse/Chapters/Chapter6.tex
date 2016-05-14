@@ -47,9 +47,15 @@ Figures \ref{fig:filter}, \ref{fig:mop}, \ref{fig:pid} and \ref{fig:fpid} depict
 The first 10 seconds show the data where the motors run at minimal speed followed by intermittent high speeds to allow lift-off till the 20 second mark. At about 25 seconds the quadcopter had attained a height of roughly 1 feet from the ground and was hovering with mild oscillations. At about 45 seconds the quadcopter encountered a breeze causing it to temporarily tilt in the direction of the breeze and oscillate with increasing amplitude till 55 seconds, at which point it was powered down.
 \begin{figure}[H]
   \centering
-  \includegraphics[width = 15cm]{complementary.png}
+  \includegraphics[width = 15cm,height=10.5cm]{complementary.png}
   \caption{Measurement of pitch and roll using complementary filter \label{fig:filter}}
   \label{Measurement of pitch and roll} 
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = 15cm,height=10.5cm]{motorsop.png}
+  \caption{Output of motors with respect to height\label{fig:mop}}
+  \label{Motor output}  
 \end{figure}
 \noindent
 The orientation of the quadcopter is sensed using the accelerometer and the gyroscope present in the IMU sensor (Fig \ref{fig:filter}).
@@ -62,28 +68,21 @@ The complementary filter combines the two to get a reliable sense of orientation
 angle = 0.98*(angle+gyrData*dt)+0.02*accData
 \label{eq:comp_filter} 
 \end{equation}
-\newline \newline
 The gyroscope data is integrated every timestep with the current angle value. After this it is combined with the low-pass data from the accelerometer (already processed with atan2). The constants (0.98 and 0.02) have to add up to 1 but can be changed to tune the filter properly.
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width = 15cm]{motorsop.png}
-  \caption{Output of motors with respect to height\label{fig:mop}}
-  \label{Motor output}  
-\end{figure}
 \noindent
 The motor outputs require to be offset by the required height to allow the quadcopter to increase or decrease the overall height while balancing using the offset received from the PID controller[Fig \ref{fig:mop}].
 
 \begin{figure}[H]
   \begin{subfigure}{1\textwidth}
     \centering
-    \includegraphics[width = 10cm]{pid.png}
+    \includegraphics[width = 12cm]{pid.png}
     \caption{Derivation of output using PID controller\label{fig:pid}}
     \label{Motor output}  
   \end{subfigure}
   \begin{subfigure}{1\textwidth}
     \centering
-    \includegraphics[width = 10cm]{output.png}
+    \includegraphics[width = 12cm]{output.png}
     \caption{Final output with respect to pitch and roll\label{fig:fpid}}
     \label{Measurement of pitch and roll} 
   \end{subfigure}
@@ -95,6 +94,5 @@ Figure \ref{fig:pid} shows how the final output and Figure \ref{fig:fpid} shows 
 motor_{command} = K_p^r*((K_p^a(\theta_{input} - \theta) + K_i^a\int (\theta_{input} - \theta)dt) -\frac{d\theta}{dt})
 \label{eq:pid} 
 \end{equation}
-\newline
 \newline
 The last chapter discusses the project's contributions and future work.
